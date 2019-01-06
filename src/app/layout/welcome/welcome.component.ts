@@ -22,6 +22,7 @@ export class WelcomeComponent implements OnInit {
 
   submit() {
     console.log('noti');
+    window.localStorage.setItem('user', 'Sweta');
     this.router.navigate(['/notification']);
   }
 

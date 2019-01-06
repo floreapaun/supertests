@@ -11,15 +11,15 @@
       <form>
         <div class="row">
           <div class="col-sm-6">Candidate Name</div>
-          <div class="col-sm-6"><input type="text" placeholder="[your name]"></div>
+          <div class="col-sm-6">User Name</div>
         </div>
         <div class="row">
           <div class="col-sm-6">Subject Name</div>
-          <div class="col-sm-6"><input type="text" placeholder="[subject name]"></div>
+          <div class="col-sm-6">Subject Name</div>
         </div>
         <div class="row">
           <div class="col-sm-6">Remaning Time</div>
-          <div class="col-sm-6"><input type="text" placeholder="[your name]"></div>
+          <div class="col-sm-6"><label for="xy">{{timeRem}}</label></div>
         </div>
       </form>
     </div>
@@ -38,36 +38,36 @@
       <div class="Container">
       </div>
     </div>
-    </div>
+  </div>
 </header>
 <div class="row">
   <div class="col-sm-6">
-    <b>Question.1</b><br>
+    <b></b>Question<br>
     <hr>
-    In which Upanishad four steps of Omkar are mentioned:<br>
+    {{question.question}}<br>
     <div class="row">
       <div class="col-sm-6">
-        (1)Prashnopanishad
+        <span> (A) : {{question.options_a}} </span>
       </div>
       <div class="col-sm-6">
-        (2)Mundakpanishad
+        <span> (B) : {{question.options_b}}</span>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-6">
-        (3)Mandukyopanishad
+        <span> (C) : {{question.options_c}}</span>
       </div>
       <div class="col-sm-6">
-        (4)Kathopanishad
+        <span> (D) : {{question.options_d}}</span>
       </div>
     </div>
 
-    <input type="radio">1)
-    <input type="radio">2)
-    <input type="radio">3)
-    <input type="radio">4)<br>
+    <input name="answer" type="radio">1)
+    <input  name="answer" type="radio">2)
+    <input   name="answer"type="radio">3)
+    <input  name="answer" type="radio">4)<br>
     <hr>
-    <button class="btn btn-primary">Save & Next</button>
+    <button class="btn btn-primary" (click)="saveAndNext();">Save & Next</button>
     <button class="btn btn-danger">Save & Mark For Review</button>
     <button class="btn btn-success">Clear Response</button><br>
     <button class="btn btn-warning">Make For Review & Next</button><br>
@@ -77,7 +77,7 @@
         <button class="btn btn-info">Next>></button>
       </div>
       <div class="col-sm-2">
-        <button class="btn btn-success" (click)="navigateToTest();" >Submit</button>
+        <button class="btn btn-success" (click)="navigateToTest();">Submit</button>
       </div>
     </div>
   </div>

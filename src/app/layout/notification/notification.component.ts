@@ -7,10 +7,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./notification.component.css']
 })
 export class NotificationComponent implements OnInit {
-
+   user : string = '';
   constructor(private router: Router) { }
 
   ngOnInit() {
+    this.user = window.localStorage.getItem('user');
+    console.log(this.user);
   }
 
 
