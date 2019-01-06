@@ -9,7 +9,7 @@ import { TestComponent } from './layout/test/test.component';
 import { AuthService } from './services/auth.service';
 import { DatamaniputationService } from './services/datamaniputation.service';
 import { ScoreComponent } from './layout/score/score.component';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +20,7 @@ import { ScoreComponent } from './layout/score/score.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [ ],

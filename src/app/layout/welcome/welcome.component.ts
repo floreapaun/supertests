@@ -8,7 +8,11 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-
+  user = {
+    name: 'test',
+    email: 'sweta@tst',
+    test :''
+  }
   constructor(private router: Router,
               private auth:AuthService) { }
 
