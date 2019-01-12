@@ -1,0 +1,41 @@
+header{
+    background:linear-gradient(35deg,#ccffff,#ffcccc);;
+}
+
+.margint{
+    margin:10px;
+}
+.marginT{
+    margin:0px 0px 0px 10px;
+}
+.box1{
+    margin:10px;
+    width:25px;
+    height:25px;
+    background-color:red;
+}
+.box2{
+    width:25px;
+    height:25px;
+    border-radius: 25px;
+    background-color:rgb(0, 255, 149);
+}
+.box3{
+    margin:10px;
+    width:25px;
+    height:25px;
+    background-color:rgb(0, 153, 255);
+    transform:skewx(25deg);
+}
+.box4{
+   width:25px;
+    height:25px;
+    border-radius:50%;
+    background-color:blue;
+}
+.box5{
+    margin:10px ;
+    width:25px;
+    height:25px;
+    background-color:orange;
+}

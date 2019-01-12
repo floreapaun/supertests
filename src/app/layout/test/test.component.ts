@@ -509,5 +509,8 @@ export class TestComponent implements OnInit {
   saveAndNext(){
     this.question = this.questionList[++this.itr];
   }
+  
+ 
+  
 
 }

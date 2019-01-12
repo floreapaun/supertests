@@ -1,6 +1,10 @@
 .mgin{
     margin:100px 50px 500px 500px;
 }
-.mgin1{
-    margin:0px 0px 0px 100px;
+
+.box{
+    padding:20px;
+    width:400px;
+    height:300px;
+    background-color:white;
 }
