@@ -2,6 +2,18 @@ p{
     text-align:center;
     font-size:20px;
 }
-body{
-    background:#0000ff;
+.table{
+    border:2px solid black;
+    padding:14px 16px;
+    background-color:white;
+}
+.text-align{
+    text-align:center;
+    
+}
+.marginl{
+    margin:0px 0px 0px 500px;
+}
+.font{
+    font-size:20px;
 }
