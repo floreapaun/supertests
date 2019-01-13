@@ -1,5 +1,5 @@
 header{
-    background:linear-gradient(35deg,#ccffff,#ffcccc);;
+    background:linear-gradient(90deg,#cae5f7,#dfedf7);
 }
 
 .margint{
@@ -39,3 +39,7 @@ header{
     height:25px;
     background-color:orange;
 }
+.success{
+    height:20px;
+    width:20px;
+    }

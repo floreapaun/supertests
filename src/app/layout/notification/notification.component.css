@@ -2,15 +2,13 @@
     margin:10px;
     width:30px;
     height:30px;
-    background:red;
-}
+    }
 .indent{
     text-indent:50px;
 }
 
 .margin{
     margin:0px 50px 50px 400px;
-    background-color:#affdaf;
 }
 .size{
     width:350px;

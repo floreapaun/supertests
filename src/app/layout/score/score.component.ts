@@ -13,3 +13,4 @@ export class ScoreComponent implements OnInit {
   }
 
 }
+
