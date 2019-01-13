@@ -13,10 +13,6 @@
   },
   "private": true,
   "dependencies": {
-    "nativescript-angular": "~7.1.0",
-    "nativescript-theme-core": "~1.0.4",
-    "reflect-metadata": "~0.1.8",
-    "tns-core-modules": "~5.1.1",
     "@angular/animations": "~7.0.0",
     "@angular/common": "~7.0.0",
     "@angular/compiler": "~7.0.0",
@@ -30,7 +26,11 @@
     "@ng-bootstrap/ng-bootstrap": "^4.0.1",
     "bootstrap": "^4.2.1",
     "core-js": "^2.5.4",
+    "nativescript-angular": "~7.1.0",
+    "nativescript-theme-core": "~1.0.4",
+    "reflect-metadata": "~0.1.8",
     "rxjs": "~6.3.3",
+    "tns-core-modules": "^5.2.1-next-2019-01-10-145030-01",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
@@ -59,7 +59,7 @@
   "nativescript": {
     "id": "org.nativescript.ngsample",
     "tns-android": {
-      "version": "5.1.0"
+      "version": "5.2.0-2019-01-09-162639-01"
     }
   }
 }

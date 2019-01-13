@@ -1,0 +1,11 @@
+<StackLayout>
+    <Label text="Name" ></Label>
+    <TextField></TextField>
+    <Label text="Email"></Label>
+    <TextField></TextField>
+    <Label text="Type Of Test"></Label>
+
+    <ListPicker [items]="typeTestList" selectedIndex="0" (selectedIndexChange)="selectedIndexChanged($event)" class="p-15"></ListPicker>
+
+    <Button text="Next" (tap)="submit()" ></Button>
+</StackLayout>
