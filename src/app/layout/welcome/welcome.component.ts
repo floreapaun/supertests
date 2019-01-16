@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class WelcomeComponent implements OnInit {
   user = {
     name: 'test',
-    email: 'sweta@tst',
+    email: 'kajal@gmail',
     test :''
   }
   constructor(private router: Router,
@@ -26,7 +26,7 @@ export class WelcomeComponent implements OnInit {
 
   submit() {
     console.log('noti');
-    window.localStorage.setItem('user', 'Sweta');
+    window.localStorage.setItem('user', 'kajal');
     this.router.navigate(['/notification']);
   }
 
