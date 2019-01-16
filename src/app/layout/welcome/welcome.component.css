@@ -8,3 +8,8 @@
     height:300px;
     background-color:white;
 }
+.carousel-inner img {
+    width: 500px;
+    height: 500px;
+}  
+     
