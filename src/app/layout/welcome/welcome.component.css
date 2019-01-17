@@ -9,7 +9,12 @@
     background-color:white;
 }
 .carousel-inner img {
-    width: 500px;
+    width: 900px;
     height: 500px;
+    
 }  
-     
+    .carousel-item{
+        margin-left:250px;
+       
+    }
+    
