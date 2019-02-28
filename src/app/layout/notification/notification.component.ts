@@ -11,8 +11,7 @@ export class NotificationComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    this.user = window.localStorage.getItem('user');
-    console.log(this.user);
+   
   }
 
 

@@ -12,9 +12,13 @@ import { ListPicker } from "tns-core-modules/ui/list-picker";
 export class WelcomeComponent implements OnInit {
   user = {
     name: 'test',
-    email: 'kajal@gmail',
-    test :''
+    email: 'sweta@tst',
+    test : ''
   };
+
+picked ;
+
+  typeTestList:  Array<string>  = [ 'HTET', 'CTET', 'ANGULAR', 'JAVASCRIPT'];
   constructor(private router: Router,
               private auth: AuthService) { }
 
@@ -28,14 +32,14 @@ export class WelcomeComponent implements OnInit {
 
   submit() {
     console.log('noti');
-    window.localStorage.setItem('user', 'kajal');
+    // window.localStorage.setItem('user', 'Sweta');
     this.router.navigate(['/notification']);
   }
 
 
   selectedIndexChanged(args){
     const picker = <ListPicker>args.object;
-    this.picker = this.typeTestList[picker.selectedIndex];
+    this.picked = this.typeTestList[picker.selectedIndex];
   }
 
 }
