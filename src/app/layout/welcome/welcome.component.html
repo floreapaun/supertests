@@ -1,29 +1,28 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<body>
 <div class="mgin">
   <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-
-
-  <form  id="test" class="box2">
+<div class="box">
+<form  id="test">
     <table>
-
-      <tr>
+<tr>
         <td>Name:</td>
-        <td><input name="name" [(ngModel)]="user.name" type="text" placeholder="Name"></td>
-      <tr>
+        <td><input class="form-control" name="name" [(ngModel)]="user.name" type="text" placeholder="Name"></td>
+      </tr><br>
       <tr>
         <td>Email:</td>
-        <td><input name="email"  [(ngModel)]="user.email" type="email" placeholder="Email"></td>
-      </tr>
+        <td><input class="form-control" name="email"  [(ngModel)]="user.email" type="email" placeholder="Email"></td>
+      </tr><br>
       <tr>
         <td>Type Of Test:</td>
-        <td><select name="test" [(ngModel)]="user.test" >
+        <td><select class="form-control" name="test" [(ngModel)]="user.test" >
             <option value="htet">HTET</option>
             <option value="ctet">CTET</option>
           </select></td>
-      </tr>
+      </tr><br>
     </table>
-    <button class="mgin1" (click)="submit()">Next</button>
-
+    <button class="btn btn-info" (click)="submit()">Next</button>
   </form>
-
 </div>
+</div>
+</body>

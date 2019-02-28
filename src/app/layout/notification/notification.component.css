@@ -1,0 +1,16 @@
+.box-size{
+    margin:10px;
+    width:30px;
+    height:30px;
+    }
+.indent{
+    text-indent:50px;
+}
+
+.margin{
+    margin:0px 50px 50px 400px;
+}
+.size{
+    width:350px;
+    height:50px;
+}

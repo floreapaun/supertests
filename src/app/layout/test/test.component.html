@@ -1,7 +1,8 @@
-<header>
+<div class="container">
+  <header>
   <div class="row">
     <div class="col-sm-7">
-      <h1 class="hmain"><img src="images/i9.jpg" width="70px" length="70px"><b>iPriksha</b></h1>
+      <h1 class="hmain"><img src="assets/images/i9.jpg" width="70px" length="70px"><b>iPriksha</b></h1>
       <h3 class="hmain1">Exclence in Assessment</h3>
     </div>
     <div class="col-sm-1">
@@ -11,7 +12,7 @@
       <form>
         <div class="row">
           <div class="col-sm-6">Candidate Name</div>
-          <div class="col-sm-6">User Name</div>
+          <div class="col-sm-6">user;</div>
         </div>
         <div class="row">
           <div class="col-sm-6">Subject Name</div>
@@ -30,13 +31,12 @@
       <h1>HTET</h1>
     </div>
     <div class="col-sm-6">
-      choose your default language <br><select class="form-control">
+      Choose your default language <br><select class="form-control">
         <option>English</option>
         <option>Hindi</option>
         <option>Punjabi</option>
       </select>
-      <div class="Container">
-      </div>
+      
     </div>
   </div>
 </header>
@@ -61,20 +61,19 @@
         <span> (D) : {{question.options_d}}</span>
       </div>
     </div>
-
-    <input name="answer" type="radio">1)
-    <input  name="answer" type="radio">2)
-    <input   name="answer"type="radio">3)
-    <input  name="answer" type="radio">4)<br>
+    <input class="success" name="answer" type="radio">1)
+    <input class="success" name="answer" type="radio">2)
+    <input class="success"  name="answer"type="radio">3)
+    <input class="success" name="answer" type="radio">4)<br>
     <hr>
-    <button class="btn btn-primary" (click)="saveAndNext();">Save & Next</button>
-    <button class="btn btn-danger">Save & Mark For Review</button>
-    <button class="btn btn-success">Clear Response</button><br>
-    <button class="btn btn-warning">Make For Review & Next</button><br>
+    <button class="btn btn-primary margint" (click)="saveAndNext();">Save & Next</button>
+    <button class="btn btn-danger margint">Save & Mark For Review</button>
+    <button class="btn btn-success margint">Clear Response</button><br>
+    <button class="btn btn-warning margint">Make For Review & Next</button><br>
     <div class="row">
       <div class="col-sm-10">
-        <button class="btn btn-info">back</button>
-        <button class="btn btn-info">Next>></button>
+        <button class="btn btn-info">Back</button>
+        <button class="btn btn-info marginT">Next>></button>
       </div>
       <div class="col-sm-2">
         <button class="btn btn-success" (click)="navigateToTest();">Submit</button>
@@ -84,20 +83,22 @@
   <div class="col-sm-6">
     <div class="row">
       <div class="col-sm-6">
-        <span class="box9">not visited</span>
+        <img class="box1">Not visited
       </div>
 
       <div class="col-sm-6">
-        <span class="box10">not answered</span>
+        <img class="box2">Not answered
       </div>
       <div class="col-sm-6">
-        <span class="box11">answered</span>
+        <img class="box3">Answered
       </div>
       <div class="col-sm-6">
-        <span class="box12">Answered & marked for review</span>
+        <img class="box4">Answered & marked for review
       </div>
       <div class="col-sm-6">
-        <span class="box13">marked for review</span>
+        <img class="box5">Marked for review
       </div>
     </div>
   </div>
+  </div>
+</div>
