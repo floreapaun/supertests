@@ -11,7 +11,8 @@ export class NotificationComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-   
+    
+   this.user = JSON.parse( window.localStorage.user);
   }
 
 

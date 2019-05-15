@@ -11,8 +11,8 @@ import { ListPicker } from "tns-core-modules/ui/list-picker";
 })
 export class WelcomeComponent implements OnInit {
   user = {
-    name: 'test',
-    email: 'sweta@tst',
+    name: '',
+    email: '',
     test : ''
   };
 
@@ -31,8 +31,9 @@ picked ;
 
 
   submit() {
-    console.log('noti');
-    // window.localStorage.setItem('user', 'Sweta');
+    console.log('notification');
+    
+    window.localStorage.setItem('user', JSON.stringify(this.user));
     this.router.navigate(['/notification']);
   }
 

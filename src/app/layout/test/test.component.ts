@@ -10,6 +10,7 @@ export class TestComponent implements OnInit {
   timeRem : any = new Date();
   question : any ;
   itr =0;
+  user;
   questionList =  [
       {
       	 "question" : "1.अशुद्ध विकल्प को पहचानिए  ",
@@ -621,6 +622,7 @@ export class TestComponent implements OnInit {
       this.timeRem = new Date();
     },1000);
     this.question = this.questionList[0];
+    this.user = JSON.parse(window.localStorage.user);
   }
 
 
