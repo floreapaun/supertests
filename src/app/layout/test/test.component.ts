@@ -624,7 +624,7 @@ export class TestComponent implements OnInit {
     },1000);
     this.question = this.questionList[0];
     this.user = JSON.parse(window.localStorage.user);
-    this.getHeroes();
+    this.getQuestions();
   }
 
 
@@ -637,8 +637,8 @@ export class TestComponent implements OnInit {
   }
 
 
-  getHeroes() {
-    this.http.get('api/tests').subscribe(res=>{
+  getQuestions() {
+    this.http.get('api/questions').subscribe(res=>{
       console.log(res);
     })
   }
