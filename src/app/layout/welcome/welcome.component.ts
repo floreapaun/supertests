@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { ListPicker } from "tns-core-modules/ui/list-picker";
+//import { ListPicker } from "tns-core-modules/ui/list-picker";
 
 
 @Component({
@@ -39,8 +39,8 @@ picked ;
 
 
   selectedIndexChanged(args){
-    const picker = <ListPicker>args.object;
-    this.picked = this.typeTestList[picker.selectedIndex];
+    // const picker = <ListPicker>args.object;
+    // this.picked = this.typeTestList[picker.selectedIndex];
   }
 
 }

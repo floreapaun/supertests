@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-test', 
@@ -615,7 +616,7 @@ export class TestComponent implements OnInit {
         "answer": "d"
       }
     ]
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit() {
     setInterval(()=>{
@@ -623,6 +624,7 @@ export class TestComponent implements OnInit {
     },1000);
     this.question = this.questionList[0];
     this.user = JSON.parse(window.localStorage.user);
+    this.getHeroes();
   }
 
 
@@ -632,6 +634,13 @@ export class TestComponent implements OnInit {
 
   saveAndNext(){
     this.question = this.questionList[++this.itr];
+  }
+
+
+  getHeroes() {
+    this.http.get('api/tests').subscribe(res=>{
+      console.log(res);
+    })
   }
   
  
