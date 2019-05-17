@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class NotificationComponent implements OnInit {
    user : string = '';
+  agree: boolean ;
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -17,6 +18,10 @@ export class NotificationComponent implements OnInit {
 
 
   navigateToTest() {
-    this.router.navigate(['/test']);
+    if(this.agree){
+      this.router.navigate(['/test']);
+    } else {
+      alert('Please agree term and conditions');
+    }
   }
 }

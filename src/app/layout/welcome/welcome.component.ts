@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { HttpClient } from '@angular/common/http';
 //import { ListPicker } from "tns-core-modules/ui/list-picker";
 
 
@@ -18,29 +19,45 @@ export class WelcomeComponent implements OnInit {
 
 picked ;
 
-  typeTestList:  Array<string>  = [ 'HTET', 'CTET', 'ANGULAR', 'JAVASCRIPT'];
+  typeTestList:  any;
   constructor(private router: Router,
-              private auth: AuthService) { }
+              private auth: AuthService,
+              private http: HttpClient) { }
 
   ngOnInit() {
     this.auth.name().subscribe(res => {
       console.log('Auth',res);
-    })
+    });
+
+    this.getTestList();
    
   }
 
 
   submit() {
-    console.log('notification');
-    
-    window.localStorage.setItem('user', JSON.stringify(this.user));
-    this.router.navigate(['/notification']);
+    //console.log('notification');
+    if (this.user.email != '' && this.user.name != '' && this.user.test != '' ){
+      console.log(this.user.test);
+      window.localStorage.setItem('user', JSON.stringify(this.user));
+      this.router.navigate(['/notification']);
+    } else {
+      alert('Please fill all information!');
+    }
   }
 
 
   selectedIndexChanged(args){
     // const picker = <ListPicker>args.object;
     // this.picked = this.typeTestList[picker.selectedIndex];
+  }
+
+  getTestList() {
+    this.http.get('api/tests').subscribe(res => {
+      this.typeTestList = res;
+
+      console.log(res)
+      console.log(res instanceof Array)
+    })
   }
 
 }
