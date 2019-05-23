@@ -16,7 +16,7 @@
         <tr>
           <td>Type Of Test:</td>
           <td><select class="form-control" name="test" [(ngModel)]="user.test">
-              <option [value]="testType.test" *ngFor="let testType of typeTestList">{{testType.name}}</option>
+              <option  [ngValue]="testType" *ngFor="let testType of typeTestList">{{testType.name}}</option>
             </select>
           </td>
         </tr><br>

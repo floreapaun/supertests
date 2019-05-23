@@ -1,0 +1,803 @@
+{"HTET": [
+   {
+      "question": "1.अशुद्ध विकल्प को पहचानिए  ",
+      "answer": "3",
+      "options": [
+         "विश्वामित्र = विश्व + मित्र",
+         "मुसलाधार = मूसल + धार",
+         "सभी = सब + ही",
+         "दीनानाथ = दीना + नाथ "
+      ]
+   },
+   {
+      "question": "2.\"वह जिस पर हमला किया गया हो \" - के लिए एक शब्द चुने ",
+      "answer": "2",
+      "options": [
+         "आत्मघात ",
+         "आघात ",
+         "आक्रांत ",
+         "आक्रांता"
+      ]
+   },
+   {
+      "question": "3.\"जो नायिका अपने प्रमी से मिलने स्वय जाए\" - के लिए एक शब्द चुने ",
+      "answer": "1",
+      "options": [
+         "दुहिता ",
+         "अभिसारिका ",
+         "प्रोषिपतिका",
+         "स्व्यगमना"
+      ]
+   },
+   {
+      "question": "4.निम्न शब्दों में से कोन सा शब्द 'रूढ़' है ?",
+      "answer": "0",
+      "options": [
+         "गाय ",
+         "विधालय",
+         "लम्बोदर",
+         "पंकज"
+      ]
+   },
+   {
+      "question": "5.\"यदि तुम आते तो में  भी तुम्हारे साथ चलता \" इस वाक्य हेतु सही काल है '",
+      "answer": "1",
+      "options": [
+         "आसन्न भूतकाल ",
+         "हेतुहेतुमद भूतकाल  ",
+         "संदिग्ध भूतकाल हुआ हो ",
+         "अपूर्ण भूतकाल "
+      ]
+   },
+   {
+      "question": " 6.\"जिसका जन्म अविवाहित कन्या के गर्भ से हुआ हो  \" - के लिए एक शब्द है ",
+      "answer": "1",
+      "options": [
+         "कन्यापुत्र ",
+         "कानीन ",
+         "अवैध पुत्र ",
+         "कुमारीसुत"
+      ]
+   },
+   {
+      "question": "किस शब्द से 'वी '  प्रत्यय का प्रयोग शुद्ध रूप से नही हुआ है? ",
+      "answer": "1",
+      "options": [
+         "ऊर्जस्वी",
+         "साध्वी",
+         "तपस्वी ",
+         "मायावी "
+      ]
+   },
+   {
+      "question": "' मै खाना खा चूका हू | ' इस वाकय में भूतकालिक भेद इंगित कीजिये |   ",
+      "answer": "0",
+      "options": [
+         "पूर्ण भुत ",
+         "सामान्य भुत ",
+         "आसन्न भुत ",
+         "संदिग्ध भुत "
+      ]
+   },
+   {
+      "question": "व्याकरण की दृष्टी से 'प्रेम ' शब्द क्या है ?",
+      "answer": "1",
+      "options": [
+         "अव्यय ",
+         "भाववाचक संज्ञा ",
+         "सर्वनाम",
+         "शुद्धता"
+      ]
+   },
+   {
+      "question": "कोन सा शब्द 'धनुष ' का पर्यावाची नही हैं ?",
+      "answer": "3",
+      "options": [
+         "कोदंड ",
+         "विशिखासन",
+         "चाप ",
+         "विशिख "
+      ]
+   },
+   {
+      "question": "'गौरव' शब्द की सही व्युत्पति है ",
+      "answer": "1",
+      "options": [
+         "गुरु + व ",
+         "गुरु + अ ",
+         "गुरु + अव ",
+         "गुरु + व"
+      ]
+   },
+   {
+      "question": "'योगीश्वर' सब्द का सम्यक संधि विच्छेद होगा ",
+      "answer": "3",
+      "options": [
+         "योगी + इश्वर ",
+         "योगि + इश्वर ",
+         "योगि + श्वर ",
+         "योगि + इश्वर "
+      ]
+   },
+   {
+      "question": "हिंदी की ' क ' ध्वनि व्याकरण की दृष्टी में है ",
+      "answer": "2",
+      "options": [
+         "अल्पप्राण- सघोष",
+         "महाप्राण - सघोष",
+         "अल्पप्राण - अघोष",
+         "महाप्राण - अघोष"
+      ]
+   },
+   {
+      "question": "'यघशाला ' शब्द में उपयुक्त समास का चयन करे  ",
+      "answer": "3",
+      "options": [
+         "दिुतिया तत्पुरुष",
+         "तृतीया तत्पुरुष",
+         "षष्ठी तत्पुरुष",
+         "चतुर्थी तत्पुरुष"
+      ]
+   },
+   {
+      "question": "'भूल गये रंग भूल गये छकड़ी , तीन चीज यद् रही नून, तेल, लकड़ी'- लोकोक्ति के लिए सही अर्थ का चयन कीजिये ",
+      "answer": "0",
+      "options": [
+         "महगाई  के आगे की विवशता ",
+         "नून, तेल, लकड़ी के बिना संसार अदूर है ",
+         "अत्यावशक वस्तुओ से ही प्रेम ",
+         "ग्रहस्थी के चक्कर में फँस जाना"
+      ]
+   },
+   {
+      "question": "उपसर्ग रहित शब्द है ",
+      "answer": "0",
+      "options": [
+         "सुरेश ",
+         "सुयोग ",
+         "अत्याधिक",
+         "विदेश "
+      ]
+   },
+   {
+      "question": "अशुद्ध विकल्प को चुने ",
+      "answer": "1",
+      "options": [
+         "आर्ष - अनार्ष ",
+         "उद्धधत - समु्द्धत",
+         "उन्मीलन - निमीलन",
+         "अर्पण - ग्रहण"
+      ]
+   },
+   {
+      "question": "'किताब ' किस भाषा का शब्द है ?",
+      "answer": "0",
+      "options": [
+         "अरबी ",
+         "फारसी ",
+         "अंग्रेजी ",
+         "हिंदी "
+      ]
+   },
+   {
+      "question": "'बंदूक ' एक उपयोगी ...................है |' रिक्त स्थान के लिए उचित शब्द का चयन करे ",
+      "answer": "1",
+      "options": [
+         "अस्त्र ",
+         "शस्त्र ",
+         "रक्षक ",
+         "ओजार"
+      ]
+   },
+   {
+      "question": "किस शब्द में कर्मधारय समास का प्रयोग नही हुआ है ?",
+      "answer": "3",
+      "options": [
+         "कदाचार ",
+         "जवाँमर्द",
+         "क्रोधागिन",
+         "कर्तव्याकर्तव्य"
+      ]
+   },
+      {
+         "question": "to cooperatethe adolscent it is essential to ",
+         "answer": "0",
+         "options": [
+            "Inspire",
+            "Indicate his mistakes",
+            "Criticise him",
+            "Do negative behaviour"
+         ]
+      },
+      {
+         "question": "Which of the following is not a suitable technique used by teachers fpr socializing the child ? ",
+         "answer": "3",
+         "options": [
+            "Direct teaching",
+            "Identification",
+            " Democratic discipline",
+            " Over-protection"
+         ]
+      },
+      {
+         "question": "Which of the following a Wrong statement about emotions of an adolescent ? ",
+         "answer": "1",
+         "options": [
+            "Emotional expressions are modified by learning.",
+            "Emotions are permanent",
+            "Every emotion is accompanied by a feeling",
+            "Emotions are aroused by external stimuli."
+         ]
+      },
+      {
+         "question": "Inclusive education means ",
+         "answer": "0",
+         "options": [
+            "Meeting individual difference in general classroom.",
+            "Meeting individul difference in defferent classroom.",
+            "Meeting individual differences in special schools.",
+            "Meeting individual differences in home based instruction."
+         ]
+      },
+      {
+         "question": " In adolescence behaviour and attitude are affected mostly by ",
+         "answer": "2",
+         "options": [
+            "Teacher",
+            "Parents",
+            "Peer Groups",
+            "Films"
+         ]
+      },
+      {
+         "question": "Moral values can be effectively inculcated among the students when teachers ",
+         "answer": "1",
+         "options": [
+            "Frequently talks about values.",
+            "Himself practices them.",
+            "Tells stories of good persons",
+            "Talks of Gods and Goddnesses."
+         ]
+      },
+      {
+         "question": "Critical thinking helps a person in developing abilities and skills for",
+         "answer": "1",
+         "options": [
+            "providing concrete experiences.",
+            "proper interpretation analysis evaluation and inference.",
+            "Creating and constructing something",
+            "thinking about ways of reacting."
+         ]
+      },
+      {
+         "question": "Best method of dealing with adolescent by parents and teachers is ",
+         "answer": "2",
+         "options": [
+            "Autocratic",
+            "Permissive",
+            "Democratic",
+            "Restrictive"
+         ]
+      },
+      {
+         "question": "Which of the following is not a characteristic of social development in adolesence ?",
+         "answer": "2",
+         "options": [
+            "Active member of their peer group ",
+            "Being an attraction towards opposite sex",
+            "High decrease in friendly relationship",
+            "Extension of special interests"
+         ]
+      },
+      {
+         "question": "An adolence user her/his left hand for performing act like taking food or writing, this is developed due to ",
+         "answer": "1",
+         "options": [
+            "Inherited behaviour",
+            " Developmental behaviour",
+            "Wrong behaviour",
+            "All ptions are right"
+         ]
+      },
+      {
+         "question": "Discalculia is a problem related to the problem of ",
+         "answer": "3",
+         "options": [
+            "Speaking accurately",
+            "Writing without committing mistake",
+            "Listening message properly",
+            "Doing mathmatical calculations"
+         ]
+      },
+      {
+         "question": "Continus and Compreshensive Evaluation aims to evalute ",
+         "answer": "1",
+         "options": [
+            "The reasoning of child only.",
+            "All aspects of development of child",
+            "The knowledge of child only",
+            "The understanding of child only"
+         ]
+      },
+      {
+         "question": "Which of the following is not a trait (ability) of a creative child ? ",
+         "answer": "2",
+         "options": [
+            "Elaboration ",
+            "Originality",
+            "Accuracy",
+            "Novelty"
+         ]
+      },
+      {
+         "question": "Learning outcomes means  ",
+         "answer": "0",
+         "options": [
+            "Change in the behaviour of the student.",
+            "Change in the teaching method of the teacher",
+            "Recognization of the subject-matter",
+            "Completion of content."
+         ]
+      },
+      {
+         "question": "Differentatin of emotions takes place at the time of ",
+         "answer": "1",
+         "options": [
+            "Birth of child",
+            "During infancy",
+            "During the period of adoleence",
+            "During adulthood"
+         ]
+      },
+      {
+         "question": "Which of the following provision is not suitable to meet individual difference among learners?",
+         "answer": "2",
+         "options": [
+            "Their abilitis should be assessed.",
+            "Adequate facilities and material should be provided",
+            "Labelling them",
+            "Making Individualisation necessary."
+         ]
+      },
+      {
+         "question": " Working with adolescents particularly maladjusted one ,which is not approprite ?",
+         "answer": "0",
+         "options": [
+            "Critical aaproch ",
+            "Democratic approach",
+            "Collective approach",
+            "Ideal approach"
+         ]
+      },
+      {
+         "question": " Heredity plays most important role in the ",
+         "answer": "2",
+         "options": [
+            "Emotional development of the child.",
+            "Social development of the child",
+            "Physical development of the child",
+            "Cultural development of the  child"
+         ]
+      },
+      {
+         "question": "The knowledge of principles of the learning is must for a good teacher, becouse",
+         "answer": "2",
+         "options": [
+            "It helps in maintaining discipline.",
+            "It helps to make content interesting ",
+            "It helps to understand the content by simple methods",
+            "It saves time."
+         ]
+      },
+      {
+         "question": "Which of the following characteristic is not correct about objective type testing? ",
+         "answer": "3",
+         "options": [
+            "Relialbility.",
+            "Objectivity",
+            "Validity",
+            "Subjectivity"
+         ]
+      },
+      {
+         "question": "Which of the following is the characteristics of constructive classroom ? ",
+         "answer": "0",
+         "options": [
+            "Student design experiments, draws conclusions and compare their findings.",
+            "Knowledge is objective, universal and complete.",
+            "Teacher transmits authoritative knowledge to students",
+            "Students look for the 'right' answer."
+         ]
+      },
+      {
+         "question": "Which of the following is the primary law of learning propounded by Thorndike ? ",
+         "answer": "1",
+         "options": [
+            "Law of analogy",
+            "Law of exercise",
+            "Law of assimilation",
+            "Law of disposition"
+         ]
+      },
+      {
+         "question": "According to Piaget the child is able apply logical thoughts to all classes problems, the development occurs which of the following periods ?",
+         "answer": "0",
+         "options": [
+            "The formal operational period.",
+            "The concrete operational period",
+            "The pre-operational period",
+            "The sensory motor period"
+         ]
+      },
+      {
+         "question": "A child is average on creativity , high in academic achivement, poor in social development. this is an example of  ",
+         "answer": "1",
+         "options": [
+            "Inter individual differences.",
+            "Intra individual differences",
+            "Individual differences",
+            "Measurable individual differences"
+         ]
+      },
+      {
+         "question": " That internal state of mind that aouses, direct and maintain behaviour is called as  ",
+         "answer": "3",
+         "options": [
+            "Interest.",
+            "Opinion",
+            "Attitude",
+            "Motivation"
+         ]
+      },
+      {
+         "question": "Some people adjust easily with new people becouse they heve high   ",
+         "answer": "c",
+         "options": [
+            "Intelligence Quotient (I.Q).",
+            "Academic Quotient (A.Q)",
+            "Emotional Quotient (E.Q)",
+            "Spirtual Quotient (S.Q)"
+         ]
+      },
+      {
+         "question": "Development generally proceeds from head to foot, this principle of development is called ",
+         "answer": "d",
+         "options": [
+            "Bilaterly to unilateral.",
+            "Proximodistal",
+            "General to specific",
+            "Cephlo caudal"
+         ]
+      },
+      {
+         "question": "A student is working hard for Board Examination, his father has promised to giv him a motor cycle if he gets good marks .this is ",
+         "answer": "d",
+         "options": [
+            "Intrinsic motivation ",
+            "Extrinsic motivation",
+            "Mathematical motivation",
+            "Intrinsic and extrinsic motivation"
+         ]
+      },
+      {
+         "question": "Which of the following statements is not correct about learner centred approach? ",
+         "answer": "c",
+         "options": [
+            "It takes into account learner's caapabilities, capacities and learning styles.",
+            "It stresses the importance of enquiry, observatio and investigation.",
+            "It emphasises transmitting knowledge to the learner by the teacher.",
+            "It used methods like experiential learning, problem solving,concept mapping and creative writing"
+         ]
+      },
+      {
+         "question": "A child's attitude 'I do not care' is a type of behaviour which can be called  ",
+         "answer": "d",
+         "options": [
+            "Aggression",
+            "Defence",
+            "Denial",
+            "Retrogression"
+         ]
+      },
+      {
+         "question": "Which of the following is not a characteristic of introvert personality?",
+         "answer": "c",
+         "options": [
+            "Self centerd",
+            "Conservative",
+            "Sociality",
+            "Submissive"
+         ]
+      },
+      {
+         "question": "The law of readiness as one of the law of learning has been propounded by : ",
+         "answer": "a",
+         "options": [
+            "Edward L. Thorndike",
+            "John B.Watson",
+            "Evan Patrovich Pavlov",
+            "Max-Wertheimer"
+         ]
+      },
+      {
+         "question": "Which of the following method is not approprite for the teaching at primary level?",
+         "answer": "c",
+         "options": [
+            "Problem solving method",
+            "Activity approach",
+            "Lecture method",
+            "Project method"
+         ]
+      },
+      {
+         "question": "The dynamic force that energises behavior and compels to act to learn is :",
+         "answer": "b",
+         "options": [
+            "Goal",
+            "Drive",
+            "Barrier",
+            "All options are right"
+         ]
+      },
+      {
+         "question": "Which of the following is known as ethical moral arm of the personality",
+         "answer": "c",
+         "options": [
+            "Id",
+            "Ego",
+            "Super-ego",
+            "Id and super-ego"
+         ]
+      },
+      {
+         "question": "The subject matter of educational psychology revolves round which of the following key factor?",
+         "answer": "d",
+         "options": [
+            "Learner and learning experiences",
+            "Teacher and learning process",
+            "Learning situations",
+            "All options are right"
+         ]
+      },
+      {
+         "question": "Which of the following is correct?",
+         "answer": "b",
+         "options": [
+            "Maturity has importance of practice ",
+            "Maturity is a psychological process",
+            "Maturity continues till death",
+            "Maturity involves only quanitative change"
+         ]
+      },
+      {
+         "question": "Educational psychology emphasizes on :",
+         "answer": "c",
+         "options": [
+            "Teacher centred education",
+            "Child centred education",
+            "curriculum centred education",
+            "School centred education"
+         ]
+      },
+      {
+         "question": "Which of the following is the characteristice of the stage of later childhood?",
+         "answer": "c",
+         "options": [
+            "Self-assertion",
+            "Time concept",
+            "Social tendency",
+            "Hero worship"
+         ]
+      },
+      {
+         "question": "How many stages of cognitive development has been narrted by jean piaget?",
+         "answer": "d",
+         "options": [
+            "Eight stages",
+            "Five stages",
+            "Six stages",
+            "Four stages"
+         ]
+      },
+      {
+         "question": "Which of the followig statement is not correct?",
+         "answer": "a",
+         "options": [
+            "Intelligence and creativity are synonym",
+            "An intelligent person may not be creative  ",
+            "A creative person may have high degree of intelligence ",
+            "Creativity can be nurtured"
+         ]
+      },
+      {
+         "question": "Why should co-curricular activities be organized in the school?",
+         "answer": "b",
+         "options": [
+            "It help institution to get frame",
+            "It help in the overall development of child ",
+            " It help in justification of fee collection",
+            "It is important for those students who do not take interest in study"
+         ]
+      },
+      {
+         "question": "Which of the following aspect comes under mental development?",
+         "answer": "a",
+         "options": [
+            "Language",
+            "Size",
+            "Affection",
+            "Honesty"
+         ]
+      },
+      {
+         "question": "A normal child belongs to which of the following I.Q level?",
+         "answer": "c",
+         "options": [
+            "70-79",
+            "80-89",
+            "90-109",
+            "110-119"
+         ]
+      },
+      {
+         "question": "Mental growth and development is controlled by which of the following factor?",
+         "answer": "b",
+         "options": [
+            "Heredity",
+            "Heredity and enviroment factor",
+            "Enviroment factor only",
+            "None of the above "
+         ]
+      },
+      {
+         "question": "Which of the following play important role in the development of moral values in te child?",
+         "answer": "d",
+         "options": [
+            "Prayer assembly",
+            "Proper socialization",
+            "Intellect",
+            "All options are right"
+         ]
+      },
+      {
+         "question": "Teaching aid is used in the class for:",
+         "answer": "a",
+         "options": [
+            "Creating specific learning conditions",
+            "Reducing burden on the teacher",
+            "Maintaining discipline in the class",
+            "Being complulsory in the teaching"
+         ]
+      },
+      {
+         "question": "Which of the following is an example of intrinsic motivation?",
+         "answer": "b",
+         "options": [
+            "Selection in school's football team",
+            "Solving a problem for its own sake",
+            "Getting a dress on birthday",
+            "All options are right"
+         ]
+      },
+      {
+         "question": "Gagne is his book \" theconditionsoflearning \" has described how may types of learning?  ",
+         "answer": "b",
+         "options": [
+            "Five types",
+            "Eight types",
+            "Seven types",
+            "Ten types"
+         ]
+      },
+      {
+         "question": "The stage when child drives less enjoyment from his parents,is related to his:",
+         "answer": "d",
+         "options": [
+            "Physical development",
+            "Mental development",
+            "Language development",
+            "Social development"
+         ]
+      },
+      {
+         "question": "Which of the following enviromental factors affects the personality?",
+         "answer": "d",
+         "options": [
+            "Social factors",
+            "Cultural factors",
+            "Economi factors",
+            "All options are right"
+         ]
+      },
+      {
+         "question": "Which of the following statement is not correct?",
+         "answer": "b",
+         "options": [
+            "Growth and development are two different aspects",
+            "Growth continuse throughout life",
+            "Growth is one of the part of development",
+            "Development is a continuous process"
+         ]
+      },
+      {
+         "question": "What is parallel play?",
+         "answer": "d",
+         "options": [
+            "Playing in groups",
+            "Participation in small groups",
+            "Role Play",
+            "Playing separately"
+         ]
+      },
+      {
+         "question": "Which of the following action verb is not affective domain?",
+         "answer": "c",
+         "options": [
+            "Accept",
+            "Obey",
+            "Differentiate",
+            "Influence"
+         ]
+      },
+      {
+         "question": "Propounder of model of memory level teaching is :",
+         "answer": "a",
+         "options": [
+            "John F.Herbert",
+            "H.C.Morrison",
+            "Ned A.Flenders",
+            "None of above"
+         ]
+      },
+      {
+         "question": "Which of the following is not a source of informal education?",
+         "answer": "d",
+         "options": [
+            "Education given by parents",
+            "Education given by neighbours",
+            "Education by peer groups",
+            "Educattion through class-room teaching"
+         ]
+      },
+      {
+         "question": "A valid and reliable method to draw conclusion about interest and aptitude of the learner is :",
+         "answer": "a",
+         "options": [
+            "Objective observation method",
+            "Introduction method",
+            "Experimental method",
+            "All options are right"
+         ]
+      },
+      {
+         "question": "Which of the following teaching strategy fulfils learning objectives under cognitive, affective and psychmotor domain?",
+         "answer": "c",
+         "options": [
+            "Lectures",
+            "Group discussion",
+            "Role playing",
+            "Programmed instruction"
+         ]
+      },
+      {
+         "question": "Reinforcement is a part of which of the following process?",
+         "answer": "2",
+         "options": [
+            "Teaching",
+            "Learning",
+            "Instructions",
+            "None of the above"
+         ]
+      },
+      {
+         "question": "Which of the following factor is responsible for individual difference among children?",
+         "answer": "d",
+         "options": [
+            "Attitude of parents",
+            "Intelligence",
+            "Race",
+            "Place"
+         ]
+      }
+   ]
+}

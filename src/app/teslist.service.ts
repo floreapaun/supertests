@@ -9,10 +9,11 @@ export class TeslistService  implements InMemoryDbService{
 
   createDb() {
     let tests = [
-      { id: 1, name: 'ANGULAR' },
-      { id: 2, name: 'HTET' },
-      { id: 3, name: 'CTET' },
-      { id: 4, name: 'JAVASCRIPT' }
+      { id: 1, name: 'ANGULAR', duration:30 ,question:10},
+      { id: 2, name: 'HTET', duration: 30 },
+      { id: 3, name: 'CTET', duration: 30 },
+      { id: 4, name: 'JAVASCRIPT', duration: 10 },
+      { id: 5, name: 'YOGA', duration: 10 }
     ];
 
     let questions = [
