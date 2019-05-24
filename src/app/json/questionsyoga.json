@@ -9,7 +9,7 @@
                 "स्वामी रामदेव",
                 "महर्षि पतंजलि"
             ],
-            "correctAnswerIndex": 3
+            "answer": "3"
         },
         {
             "question": "योग के आठ घटक हैं, जिन्हें जीवन के आठ गुना पथ के रूप में भी जाना जाता है - नियामा, आसन, प्राणायाम, ध्यान, समाधि इनमें से पांच हैं। जो अन्य तीन हैं?",
@@ -19,7 +19,7 @@
                 "आनंद, अस्मिता, आचार",
                 "यम, धारणा, प्रत्याहार"
             ],
-            "correctAnswerIndex": 3
+            "answer": "3"
         },
         {
             "question": "'योग' शब्द संस्कृत से लिया गया ! इस शब्द का शाब्दिक अर्थ क्या है?",
@@ -29,7 +29,7 @@
                 "जोड़ना",
                 "साँस में नियंत्रित"
             ],
-            "correctAnswerIndex": 2
+            "answer": "2"
         },
         {
             "question": "सूर्य नमस्कार को शरीर के लिए एक संपूर्ण व्यायाम माना जाता है और अक्सर इसे आसन के संयोजन के रूप में उद्धृत किया गया है जो लगभग सभी प्रमुख मांसपेशियों को खींचने में मदद करता है। सूर्य नमस्कार में कितने अलग-अलग आसन होते हैं?",
@@ -39,7 +39,7 @@
                 "8",
                 "10"
             ],
-            "correctAnswerIndex": 1
+            "answer": "1"
         },
         {
             "question": "Yoga has many practitioners in the West and several Hollywood celebrities such as Adam Levine and Julia Roberts have endorsed it. Indra Devi is credited with introducing Yoga to the West. Which country did she belong to?",
@@ -49,7 +49,7 @@
                 "India",
                 "USA"
             ],
-            "correctAnswerIndex": 1
+            "answer": "1"
         },
         {
             "question": "An Indian youth organisation entered the Limca Book of Records for simultaneously performing Yoga for the longest duration. Which organisation was this?",
@@ -59,7 +59,7 @@
                 "LTS",
                 "NCC"
             ],
-            "correctAnswerIndex": 3
+            "answer": "3"
         },
         {
             "question": "भरत ठाकुर योग प्रशिक्षकों के क्षेत्र में एक अंतरराष्ट्रीय स्तर पर प्रसिद्ध नाम है और अपने आप में एक सेलिब्रिटी है। योग के किस नए क्षेत्र के लिए उन्होंने नींव रखी?",
@@ -69,7 +69,7 @@
                 "सहज योग",
                 "कलात्मक योग"
             ],
-            "correctAnswerIndex": 3
+            "answer": "3"
         }
     ]
 }

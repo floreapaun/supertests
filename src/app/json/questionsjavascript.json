@@ -1,0 +1,25 @@
+{
+    "JAVASCRIPT": [
+        {
+            "question": "What is Closure?",
+            "answer": "2",
+            "options": [
+                "Callback",
+                "Module",
+                "Function",
+                "Service"
+            ]
+        },
+        {
+            "question": "typeof null",
+            "answer": "1",
+            "options": [
+                "object",
+                "undefined",
+                "function",
+                "string"
+            ]
+        }
+    ]
+
+    }

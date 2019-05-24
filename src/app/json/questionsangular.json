@@ -1,4 +1,25 @@
 {
-    
-    
-}
+    "ANGULAR": [
+        {
+            "question": "What is Component?",
+            "answer": "1",
+            "options": [
+                "Directive",
+                "Module",
+                "Class",
+                "Service"
+            ]
+        },
+        {
+            "question": "Which is Two way binding?",
+            "answer": "1",
+            "options": [
+                "[()]",
+                "[]",
+                "()",
+                "[()}"
+            ]
+        }
+    ]
+
+    }
