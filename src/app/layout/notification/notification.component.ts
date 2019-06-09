@@ -7,7 +7,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./notification.component.css']
 })
 export class NotificationComponent implements OnInit {
-   user : string = '';
+   user  = { test: {
+     name:'',
+     duration:''
+   }};
   agree: boolean ;
   constructor(private router: Router) { }
 
