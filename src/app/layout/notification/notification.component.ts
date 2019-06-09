@@ -13,7 +13,7 @@ export class NotificationComponent implements OnInit {
 
   ngOnInit() {
     
-   this.user = JSON.parse( window.localStorage.user);
+    this.user = JSON.parse(window.sessionStorage.user);
   }
 
 

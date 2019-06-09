@@ -21,6 +21,7 @@
         <div class="row">
           <div class="col-sm-6">Remaning Time</div>
           <div class="col-sm-6"><label for="xy">{{timeRem}}</label></div>
+          {{user|json}}
         </div>
       </form>
     </div>
@@ -42,47 +43,47 @@
   <div class="row ">
     <span> {{'QUESTION ' + (itr + 1) + '/' + questionList.length}}</span>
     <span>
-     Answered: {{(itr * 100 / questionList.length) + '%'}}
+     Answered: {{(itr * 100 / questionList.length).toFixed(2) + '%'}}
     </span>
   </div>
 </header>
 <div class="row">
-  <div class="col-sm-6">
+  <div class="col-sm-6" *ngIf="question">
     <b></b>Question<br>
     <hr>
     {{question.question}}<br>
     <div class="row">
       <div class="col-sm-6">
-        <span> (A) : {{question.options_a}} </span>
+        <span> (A) : {{question.options[0]}} </span>
       </div>
       <div class="col-sm-6">
-        <span> (B) : {{question.options_b}}</span>
+        <span> (B) : {{question.options[1]}}</span>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-6">
-        <span> (C) : {{question.options_c}}</span>
+        <span> (C) : {{question.options[2]}}</span>
       </div>
       <div class="col-sm-6">
-        <span> (D) : {{question.options_d}}</span>
+        <span> (D) : {{question.options[3]}}</span>
       </div>
     </div>
-    <input class="success" name="answer" type="radio">1)
-    <input class="success" name="answer" type="radio">2)
-    <input class="success"  name="answer"type="radio">3)
-    <input class="success" name="answer" type="radio">4)<br>
+    <input class="success"  value="0" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">A)
+    <input class="success"  value="1" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">B)
+    <input class="success"  value="2" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer"  name="answer"type="radio">C)
+    <input class="success"  value="3" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">D)<br>
     <hr>
     <button class="btn btn-primary margint" (click)="saveAndNext();">Save & Next</button>
-    <button class="btn btn-danger margint">Save & Mark For Review</button>
-    <button class="btn btn-success margint">Clear Response</button><br>
-    <button class="btn btn-warning margint">Make For Review & Next</button><br>
+    <button class="btn btn-danger margint" (click)="saveAndNext();">Save & Mark For Review</button>
+    <button class="btn btn-success margint"(click)="clearResponse();" >Clear Response</button><br>
+    <button class="btn btn-warning margint" (click)="saveAndNext();">Make For Review & Next</button><br>
     <div class="row">
       <div class="col-sm-10">
         <button class="btn btn-info">Back</button>
         <button class="btn btn-info marginT">Next>></button>
       </div>
       <div class="col-sm-2">
-        <button class="btn btn-success" (click)="navigateToTest();">Submit</button>
+        <button class="btn btn-success" (click)="finishTest();">Submit</button>
       </div>
     </div>
   </div>

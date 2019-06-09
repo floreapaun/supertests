@@ -28,7 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(TeslistService, { delay: 500 })
+    HttpClientInMemoryWebApiModule.forRoot(TeslistService, { delay: 500, passThruUnknownUrl: true})
   ],
   providers: [ ],
   bootstrap: [AppComponent]

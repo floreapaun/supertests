@@ -25,6 +25,7 @@ picked ;
               private http: HttpClient) { }
 
   ngOnInit() {
+    window.sessionStorage.clear();
     this.auth.name().subscribe(res => {
       console.log('Auth',res);
     });
@@ -35,10 +36,10 @@ picked ;
 
 
   submit() {
-    //console.log('notification');
+    console.log('notification', this.user);
     if (this.user.email != '' && this.user.name != '' && this.user.test != '' ){
       console.log(this.user.test);
-      window.localStorage.setItem('user', JSON.stringify(this.user));
+      window.sessionStorage.setItem('user', JSON.stringify(this.user));
       this.router.navigate(['/notification']);
     } else {
       alert('Please fill all information!');

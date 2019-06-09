@@ -3,7 +3,7 @@
   <b>Exam Summary !</b>
 </p>
 <div>
-  <table class="table">
+  <!-- <table class="table">
     <tr>
       <th>Section name</th>
       <th>No. of questions</th>
@@ -22,16 +22,20 @@
       <td>10</td>
       <td>10</td>
     </tr>
-  </table>
+  </table> -->
 </div>
 <div class="text-align">
- <pre><b>Are you sure you want to submit for final marking ?
+  <span>
+  Welcome {{user.name}} , You have score {{result.marks}} of {{result.total}}
+  </span>
+ <!-- <pre><b>Are you sure you want to submit for final marking ?
 No change will be allowed after submission.</b>
-  </pre>
+  </pre> -->
 </div>
 <div class="marginl">
-<button class="btn btn-success">Yes</button>
+<!-- <button class="btn btn-success">Yes</button>
 
-<button class="btn btn-danger marginR">No</button>
+<button class="btn btn-danger marginR">No</button> -->
+<button (click)="testAgain()">  Do you want to do it again? :)</button>
 </div>
 </div>
