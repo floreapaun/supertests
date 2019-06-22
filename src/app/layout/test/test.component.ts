@@ -54,11 +54,11 @@ export class TestComponent implements OnInit {
     }
   }
 
-  finishTest(){
+  finishTest():void {
     let result = {
       marks: this.testMarks,
       total: this.questionList.length
-    }
+    };
     window.sessionStorage.setItem('result', JSON.stringify(result));
     this.navigateToScore();
   }
@@ -69,12 +69,12 @@ export class TestComponent implements OnInit {
   }
 
   saveAndNext(){
-    if(this.itr > this.questionList.length){
-      let result = {
+    if (this.itr > this.questionList.length) {
+      const result = {
         marks: this.testMarks,
         total: this.questionList.length
-      }
-      window.sessionStorage.setItem('result',JSON.stringify(result));
+      };
+      window.sessionStorage.setItem('result', JSON.stringify(result));
       this.navigateToScore();
     } else {
       this.currentAnswer = '';
@@ -89,13 +89,11 @@ export class TestComponent implements OnInit {
     // })
 
     this.http.get(`/assets/json/questions${this.user.test.name}.json`).subscribe(res => {
-      console.log('mydata',res);
+      console.log('mydata', res);
       this.questionList = res['TEST'];
       this.question = this.questionList[0];
-    })
+    });
   }
-  
- 
-  
+
 
 }
