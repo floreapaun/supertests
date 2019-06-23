@@ -54,7 +54,7 @@ export class TestComponent implements OnInit {
     }
   }
 
-  finishTest():void {
+  finishTest(): void {
     let result = {
       marks: this.testMarks,
       total: this.questionList.length
@@ -63,13 +63,15 @@ export class TestComponent implements OnInit {
     this.navigateToScore();
   }
 
-  navigateToScore() {
+  navigateToScore(): void {
 
     this.router.navigate(['/score']);
   }
 
-  saveAndNext(){
-    if (this.itr > this.questionList.length) {
+  saveAndNext(): void {
+   ++this.itr;
+
+    if (this.itr >= this.questionList.length) {
       const result = {
         marks: this.testMarks,
         total: this.questionList.length
@@ -78,17 +80,14 @@ export class TestComponent implements OnInit {
       this.navigateToScore();
     } else {
       this.currentAnswer = '';
-      this.question = this.questionList[++this.itr];
+      this.question = this.questionList[this.itr];
     }
   }
 
 
-  getQuestions() {
-    // this.http.get('api/questions').subscribe(res=>{
-    //   console.log(res);
-    // })
-
-    this.http.get(`https://raw.githubusercontent.com/acharyaks90/questionjson/master/json/questions${this.user.test.name}.json`).subscribe(res => {
+  getQuestions(): void {
+    this.http.get(`https://raw.githubusercontent.com/acharyaks90/questionjson/master/json/questions${this.user.test.name}.json`)
+    .subscribe(res => {
       console.log('mydata', res);
       this.questionList = res['TEST'];
       this.question = this.questionList[0];
