@@ -88,7 +88,7 @@ export class TestComponent implements OnInit {
     //   console.log(res);
     // })
 
-    this.http.get(`/assets/json/questions${this.user.test.name}.json`).subscribe(res => {
+    this.http.get(`https://raw.githubusercontent.com/acharyaks90/questionjson/master/json/questions${this.user.test.name}.json`).subscribe(res => {
       console.log('mydata', res);
       this.questionList = res['TEST'];
       this.question = this.questionList[0];
