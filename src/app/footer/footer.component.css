@@ -1,0 +1,12 @@
+div{
+    font-size: .5em;
+}
+/* #parent div,
+#parent ul,
+#parent p {
+    color:blue;
+} */
+
+#parent :nth-child(1) {
+    color:yellow;
+}

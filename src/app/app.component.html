@@ -2,8 +2,10 @@
 <div class="container">
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    Welcome to {{ title| secondLetterCapital }}
   </h1>
+  <h3 (click)="child.testChild()">{{counter}}</h3>
 </div>
 </div>
 <router-outlet></router-outlet>
+<app-footer #child  (passData)="childDataRecieved($event)" [year]="'2020'"></app-footer>  

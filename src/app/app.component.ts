@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'iPriksha';
+  title = 'ipriksha';
+  counter : number;
+  childDataRecieved(data:number):void{
+    this.counter = data;
+  }
+
+
 }

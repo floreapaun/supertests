@@ -4,3 +4,12 @@
 body{
     background:linear-gradient(90deg,#cae5f7,#dfedf7);
 }
+
+:root{
+    color:gray;
+    font-family: 'Times New Roman', Times, serif;
+}
+*{
+    /* color:gray;
+    font-family: 'Times New Roman', Times, serif; */
+}

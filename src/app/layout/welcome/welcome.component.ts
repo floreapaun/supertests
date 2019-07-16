@@ -35,7 +35,7 @@ picked ;
   }
 
 
-  submit() {
+  submit(singnupForm) {
     console.log('notification', this.user);
     if (this.user.email != '' && this.user.name != '' && this.user.test != '' ){
       console.log(this.user.test);
