@@ -15,3 +15,14 @@
 .ng-invalid:not(form){
     border-left: 5px solid #A94442;
 }
+
+.centerme{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.w50{
+ width: 50%;
+}

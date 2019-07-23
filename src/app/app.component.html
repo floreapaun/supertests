@@ -2,10 +2,16 @@
 <div class="container">
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title| secondLetterCapital }}
+    Welcome to {{ title|secondLetterCapital }}
   </h1>
   <h3 (click)="child.testChild()">{{counter}}</h3>
+
 </div>
 </div>
-<router-outlet></router-outlet>
+<router-outlet>
+    <div class="lds-heart"  *ngIf="loading" ><div></div></div>
+  <!-- <span class="loader" *ngIf="loading"></span> -->
+</router-outlet>
 <app-footer #child  (passData)="childDataRecieved($event)" [year]="'2020'"></app-footer>  
+<!-- <div class="lds-heart"><div></div></div> -->
+
