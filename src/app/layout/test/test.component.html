@@ -31,11 +31,11 @@
       <h1>{{user.test.name}}</h1>
     </div>
     <div class="col-sm-6">
-      Choose your default language <br><select class="form-control">
+      <!-- Choose your default language <br><select class="form-control">
         <option>English</option>
         <option>Hindi</option>
         <option>Punjabi</option>
-      </select>
+      </select> -->
       
     </div>
   </div>
@@ -47,31 +47,32 @@
   </div>
 </header>
 <div class="row">
-  <div class="col-sm-6" *ngIf="question">
+  <div class="col-12 col-sm-12 col-md-12 col-12" *ngIf="question">
     <b></b>Question<br>
     <hr>
     {{question.question}}<br>
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-12 col-sm-6 col-lg-6 col-xl-6">
         <span> (A) : {{question.options[0]}} </span>
       </div>
-      <div class="col-sm-6">
+      <div class="col-12 col-sm-6 col-lg-6 col-xl-6">
         <span> (B) : {{question.options[1]}}</span>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
+      <div class="col-12 col-sm-6 col-lg-6 col-xl-6">
         <span> (C) : {{question.options[2]}}</span>
       </div>
-      <div class="col-sm-6">
+      <div class="col-12 col-sm-6 col-lg-6 col-xl-6">
         <span> (D) : {{question.options[3]}}</span>
       </div>
     </div>
-    <input class="success"  value="0" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">A)
-    <input class="success"  value="1" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">B)
-    <input class="success"  value="2" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer"  name="answer"type="radio">C)
-    <input class="success"  value="3" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">D)<br>
-    <hr>
+    <div class="row">
+      <input class="success form-control"  value="0" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">A)
+      <input class="success form-control"  value="1" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">B)
+      <input class="success form-control"  value="2" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer"  name="answer"type="radio">C)
+      <input class="success form-control"  value="3" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">D)<br>
+      <hr>
+    </div>
+   
     <button class="btn btn-primary margint" (click)="saveAndNext();">Save & Next</button>
     <!-- <button class="btn btn-danger margint" (click)="saveAndNext();">Save & Mark For Review</button> -->
     <button class="btn btn-success margint"(click)="clearResponse();" >Clear Response</button><br>
