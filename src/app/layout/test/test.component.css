@@ -6,7 +6,10 @@ header{
     margin:10px;
 }
 .marginT{
-    margin:0px 0px 0px 10px;
+    margin:0px 10px 0px 10px;
+}
+.marginT10{
+    margin:10px 0px 0px 0px;
 }
 .box1{
     margin:10px;

@@ -65,26 +65,35 @@
         <span> (D) : {{question.options[3]}}</span>
       </div>
     </div>
-    <div class="row">
-      <input class="success form-control"  value="0" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">A)
-      <input class="success form-control"  value="1" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">B)
-      <input class="success form-control"  value="2" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer"  name="answer"type="radio">C)
-      <input class="success form-control"  value="3" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">D)<br>
-      <hr>
+    <div class="row marginT10">
+      <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" >
+
+        <input class="success form-control"  value="0" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">A)
+      </div>
+        <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+        <input class="success form-control"  value="1" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">B)
+        </div>
+        <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+        <input class="success form-control"  value="2" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer"  name="answer"type="radio">C)
+        </div>
+        <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+        <input class="success form-control"  value="3" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">D)
+      </div>
+    
     </div>
-   
-    <button class="btn btn-primary margint" (click)="saveAndNext();">Save & Next</button>
-    <!-- <button class="btn btn-danger margint" (click)="saveAndNext();">Save & Mark For Review</button> -->
-    <button class="btn btn-success margint"(click)="clearResponse();" >Clear Response</button><br>
-    <!-- <button class="btn btn-warning margint" (click)="saveAndNext();">Make For Review & Next</button><br> -->
     <div class="row">
-      <div class="col-sm-10">
-        <button class="btn btn-info">Back</button>
-        <button class="btn btn-info marginT">Next>></button>
-      </div>
-      <div class="col-sm-2">
-        <button class="btn btn-success" (click)="finishTest();">Submit</button>
-      </div>
+    <button class="btn btn-primary col-6 col-sm-2" (click)="saveAndNext();">Save & Next</button>
+    <!-- <button class="btn btn-danger margint" (click)="saveAndNext();">Save & Mark For Review</button> -->
+    <button class="btn btn-success col-6 col-sm-2 " (click)="clearResponse();" >Clear Response</button>
+    <!-- <button class="btn btn-warning margint" (click)="saveAndNext();">Make For Review & Next</button><br> -->
+  
+    
+        <button class="btn btn-info col-6 col-sm-2 marginT10 ">Back</button>
+        <button class="btn btn-info col-6 col-sm-2 marginT10 ">Next>></button>
+     
+     
+        <button class="btn btn-success col-12 col-sm-2 marginT10" (click)="finishTest();">Submit</button>
+     
     </div>
   </div>
   <div class="col-sm-6">
