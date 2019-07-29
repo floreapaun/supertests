@@ -31,7 +31,8 @@ export class FooterComponent implements OnInit {
 
   OnClickPassData() :void{
     this.counter++;
-    this.passData.emit(this.counter);
+    alert('Be alert for Test!')
+   // this.passData.emit(this.counter);
   }
 
   testChild(){
