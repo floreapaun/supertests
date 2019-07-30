@@ -2,7 +2,7 @@
   <header>
   <div class="row">
     <div class="col-sm-7">
-      <h1 class="hmain"><img src="assets/images/i9.jpg" width="70px" length="70px"><b>iPriksha</b></h1>
+      <h1 class="hmain"><img src="assets/images/ip.png" width="70px" length="70px"><b>iPriksha</b></h1>
       <h3 class="hmain1">Excellence in Assessment</h3>
     </div>
     <div class="col-sm-1">
@@ -82,17 +82,24 @@
     
     </div>
     <div class="row">
-    <button class="btn btn-primary col-6 col-sm-2" (click)="saveAndNext();">Save & Next</button>
+      <div class="col-12 col-sm-12 col-md-12 col-xl-12">
+          <button class="btn btn-primary col-6 col-sm-2" (click)="saveAndNext();">Save & Next</button>
     <!-- <button class="btn btn-danger margint" (click)="saveAndNext();">Save & Mark For Review</button> -->
     <button class="btn btn-success col-6 col-sm-2 " (click)="clearResponse();" >Clear Response</button>
     <!-- <button class="btn btn-warning margint" (click)="saveAndNext();">Make For Review & Next</button><br> -->
+      </div>
+  
   
     
-        <button class="btn btn-info col-6 col-sm-2 marginT10 ">Back</button>
-        <button class="btn btn-info col-6 col-sm-2 marginT10 ">Next>></button>
+        <!-- <button class="btn btn-info col-6 col-sm-2 marginT10 ">Back</button>
+        <button class="btn btn-info col-6 col-sm-2 marginT10 ">Next>></button> -->
      
-     
-        <button class="btn btn-success col-12 col-sm-2 marginT10" (click)="finishTest();">Submit</button>
+     <div class="row">
+       <div class="col-12 col-md-6 col-lg-6 col-sm-6">
+         <button class="btn btn-success  " (click)="finishTest()">Submit</button>
+       </div>
+     </div>
+       
      
     </div>
   </div>
