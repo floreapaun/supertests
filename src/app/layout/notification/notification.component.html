@@ -110,11 +110,13 @@
 
             <div class="row">
               <p class="indent col-12 ">
-                <input class="box-size form-control" name="agree" [(ngModel)]="agree" type="checkbox" />I have read and understood the instructions.
-                 All computer hardware alloted to me are in proper working condition . I declare that I am not in
-                possession of / not wearing/ not carring and prohibited gadget like mobile phone, bluetooth device etc.
-                 / any prohibited material with me into the Examination Hall. I agree that in case of not adering to the instruction , I shall be liable
-                to be declared from this test and/or to disciplinary action , which may include ban from future Tests/ Examinations.
+                <input class=" form-control" id="check" name="agree" [(ngModel)]="agree" type="checkbox" />
+                <label class="" for="check">I have read and understood the instructions.
+                    All computer hardware alloted to me are in proper working condition . I declare that I am not in
+                   possession of / not wearing/ not carring and prohibited gadget like mobile phone, bluetooth device etc.
+                    / any prohibited material with me into the Examination Hall. I agree that in case of not adering to the instruction , I shall be liable
+                   to be declared from this test and/or to disciplinary action , which may include ban from future Tests/ Examinations.</label>
+                
               </p>
   
               <button class="btn btn-light col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2" (click)="navigateToTest()">Proceed</button>
