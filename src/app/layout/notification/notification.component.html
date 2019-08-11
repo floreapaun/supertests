@@ -4,19 +4,19 @@
         <div class="col-sm-8">
           <h2>General Instructions</h2>
         </div>
-        <div class="col-sm-4 ">
+        <!-- <div class="col-sm-4 ">
           Choose your default language
           <select class="form-control">
             <option>English</option>
             <option>Hindi</option>
             <option>Punjabi</option>
           </select>
-        </div>
+        </div> -->
       </div>
     </header>
     
       <div>
-        <h2>Please read the instructions carefully</h2>
+        <h5>Please read the instructions carefully</h5>
         <!-- <p><u><b>General instructions</b></u></p> -->
       </div>
   
@@ -109,16 +109,19 @@
         </div>
 
             <div class="row">
+                <form >
               <p class="indent col-12 ">
+              
                 <input class=" form-control" id="check" name="agree" [(ngModel)]="agree" type="checkbox" />
                 <label class="" for="check">I have read and understood the instructions.
                     All computer hardware alloted to me are in proper working condition . I declare that I am not in
                    possession of / not wearing/ not carring and prohibited gadget like mobile phone, bluetooth device etc.
                     / any prohibited material with me into the Examination Hall. I agree that in case of not adering to the instruction , I shall be liable
-                   to be declared from this test and/or to disciplinary action , which may include ban from future Tests/ Examinations.</label>
-                
+                   to be declared from this test and/or to disciplinary action , which may include ban from future Tests/ Examinations.
+                  </label>
+             
               </p>
-  
+            </form>
               <button class="btn btn-light col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2" (click)="navigateToTest()">Proceed</button>
             </div>
       

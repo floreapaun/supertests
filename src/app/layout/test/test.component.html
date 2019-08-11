@@ -39,11 +39,15 @@
       
     </div>
   </div>
-  <div class="row ">
+  <div class="row " *ngIf="questionList.length>0">
     <span> {{'QUESTION ' + (itr + 1) + '/' + questionList.length}}</span>
     <span>
      Answered: {{(itr * 100 / questionList.length).toFixed(2) + '%'}}
     </span>
+  </div>
+  <div class="row " *ngIf="questionList.length ==0">
+    <span> Question not loaded at yet</span>
+   
   </div>
 </header>
 <div class="row">
