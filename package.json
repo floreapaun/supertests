@@ -30,11 +30,11 @@
     "nativescript-theme-core": "~1.0.4",
     "reflect-metadata": "~0.1.8",
     "rxjs": "~6.5.0",
-    "tns-core-modules": "6.0.0-rc-2019-06-28-175837-02",
+    "tns-core-modules": "6.0.1",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "nativescript-dev-webpack": "1.0.0-rc-2019-07-02-161545-02",
+    "nativescript-dev-webpack": "1.0.1",
     "@nativescript/schematics": "~0.4.0",
     "@angular-devkit/build-angular": "~0.10.0",
     "@angular/cli": "~7.0.2",
@@ -54,15 +54,15 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
-    "typescript": "3.4.1"
+    "typescript": "3.4.5"
   },
   "nativescript": {
     "id": "org.nativescript.ngsample",
     "tns-android": {
-      "version": "6.0.0-rc-2019-06-27-172817-03"
+      "version": "6.0.0"
     },
     "tns-ios": {
-      "version": "6.0.0-rc-2019-06-28-105002-01"
+      "version": "6.0.1"
     }
   }
 }

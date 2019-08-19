@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { StorageService } from 'src/app/services/storage.service.tns';
 
 @Component({
   selector: 'app-test', 
@@ -16,14 +17,16 @@ export class TestComponent implements OnInit {
   answerList = [];
   currentAnswer : any;
   testMarks: number = 0 ;
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private router: Router, 
+              private http: HttpClient,
+              private storage: StorageService) { }
 
   ngOnInit() {
     setInterval(()=>{
       this.timeRem = new Date();
     }, 1000);
    
-    this.user = JSON.parse(window.sessionStorage.user);
+    this.user = JSON.parse(this.storage.getData('user'));
     this.getQuestions();
   }
 
@@ -59,7 +62,7 @@ export class TestComponent implements OnInit {
       marks: this.testMarks,
       total: this.questionList.length
     };
-    window.sessionStorage.setItem('result', JSON.stringify(result));
+    this.storage.setData('result', JSON.stringify(result));
     this.navigateToScore();
   }
 
@@ -76,7 +79,7 @@ export class TestComponent implements OnInit {
         marks: this.testMarks,
         total: this.questionList.length
       };
-      window.sessionStorage.setItem('result', JSON.stringify(result));
+      this.storage.setData('result', JSON.stringify(result));
       this.navigateToScore();
     } else {
       this.currentAnswer = '';

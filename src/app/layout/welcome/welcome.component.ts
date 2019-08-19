@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { HttpClient } from '@angular/common/http';
+import { StorageService } from 'src/app/services/storage.service';
 //import { ListPicker } from "tns-core-modules/ui/list-picker";
 
 
@@ -22,10 +23,12 @@ picked ;
   typeTestList:  any;
   constructor(private router: Router,
               private auth: AuthService,
-              private http: HttpClient) { }
+              private http: HttpClient,
+               private storage: StorageService) { }
 
   ngOnInit() {
-    window.sessionStorage.clear();
+
+    this.storage.clear();
     this.auth.name().subscribe(res => {
       console.log('Auth',res);
     });
@@ -39,7 +42,7 @@ picked ;
     console.log('notification', this.user);
     if (this.user.email != '' && this.user.name != '' && this.user.test != '' ){
       console.log(this.user.test);
-      window.sessionStorage.setItem('user', JSON.stringify(this.user));
+      this.storage.setData('user', JSON.stringify(this.user));
       this.router.navigate(['/notification']);
     } else {
       alert('Please fill all information!');

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { StorageService } from 'src/app/services/storage.service.tns';
 
 @Component({
   selector: 'app-notification',
@@ -12,11 +13,12 @@ export class NotificationComponent implements OnInit {
      duration:''
    }};
   agree: boolean ;
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private storage: StorageService) { }
 
   ngOnInit() {
     
-    this.user = JSON.parse(window.sessionStorage.user);
+    this.user = JSON.parse(this.storage.getData('user'));
   }
 
 

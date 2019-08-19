@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { ChangeColorDirective } from './change-color.directive';
 import { SecondLetterCapitalPipe } from './second-letter-capital.pipe';
+import { StorageService } from './services/storage.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,7 @@ import { SecondLetterCapitalPipe } from './second-letter-capital.pipe';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [ ],
+  providers: [ StorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
