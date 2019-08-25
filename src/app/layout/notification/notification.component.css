@@ -6,5 +6,29 @@
 .indent{
     text-indent:50px;
 }
+.instruction-block{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
+.instruction-block input{
+  display: block;
+  width: auto;
+  margin-right: 6px;
+  padding: 0;
+  height: auto;
+  position: relative;
+  top: 7px;
+}
+
+@media (max-width: 768px) {
+  .candidate-details label{
+    font-size: 13px;
+  }
+  .candidate-details div>span{
+    font-size: 17px;
+    font-weight: 700;
+  }
+}
 
 
