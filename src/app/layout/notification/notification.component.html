@@ -14,15 +14,16 @@
         </div> -->
       </div>
     </header>
-    
+
       <div>
         <h5>Please read the instructions carefully</h5>
         <!-- <p><u><b>General instructions</b></u></p> -->
       </div>
-  
-   
-      
+
+
+
         <div class="row">
+          <div class="col-12">
             <ol>
               <li>
                 Total duration of {{user.test.name}} ( {{user.test.duration}} min).
@@ -30,7 +31,7 @@
               <li>
                 The clock will be set at the server. The countdown timer in the top right corner of screen will display the
                 remaining time available for you to complete the examination
-            
+
               </li>
               <li>
                 When the timer reaches zero,the examination will end by itself .you will not be required to end or submit your
@@ -40,7 +41,7 @@
                 The Questions Palette displayed on the right of screen will show the status of reach questions using one of the
                 following symbols.
               </li>
-<!--             
+<!--
               <li>
                 You have not visited the question yet.</li>
               <li>
@@ -51,17 +52,17 @@
                 You have Not answered the question , but you have marked the question for review.</li>
               <li>
                 The question(s) "Answered and Marked for Review" will be considerd for evaluation.</li>
-            
+
               4. You can click on the ">" arrow which apperes to the left of question platte to callapse the question pallete
                     thereby maximizing the question Window . To view the
                     question platte again , you can click on "<" which apperes on the right side of the question window.<br>
                       5. You can click on your "Profile " image on the top right corner of your screen to change the language During
                       the exam for entire question paper. On clicking of Profile image you will get a droup- down to change the
                       Question cintent to the desired language.<br> -->
-            
+
               <!-- <li>
                             <h3><u>Navigating to a Question :</u></h3>
-              
+
                             To answer a question, do the following:
                             <ol type="a">
                               <li> Click on the question number in the question Palette at the right of your screen to go to that numbered question directly. Note that using this option does not save your answer to the current question.</li>
@@ -81,7 +82,7 @@
                               <li>To mark the question for review, click on the Mark for Review & Next button. </li>
                             </ol>
                           </li>
-            
+
               <li>
                 To change your answer to a question that has already been answer, first select that question for answering and then
                 follow the procedure for answering that type of question.
@@ -95,7 +96,7 @@
                 question of the next section.
               </li>
               <li>
-            
+
                 You can suffle between sections and questions anything during the examination as per your convenience only during
                 the time stipulated.
               </li>
@@ -104,27 +105,27 @@
                 question pallette.
               </li> -->
             </ol>
+          </div>
             <!-- <h4>Please note all questions will apper in your default language. This language can be changed for a particular question later on
                         </h4> -->
         </div>
 
             <div class="row">
-                <form >
-              <p class="indent col-12 ">
-              
-                <input class=" form-control" id="check" name="agree" [(ngModel)]="agree" type="checkbox" />
-                <label class="" for="check">I have read and understood the instructions.
+              <div class="col-12">
+                <form class="instruction-block">
+                  <input class=" form-control" id="check" name="agree" [(ngModel)]="agree" type="checkbox" />
+                  <label for="check">I have read and understood the instructions.
                     All computer hardware alloted to me are in proper working condition . I declare that I am not in
-                   possession of / not wearing/ not carring and prohibited gadget like mobile phone, bluetooth device etc.
+                    possession of / not wearing/ not carring and prohibited gadget like mobile phone, bluetooth device etc.
                     / any prohibited material with me into the Examination Hall. I agree that in case of not adering to the instruction , I shall be liable
-                   to be declared from this test and/or to disciplinary action , which may include ban from future Tests/ Examinations.
+                    to be declared from this test and/or to disciplinary action , which may include ban from future Tests/ Examinations.
                   </label>
-             
-              </p>
-            </form>
-              <button class="btn btn-light col-12 col-sm-4 col-md-3 col-lg-2 col-xl-2" (click)="navigateToTest()">Proceed</button>
+                </form>
+              </div>
+              <div class="col-12 text-center">
+                <button class="btn btn-info" (click)="navigateToTest()">Proceed</button>
+              </div>
             </div>
-      
-    
+
+
   </div>
-  

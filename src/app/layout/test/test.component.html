@@ -1,26 +1,32 @@
 <div class="container">
   <header>
   <div class="row">
-    <div class="col-sm-7">
-      <h1 class="hmain"><img src="assets/images/ip.png" width="70px" length="70px"><b>iPriksha</b></h1>
+    <div class="col-sm-7 mt-3 mb-3">
+      <h1 class="hmain"><img src="assets/images/ip.png"><b>iPriksha</b></h1>
       <h3 class="hmain1">Excellence in Assessment</h3>
     </div>
     <div class="col-sm-1">
     </div>
 
-    <div class="col-sm-4">
-      <form>
+    <div class="col-12 col-sm-4 mt-3 mb-3">
+      <form class="candidate-details">
         <div class="row">
-          <div class="col-sm-6">Candidate Name</div>
-          <div class="col-sm-6">{{user.name}}</div>
+          <label for="" class="col-6"> Candidate Name </label>
+          <div class="col-6">
+            <span> {{user.name}} </span>
+          </div>
         </div>
         <div class="row">
-          <div class="col-sm-6">Subject Name</div>
-          <div class="col-sm-6">{{user.test.name}}</div>
+          <label for="" class="col-6"> Subject Name </label>
+          <div class="col-6">
+            <span> {{user.test.name}} </span>
+          </div>
         </div>
         <div class="row">
-          <div class="col-sm-6">Remaning Time</div>
-          <div class="col-sm-6"><label for="xy">{{timeRem}}</label></div>
+          <label for="" class="col-6"> Remaning Time </label>
+          <div class="col-6">
+            <span> <label for="xy">{{timeRem}}</label> </span>
+          </div>
         </div>
       </form>
     </div>
@@ -36,18 +42,21 @@
         <option>Hindi</option>
         <option>Punjabi</option>
       </select> -->
-      
+
+    </div>
+    <div *ngIf="questionList.length>0" class="col-12 ">
+      <div class="q_a_calc_block">
+          <span> {{'QUESTION ' + (itr + 1) + '/' + questionList.length}}</span>
+          <span>
+         Answered: {{(itr * 100 / questionList.length).toFixed(2) + '%'}}
+        </span>
+      </div>
     </div>
   </div>
-  <div class="row " *ngIf="questionList.length>0">
-    <span> {{'QUESTION ' + (itr + 1) + '/' + questionList.length}}</span>
-    <span>
-     Answered: {{(itr * 100 / questionList.length).toFixed(2) + '%'}}
-    </span>
-  </div>
+
   <div class="row " *ngIf="questionList.length==0">
     <span > Question not loaded at yet</span>
-   
+
   </div>
 </header>
 <div class="row">
@@ -69,7 +78,7 @@
         <span> (D) : {{question.options[3]}}</span>
       </div>
     </div>
-    <div class="row marginT10">
+    <div class="row ">
       <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" >
         <label for="a">A)</label>
         <input class="success form-control" id="a" value="0" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">
@@ -86,44 +95,44 @@
             <label for="d">D)</label>
         <input class="success form-control" id="d" value="3" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">
       </div>
-    
+
     </div>
     <div class="row">
       <div class="col-xl-6 ">
         <div class="row">
-          <div class="col-xl-6">
+          <div class="col-xl-6 mt-2 mb-2">
               <button class="btn btn-primary  btn-block" (click)="saveAndNext();">Save & Next</button>
               <!-- <button class="btn btn-danger margint" (click)="saveAndNext();">Save & Mark For Review</button> -->
           </div>
-          <div class="col-xl-6">
+          <div class="col-xl-6 mt-2 mb-2">
               <button class="btn btn-success  btn-block " (click)="clearResponse();" >Clear Response</button>
               <!-- <button class="btn btn-warning margint" (click)="saveAndNext();">Make For Review & Next</button><br> -->
           </div>
         </div>
-     
+
 
   </div>
 
   <div class="col-xl-6 text-right">
     <div class="row">
-        <div class="col-xl-6">
+        <div class="col-xl-6 mt-2 mb-2">
         <button class="btn btn-success  btn-block" (click)="finishTest()">Submit</button>
         </div>
 
     </div>
 
   </div>
-  
-  
-    
+
+
+
         <!-- <button class="btn btn-info col-6 col-sm-2 marginT10 ">Back</button>
         <button class="btn btn-info col-6 col-sm-2 marginT10 ">Next>></button> -->
-       
-     
+
+
     </div>
 
-  
-    
+
+
   </div>
   <div class="col-sm-6">
     <div class="row">
@@ -138,7 +147,7 @@
         <img class="box3">Answered
       </div> -->
       <!-- <div class="col-sm-6">
-        <img class="box4">Answered & marked for review 
+        <img class="box4">Answered & marked for review
       </div>
        <div class="col-sm-6">
         <img class="box5">Marked for review
