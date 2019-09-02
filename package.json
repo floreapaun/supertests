@@ -30,11 +30,11 @@
     "nativescript-theme-core": "~1.0.4",
     "reflect-metadata": "~0.1.8",
     "rxjs": "~6.5.0",
-    "tns-core-modules": "6.0.1",
+    "tns-core-modules": "~6.0.0",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "nativescript-dev-webpack": "1.0.1",
+    "nativescript-dev-webpack": "~1.1.0",
     "@nativescript/schematics": "~0.4.0",
     "@angular-devkit/build-angular": "~0.10.0",
     "@angular/cli": "~7.0.2",
@@ -59,10 +59,10 @@
   "nativescript": {
     "id": "org.nativescript.ngsample",
     "tns-android": {
-      "version": "6.0.0"
+      "version": "6.0.2"
     },
     "tns-ios": {
-      "version": "6.0.1"
+      "version": "6.0.2"
     }
   }
 }

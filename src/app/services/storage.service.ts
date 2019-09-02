@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-@Injectable()
+@Injectable({providedIn:'root'})
 
 // Storage for mobie app settings and web session storage
 export class StorageService {

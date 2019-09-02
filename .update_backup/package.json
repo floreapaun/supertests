@@ -13,32 +13,32 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~7.0.0",
-    "@angular/common": "~7.0.0",
-    "@angular/compiler": "~7.0.0",
-    "@angular/core": "~7.0.0",
-    "@angular/forms": "~7.0.0",
-    "@angular/http": "~7.0.0",
-    "@angular/platform-browser": "~7.0.0",
-    "@angular/platform-browser-dynamic": "~7.0.0",
-    "@angular/router": "~7.0.0",
+    "@angular/animations": "~8.0.0",
+    "@angular/common": "~8.0.0",
+    "@angular/compiler": "~8.0.0",
+    "@angular/core": "~8.0.0",
+    "@angular/forms": "~8.0.0",
+    "@angular/http": "~8.0.0-beta.10",
+    "@angular/platform-browser": "~8.0.0",
+    "@angular/platform-browser-dynamic": "~8.0.0",
+    "@angular/router": "~8.0.0",
     "@nativescript/schematics": "^0.5.0",
     "@ng-bootstrap/ng-bootstrap": "^4.0.1",
     "bootstrap": "^4.2.1",
     "core-js": "^2.5.4",
-    "nativescript-angular": "~7.1.0",
+    "nativescript-angular": "~8.0.0",
     "nativescript-theme-core": "~1.0.4",
     "reflect-metadata": "~0.1.8",
-    "rxjs": "~6.3.3",
-    "tns-core-modules": "6.0.0-rc-2019-06-28-175837-02",
-    "zone.js": "~0.8.26"
+    "rxjs": "~6.5.0",
+    "tns-core-modules": "6.0.1",
+    "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "nativescript-dev-webpack": "1.0.0-rc-2019-07-02-161545-02",
+    "nativescript-dev-webpack": "1.0.1",
     "@nativescript/schematics": "~0.4.0",
     "@angular-devkit/build-angular": "~0.10.0",
     "@angular/cli": "~7.0.2",
-    "@angular/compiler-cli": "~7.0.0",
+    "@angular/compiler-cli": "~8.0.0",
     "@angular/language-service": "~7.0.0",
     "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
@@ -54,15 +54,15 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
-    "typescript": "3.4.1"
+    "typescript": "3.4.5"
   },
   "nativescript": {
     "id": "org.nativescript.ngsample",
     "tns-android": {
-      "version": "6.0.0-rc-2019-06-27-172817-03"
+      "version": "6.0.0"
     },
     "tns-ios": {
-      "version": "6.0.0-rc-2019-06-28-105002-01"
+      "version": "6.0.2"
     }
   }
 }
