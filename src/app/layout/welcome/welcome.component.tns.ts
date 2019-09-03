@@ -40,7 +40,6 @@ picked ;
 
   submit(singnupForm) {
     this.router.navigate(['/notification']);
-    return;
     console.log('notification', this.user);
     if (this.user.email != '' && this.user.name != '' && this.user.test != '' ){
       console.log(this.user.test);
@@ -61,6 +60,7 @@ picked ;
     this.http.get('https://raw.githubusercontent.com/acharyaks90/questionjson/master/json/testlist.json')
     .subscribe(res => {
       this.typeTestList = res['testlist'];
+      console.log('Type list',this.typeTestList);
     });
   }
 
