@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { StorageMobService } from 'src/app/services/storage-mob.service';
+import { StorageMobService } from '../../storage-mob.service';
 
 @Component({
   selector: 'app-score',

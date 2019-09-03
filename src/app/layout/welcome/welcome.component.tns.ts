@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { HttpClient } from '@angular/common/http';
-import { StorageMobService } from 'src/app/services/storage-mob.service';
+import { StorageMobService } from '../../storage-mob.service';
 //import { ListPicker } from "tns-core-modules/ui/list-picker";
 
 
@@ -24,7 +24,7 @@ picked ;
   constructor(private router: Router,
               private auth: AuthService,
               private http: HttpClient,
-               private storage: StorageMobService) { }
+              private storage: StorageMobService) { }
 
   ngOnInit() {
 

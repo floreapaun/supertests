@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MyStoreService } from './my-store.service';
+import { StorageMobService } from './storage-mob.service';
 
-describe('MyStoreService', () => {
+describe('StorageMobService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: MyStoreService = TestBed.get(MyStoreService);
+    const service: StorageMobService = TestBed.get(StorageMobService);
     expect(service).toBeTruthy();
   });
 });
