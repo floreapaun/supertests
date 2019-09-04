@@ -66,7 +66,7 @@
                                     </div>
                                     <div class="custom-control custom-radio d-inline-block mr-3">
                                         <input class="custom-control-input" id="c" value="2" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">
-                                        <label class="custom-control-label">{{question.options[2]}}</label>
+                                        <label class="custom-control-label" for="c" >{{question.options[2]}}</label>
                                     </div>
                                     <div class="custom-control custom-radio d-inline-block">
                                         <input class="custom-control-input" id="d" value="3" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">
