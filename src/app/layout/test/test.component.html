@@ -1,158 +1,101 @@
 <div class="container">
-  <header>
-  <div class="row">
-    <div class="col-sm-7 mt-3 mb-3">
-      <h1 class="hmain"><img src="assets/images/ip.png"><b>iPriksha</b></h1>
-      <h3 class="hmain1">Excellence in Assessment</h3>
-    </div>
-    <div class="col-sm-1">
-    </div>
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="row">
+                                <div class="col-md-4 text-sm-center"><img src="assets/images/ip.png" class="img-fluid"></div>
+                                <div class="col-md-8 text-sm-center text-md-left">
+                                    <h1 class="mb-0 text-primary">iPriksha</h1>
+                                    <p class="lead">Excellence in Assessment</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <form class="candidate-details">
+                                <div class="p-3 mb-2 bg-light text-dark">
+                                    <div class="row form-group">
+                                        <div class="col-4"> <strong>Candidate Name</strong> </div>
+                                        <div class="col-8">
+                                            {{user.name}}
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-4"> <strong>Subject Name</strong> </div>
+                                        <div class="col-8">
+                                            {{user.test.name}}
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-4"> <strong>Remaning Time</strong> </div>
+                                        <div class="col-8">
+                                            {{timeRem}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4> <span class="badge badge-danger">{{user.test.name}}</span> </h4>
+                        </div>
+                        <div *ngIf="questionList.length>0" class="col-12">
+                            <div class="d-flex justify-content-between">
+                                <strong> {{'QUESTION ' + (itr + 1) + '/' + questionList.length}}</strong>
+                                <strong> Answered: {{(itr * 100 / questionList.length).toFixed(2) + '%'}}</strong>
+                            </div>
+                        </div>
+                        <div class="col-12" *ngIf="questionList.length==0">
+                            <p> Question not loaded at yet</p>
+                        </div>
+                        <div class="col-sm-12 mt-4" *ngIf="question">
+                            <h4>{{question.question}}</h4>
+                            <div class="row ">
+                                <div class="col-md-12">
+                                    <div class="custom-control custom-radio d-inline-block mr-3">
+                                        <input class="custom-control-input" id="a" value="0" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">
+                                        <label class="custom-control-label" for="a">{{question.options[0]}}</label>
+                                    </div>
+                                    <div class="custom-control custom-radio d-inline-block mr-3">
+                                        <input class="custom-control-input" id="b" value="1" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">
+                                        <label class="custom-control-label" for="b">{{question.options[1]}}</label>
+                                    </div>
+                                    <div class="custom-control custom-radio d-inline-block mr-3">
+                                        <input class="custom-control-input" id="c" value="2" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">
+                                        <label class="custom-control-label">{{question.options[2]}}</label>
+                                    </div>
+                                    <div class="custom-control custom-radio d-inline-block">
+                                        <input class="custom-control-input" id="d" value="3" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">
+                                        <label class="custom-control-label" for="d"> {{question.options[3]}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-sm-12">
+                                            <button class="btn btn-light btn-block-sm" (click)="clearResponse();">Clear Response</button>
 
-    <div class="col-12 col-sm-4 mt-3 mb-3">
-      <form class="candidate-details">
-        <div class="row">
-          <label for="" class="col-6"> Candidate Name </label>
-          <div class="col-6">
-            <span> {{user.name}} </span>
-          </div>
-        </div>
-        <div class="row">
-          <label for="" class="col-6"> Subject Name </label>
-          <div class="col-6">
-            <span> {{user.test.name}} </span>
-          </div>
-        </div>
-        <div class="row">
-          <label for="" class="col-6"> Remaning Time </label>
-          <div class="col-6">
-            <span> <label for="xy">{{timeRem}}</label> </span>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <div class="row divhead">
-    <div class="col-sm-6">
-      <h1>{{user.test.name}}</h1>
-    </div>
-    <div class="col-sm-6">
-      <!-- Choose your default language <br><select class="form-control">
-        <option>English</option>
-        <option>Hindi</option>
-        <option>Punjabi</option>
-      </select> -->
-
-    </div>
-    <div *ngIf="questionList.length>0" class="col-12 ">
-      <div class="q_a_calc_block">
-          <span> {{'QUESTION ' + (itr + 1) + '/' + questionList.length}}</span>
-          <span>
-         Answered: {{(itr * 100 / questionList.length).toFixed(2) + '%'}}
-        </span>
-      </div>
-    </div>
-  </div>
-
-  <div class="row " *ngIf="questionList.length==0">
-    <span > Question not loaded at yet</span>
-
-  </div>
-</header>
-<div class="row">
-  <div class="col-12 col-sm-12 col-md-12 col-12" *ngIf="question">
-    <b></b>Question<br>
-    <hr>
-    {{question.question}}<br>
-    <div class="row">
-      <div class="col-12 col-sm-6 col-lg-6 col-xl-6">
-        <span> (A) : {{question.options[0]}} </span>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-6 col-xl-6">
-        <span> (B) : {{question.options[1]}}</span>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-6 col-xl-6">
-        <span> (C) : {{question.options[2]}}</span>
-      </div>
-      <div class="col-12 col-sm-6 col-lg-6 col-xl-6">
-        <span> (D) : {{question.options[3]}}</span>
-      </div>
-    </div>
-    <div class="row ">
-      <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3" >
-        <label for="a">A)</label>
-        <input class="success form-control" id="a" value="0" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">
-      </div>
-        <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
-            <label for="b">B)</label>
-        <input class="success form-control" id="b"  value="1" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">
-        </div>
-        <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
-            <label for="c">C)</label>
-        <input class="success form-control" id="c"  value="2" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer"  name="answer"type="radio">
-        </div>
-        <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
-            <label for="d">D)</label>
-        <input class="success form-control" id="d" value="3" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">
-      </div>
-
-    </div>
-    <div class="row">
-      <div class="col-xl-6 ">
-        <div class="row">
-          <div class="col-xl-6 mt-2 mb-2">
-              <button class="btn btn-primary  btn-block" (click)="saveAndNext();">Save & Next</button>
-              <!-- <button class="btn btn-danger margint" (click)="saveAndNext();">Save & Mark For Review</button> -->
-          </div>
-          <div class="col-xl-6 mt-2 mb-2">
-              <button class="btn btn-success  btn-block " (click)="clearResponse();" >Clear Response</button>
-              <!-- <button class="btn btn-warning margint" (click)="saveAndNext();">Make For Review & Next</button><br> -->
-          </div>
-        </div>
-
-
-  </div>
-
-  <div class="col-xl-6 text-right">
-    <div class="row">
-        <div class="col-xl-6 mt-2 mb-2">
-        <button class="btn btn-success  btn-block" (click)="finishTest()">Submit</button>
+                                        </div>
+                                        <div class="col-xl-6 col-sm-12 text-right">
+                                            <button class="btn btn-primary mr-2" (click)="saveAndNext();">Save & Next</button>
+                                            <button class="btn btn-primary" (click)="finishTest()">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
 
-  </div>
 
-
-
-        <!-- <button class="btn btn-info col-6 col-sm-2 marginT10 ">Back</button>
-        <button class="btn btn-info col-6 col-sm-2 marginT10 ">Next>></button> -->
-
-
-    </div>
-
-
-
-  </div>
-  <div class="col-sm-6">
-    <div class="row">
-      <!-- <div class="col-sm-6">
-        <img class="box1">Not visited
-      </div> -->
-
-      <!-- <div class="col-sm-6">
-        <img class="box2">Not answered
-      </div> -->
-      <!-- <div class="col-sm-6">
-        <img class="box3">Answered
-      </div> -->
-      <!-- <div class="col-sm-6">
-        <img class="box4">Answered & marked for review
-      </div>
-       <div class="col-sm-6">
-        <img class="box5">Marked for review
-      </div> -->
-    </div>
-  </div>
-  </div>
 </div>
