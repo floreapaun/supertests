@@ -1,46 +1,46 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div class="container">
-  <div class="text-center">
-    <h1>
-      Welcome to {{ title|secondLetterCapital }}
-    </h1>
-    <h3 (click)="child.testChild()">{{counter}}</h3>
-  
-  </div>
-  </div>
-<div class="container h-100 centerme" >
-  <div class="row">
-      <img width="300" alt="iPriksha Logo"
-      src="/assets/images/ip.png">
-   
-  </div>
-  <div class="row">
-    <form id="test" class="col-12" #signupform="ngForm" (ngSubmit)="submit(signupform)">
-      <div class="row ">
-        <label class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4" for="name">Name:</label>
-        <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
-            <input class="form-control" name="name" [(ngModel)]="user.name" type="text" placeholder="Name" required>
-        </div>
-      </div>
-      <div class="row ">
-        <label class="col-12 col-md-4 col-lg-4 col-xl-4" for="email">Email:</label>
-        <div class="col-12 col-md-8 col-lg-8 col-xl-8">
-          <input class="form-control" name="email" [(ngModel)]="user.email" type="email" placeholder="Email" required>        </div>
-      </div>
-      <div class="row ">
-        <label class="col-12 col-md-4 col-lg-4 col-xl-4" for="email">Type Of Test:</label>
-        <div class="col-12 col-md-8 col-lg-8 col-xl-8">
-          <select class="form-control" name="test" [(ngModel)]="user.test" required>
-            <option [ngValue]="testType" *ngFor="let testType of typeTestList">{{testType.name}}</option>
-          </select>
-      </div>
-      </div>
-      <div class="row ">
-        <div class="col-12" style="padding-top:5px">
+    <div class="row mt-5">
+        <div class="col-md-6 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-center mb-3">
+                        <img width="180" alt="iPriksha Logo" src="/assets/images/ip.png">
+                    </div>
+                    <h3>
+                        Welcome to <span class="text-primary">iPriksha</span> {{ title | secondLetterCapital }}
+                        <span (click)="child.testChild()">{{counter}}</span>
+                    </h3>
+                    <hr>
+                    <form id="test" class="col-12" #signupform="ngForm" (ngSubmit)="submit(signupform)">
+                        <div class="row form-group">
+                            <label class="col-sm-4 col-form-label" for="name">Name:</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" name="name" [(ngModel)]="user.name" type="text" placeholder="Name" required>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="col-sm-4 col-form-label" for="email">Email:</label>
+                            <div class="col-sm-8">
+                                <input class="form-control" name="email" [(ngModel)]="user.email" type="email" placeholder="Email" required> </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="col-sm-4 col-form-label" for="email">Type Of Test:</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" name="test" [(ngModel)]="user.test" required>
+                                   <option [ngValue]="testType" *ngFor="let testType of typeTestList">{{testType.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <button class="btn btn-primary btn-block" [disabled]="signupform.invalid" type="submit">Next</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
-          <button class=" col-12 col-md-3 btn btn-info" [disabled]="signupform.invalid" type="submit" >Next</button>
         </div>
-      </div>
-    </form>
-  </div>
+    </div>
+
 </div>
