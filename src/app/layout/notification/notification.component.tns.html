@@ -1,4 +1,7 @@
-<StackLayout> 
+<StackLayout orientation="vertical" height="100%">
+<DockLayout height="100%"> 
+    <Button dock="bottom" text="Proceed" (onTap)="navigateToTest()">Proceed</Button>
+  <StackLayout orientation="vertical" class="content">
 <Label text="General Instructions"></Label>  
 <Label textWrap="true" text="1.Total duration of HTET (Paper-1 is 60 min & Paper-2 is 120 min)."></Label>
 
@@ -18,6 +21,6 @@ the following symbols"></Label>
         the exam for entire question paper. On clicking of Profile image you will get a droup- down to change the
         Question cintent to the desired language.."></Label>
       <Label textWrap="true" text="Navigating to a Question :"></Label>
-
-      <Button text="Proceed" (onTap)="navigateToTest()">Proceed</Button>
+    </StackLayout>
+</DockLayout>
 </StackLayout>

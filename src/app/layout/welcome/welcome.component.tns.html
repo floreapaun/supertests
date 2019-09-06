@@ -1,4 +1,10 @@
-<StackLayout>
+<StackLayout style="margin: 20" orientation="vertical"> 
+        <StackLayout horizontalAlignment="center"> 
+                <Image stretch="none"
+                src="~/assets/images/ip.png"> </Image>
+        </StackLayout>
+             
+                <StackLayout class="form-style"> 
     <Label text="Name" ></Label>
     <TextField (textChange)="onTextNameChange($event)" hint="Enter Name" ></TextField>
     <Label text="Email"></Label>
@@ -9,4 +15,5 @@
      (selectedIndexChange)="selectedIndexChanged($event)" class="p-15"></ListPicker>
 
     <Button text="Next" (tap)="submit()" ></Button>
+</StackLayout>
 </StackLayout>
