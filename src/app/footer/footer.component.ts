@@ -4,7 +4,7 @@ import { Component, OnInit, ViewEncapsulation,ChangeDetectionStrategy, Input, Ou
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css'],
-  encapsulation: ViewEncapsulation.Native,
+  // encapsulation: ViewEncapsulation.Native,
   changeDetection : ChangeDetectionStrategy.OnPush,
  
  
