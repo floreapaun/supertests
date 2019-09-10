@@ -1,11 +1,23 @@
 <StackLayout> 
-<Label text="Test"></Label>  
-<Label textWrap="true" text="1.Total duration of HTET (Paper-1 is 60 min & Paper-2 is 120 min)."></Label>
+<Label textWrap="true" text="Test"></Label>
+
+<Label text="Remaning Time :"></Label>
+<Label >
+    {{timeRem}}
+</Label>
 
 
 
+<Label  text="{{'QUESTION ' + (itr + 1) + '/' + questionList.length}}"></Label>
+<Label  text="Answered: {{(itr * 100 / questionList.length).toFixed(2) + '%'}}"></Label>
 
+<Label textWrap="true" text="{{question.question}}" ></Label>
 
-
+<Label text="{{question.options[0]}}"></Label>
+<Label text="{{question.options[1]}}"></Label>
+<Label text="{{question.options[2]}}"></Label>
+<Label text="{{question.options[3]}}"></Label>
+<Button  (tap)="saveAndNext();" text="Save & Next"></Button>
+<Button (tap)="finishTest()"text="Submit" ></Button>
       <Button (tap)="navigateToScore()" text="Proceed"></Button>
 </StackLayout>

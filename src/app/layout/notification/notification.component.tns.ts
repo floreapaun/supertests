@@ -13,19 +13,21 @@ export class NotificationComponent implements OnInit {
      name:'',
      duration:''
    }};
-  agree: boolean ;
+  agree: boolean = false ;
   constructor(private router: Router,
               private storage: StorageMobService) { }
 
   ngOnInit() {
     
-    //this.user = JSON.parse(this.storage.getData('user'));
+    this.user = JSON.parse(this.storage.getData('user'));
+  }
+
+  accept() : void{
+    this.agree = true;
   }
 
 
   navigateToTest() {
-    this.router.navigate(['/test']);
-    return;
     if(this.agree){
       this.router.navigate(['/test']);
     } else {
