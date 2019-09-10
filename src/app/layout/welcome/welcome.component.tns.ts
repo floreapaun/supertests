@@ -3,8 +3,14 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { HttpClient } from '@angular/common/http';
 import { StorageMobService } from '../../storage-mob.service';
-//import { ListPicker } from "tns-core-modules/ui/list-picker";
+import { ListPicker } from "tns-core-modules/ui/list-picker";
+import { TextField } from "tns-core-modules/ui/text-field";
 
+interface User {
+  name: string,
+  email: string,
+  test: string
+}
 
 @Component({
   selector: 'app-welcome',
@@ -12,13 +18,12 @@ import { StorageMobService } from '../../storage-mob.service';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
-  user = {
+  user : User = {
     name: '',
     email: '',
     test : ''
   };
 
-picked ;
 
   typeTestList:  any;
   constructor(private router: Router,
@@ -38,8 +43,7 @@ picked ;
   }
 
 
-  submit(singnupForm) {
-    this.router.navigate(['/notification']);
+  submit() {
     console.log('notification', this.user);
     if (this.user.email != '' && this.user.name != '' && this.user.test != '' ){
       console.log(this.user.test);
@@ -52,16 +56,29 @@ picked ;
 
 
   selectedIndexChanged(args){
-    // const picker = <ListPicker>args.object;
-    // this.picked = this.typeTestList[picker.selectedIndex];
+    const picker = <ListPicker>args.object;
+    console.log(picker.selectedIndex)
+    this.user.test = this.typeTestList[picker.selectedIndex];
   }
 
-  getTestList() {
+  getTestList() : void {
     this.http.get('https://raw.githubusercontent.com/acharyaks90/questionjson/master/json/testlist.json')
     .subscribe(res => {
       this.typeTestList = res['testlist'];
       console.log('Type list',this.typeTestList);
     });
+  }
+
+  onTextNameChange(args):void{
+    //console.log(args);
+    let textField = <TextField>args.object;
+
+        this.user.name = textField.text;
+  }
+
+  onTextEmailChange(args):void{
+    let textField = <TextField>args.object;
+    this.user.email = textField.text;
   }
 
 }
