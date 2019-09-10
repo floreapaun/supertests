@@ -58,10 +58,10 @@
   },
   "nativescript": {
     "id": "org.nativescript.ngsample",
-    "tns-android": {
+    "tns-ios": {
       "version": "6.0.2"
     },
-    "tns-ios": {
+    "tns-android": {
       "version": "6.0.2"
     }
   }

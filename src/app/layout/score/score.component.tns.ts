@@ -5,7 +5,7 @@ import { StorageMobService } from '../../storage-mob.service';
 @Component({
   selector: 'app-score',
   templateUrl: './score.component.html',
-  styleUrls: ['./score.component.css']
+  styleUrls: ['./score.component.scss']
 })
 export class ScoreComponent implements OnInit {
  user:any;

@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { StorageMobService } from '../../storage-mob.service';
 import { ListPicker } from "tns-core-modules/ui/list-picker";
 import { TextField } from "tns-core-modules/ui/text-field";
-
+import { Page } from "tns-core-modules/ui/page"
 interface User {
   name: string,
   email: string,
@@ -15,7 +15,7 @@ interface User {
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.css']
+  styleUrls: ['./welcome.component.scss']
 })
 export class WelcomeComponent implements OnInit {
   user : User = {
@@ -29,9 +29,12 @@ export class WelcomeComponent implements OnInit {
   constructor(private router: Router,
               private auth: AuthService,
               private http: HttpClient,
-              private storage: StorageMobService) { }
+              private storage: StorageMobService,
+              private page: Page) { }
 
   ngOnInit() {
+
+    this.page.actionBarHidden = true;
 
     this.storage.clear();
     this.auth.name().subscribe(res => {
