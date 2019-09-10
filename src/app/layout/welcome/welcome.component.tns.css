@@ -23,11 +23,41 @@
     flex-direction: column;
 }
 
-.w50{
- width: 50%;
+.form-style {
+margin: 20;
+}
+.form-style Image {
+    margin: 50 30 0 30;
+}
+.form-style .welcome {
+    font-size: 40;
+    color: #A94442;
+    font-weight: bold;
+    margin: 10 0;
 }
 .form-style Label {
 font-size: 16;
-color: #000000;
+color: #666666;
 font-weight: bold;
+}
+.form-style .form-panel {
+    margin: 0 30;
+}
+.form-style .form-panel StackLayout{
+    margin: 10 0;
+}
+.form-style .form-panel StackLayout TextField{
+    font-size: 16;
+    color: #666666;
+}
+Button {
+    background: cornflowerblue;
+    color: #ffffff;
+    font-size: 14;
+    border: 0;
+    border-radius: 0;
+    padding: 10;
+}
+.mainWrapper {
+    width: 100%;
 }
