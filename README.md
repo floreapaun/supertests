@@ -30,3 +30,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Todo 
 Mobile storage service
 Linking of data input
+App Icon 
+Splash screen 
+Swipe action 
+Backend server 
+Add question dashbaord 
+Material Design 
+Adding Score 
+Android / IOS Setup

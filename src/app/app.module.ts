@@ -16,6 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 import { ChangeColorDirective } from './change-color.directive';
 import { SecondLetterCapitalPipe } from './second-letter-capital.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,8 @@ import { SecondLetterCapitalPipe } from './second-letter-capital.pipe';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [ ],
   bootstrap: [AppComponent]
