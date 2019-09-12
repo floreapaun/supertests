@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Uncomment and add to NgModule imports  if you need to use the HTTP wrapper
  import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
+import { QuizTypeComponent } from './layout/quiz-type/quiz-type.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     WelcomeComponent,
     NotificationComponent,
     TestComponent,
-    ScoreComponent
+    ScoreComponent,
+    QuizTypeComponent
   ],
   imports: [
     NativeScriptModule,

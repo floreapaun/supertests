@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { HttpClient } from '@angular/common/http';
 import { StorageMobService } from '../../storage-mob.service';
-import { ListPicker } from "tns-core-modules/ui/list-picker";
+
 import { TextField } from "tns-core-modules/ui/text-field";
 import { Page } from "tns-core-modules/ui/page"
 interface User {
@@ -41,36 +41,23 @@ export class WelcomeComponent implements OnInit {
       console.log('Auth',res);
     });
 
-    this.getTestList();
    
   }
 
 
   submit() {
     console.log('notification', this.user);
-    if (this.user.email != '' && this.user.name != '' && this.user.test != '' ){
+    if (this.user.email != '' && this.user.name != ''){
       console.log(this.user.test);
       this.storage.setData('user', JSON.stringify(this.user));
-      this.router.navigate(['/notification']);
+      this.router.navigate(['/quiz']);
     } else {
       alert('Please fill all information!');
     }
   }
 
 
-  selectedIndexChanged(args){
-    const picker = <ListPicker>args.object;
-    console.log(picker.selectedIndex)
-    this.user.test = this.typeTestList[picker.selectedIndex];
-  }
-
-  getTestList() : void {
-    this.http.get('https://raw.githubusercontent.com/acharyaks90/questionjson/master/json/testlist.json')
-    .subscribe(res => {
-      this.typeTestList = res['testlist'];
-      console.log('Type list',this.typeTestList);
-    });
-  }
+  
 
   onTextNameChange(args):void{
     //console.log(args);

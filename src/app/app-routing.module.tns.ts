@@ -7,6 +7,7 @@ import { WelcomeComponent } from './layout/welcome/welcome.component';
 import { NotificationComponent } from './layout/notification/notification.component';
 import { TestComponent } from './layout/test/test.component';
 import { ScoreComponent } from './layout/score/score.component';
+import { QuizTypeComponent } from './layout/quiz-type/quiz-type.component';
 
 export const routes: Routes = [
   {
@@ -31,7 +32,9 @@ export const routes: Routes = [
     component: TestComponent
   },
   { path: 'score',
-  component: ScoreComponent}
+  component: ScoreComponent},
+  {  path: 'quiz',
+  component: QuizTypeComponent}
 ];
 
 

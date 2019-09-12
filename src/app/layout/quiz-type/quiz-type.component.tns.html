@@ -1,0 +1,17 @@
+<StackLayout id="mainWrapper">
+    <Label class="h1" text="Type Of Test"></Label>
+
+<!-- <ListPicker [items]="typeTestList" selectedIndex="0" textField="name"
+    (selectedIndexChange)="selectedIndexChanged($event)" class="p-15"></ListPicker> -->
+
+    <ScrollView>
+        <StackLayout class="quiz">
+            <ListView height="150" [items]="typeTestList">
+                <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
+                    <Label [text]="item.name"></Label>
+                </ng-template>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+
+</StackLayout>
