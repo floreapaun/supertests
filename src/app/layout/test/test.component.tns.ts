@@ -28,6 +28,7 @@ export class TestComponent implements OnInit {
     }, 1000);
    
    this.user = JSON.parse(this.storage.getData('user'));
+   console.log(this.user);
    this.getQuestions();
   }
 
@@ -90,6 +91,7 @@ export class TestComponent implements OnInit {
 
 
   getQuestions(): void {
+    console.log(this.user.test.name);
     this.http.get(`https://raw.githubusercontent.com/acharyaks90/questionjson/master/json/questions${this.user.test.name}.json`)
     .subscribe(res => {
       console.log('mydata', res);

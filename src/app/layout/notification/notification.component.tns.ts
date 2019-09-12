@@ -24,6 +24,7 @@ export class NotificationComponent implements OnInit {
     this.page.actionBarHidden = true;
 
     this.user = JSON.parse(this.storage.getData('user'));
+    console.log('user', this.user)
   }
 
   accept() : void{

@@ -26,6 +26,8 @@ export class QuizTypeComponent implements OnInit {
   ngOnInit() {
     this.getTestList();
     this.page.actionBarHidden = true;
+    this.user = JSON.parse(this.storage.getData('user'));
+
 
   }
 
@@ -48,7 +50,8 @@ export class QuizTypeComponent implements OnInit {
 
   navigateToNotification(){
     if ( this.user.test != '' ){
-     // this.storage.setData('user', JSON.stringify(this.user));
+
+     this.storage.setData('user', JSON.stringify(this.user));
       this.router.navigate(['/notification']);
     } else {
       alert('Please fill all information!');
@@ -56,6 +59,7 @@ export class QuizTypeComponent implements OnInit {
   }
 
   testTypeTap(val:string){
+    console.log(val);
     this.user.test = val;
   }
 
