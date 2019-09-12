@@ -38,3 +38,5 @@ Add question dashbaord
 Material Design 
 Adding Score 
 Android / IOS Setup
+
+Adding the Steps in Score success bar 
