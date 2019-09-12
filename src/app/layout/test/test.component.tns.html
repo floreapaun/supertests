@@ -13,10 +13,10 @@
 
 <Label textWrap="true" text="{{question.question}}" ></Label>
 
-<Label text="{{question.options[0]}}"></Label>
-<Label text="{{question.options[1]}}"></Label>
-<Label text="{{question.options[2]}}"></Label>
-<Label text="{{question.options[3]}}"></Label>
+<Label (tap)="answeredValue(0)" text="{{question.options[0]}}"></Label>
+<Label (tap)="answeredValue(1)" text="{{question.options[1]}}"></Label>
+<Label (tap)="answeredValue(2)" text="{{question.options[2]}}"></Label>
+<Label (tap)="answeredValue(3)" text="{{question.options[3]}}"></Label>
 <Button  (tap)="saveAndNext();" text="Save & Next"></Button>
 <Button (tap)="finishTest()"text="Submit" ></Button>
       <Button (tap)="navigateToScore()" text="Proceed"></Button>

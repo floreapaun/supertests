@@ -8,10 +8,10 @@
         <StackLayout class="quiz">
             <ListView height="150" [items]="typeTestList">
                 <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
-                    <Label [text]="item.name"></Label>
+                    <Label (tap)="testTypeTap(item.name)" [text]="item.name"></Label>
                 </ng-template>
             </ListView>
         </StackLayout>
     </ScrollView>
-
+    <Button text="Next" (tap)="submit()"></Button>
 </StackLayout>

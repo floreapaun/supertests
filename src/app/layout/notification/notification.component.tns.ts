@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { StorageMobService } from '../../storage-mob.service';
 // import { StorageMobService } from 'src/app/services/storage-mob.service';
 
+import { Page } from 'tns-core-modules/ui/page/page';
+
 @Component({
   selector: 'app-notification',
   templateUrl: './notification.component.html',
@@ -15,10 +17,12 @@ export class NotificationComponent implements OnInit {
    }};
   agree: boolean = false ;
   constructor(private router: Router,
-              private storage: StorageMobService) { }
+              private storage: StorageMobService,
+              private page: Page) { }
 
   ngOnInit() {
-    
+    this.page.actionBarHidden = true;
+
     this.user = JSON.parse(this.storage.getData('user'));
   }
 

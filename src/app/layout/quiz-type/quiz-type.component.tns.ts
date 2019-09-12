@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ListPicker } from "tns-core-modules/ui/list-picker";
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Page } from 'tns-core-modules/ui/page/page';
+import { StorageMobService } from '../../storage-mob.service';
 
 
 @Component({
@@ -17,15 +20,20 @@ export class QuizTypeComponent implements OnInit {
   };
   constructor(private router: Router,
     private http: HttpClient,
-   ) { }
+    private page: Page,
+    private storage: StorageMobService) { }
 
   ngOnInit() {
     this.getTestList();
-   
+    this.page.actionBarHidden = true;
 
   }
 
-  
+  selectedIndexChanged(args){
+    const picker = <ListPicker>args.object;
+    console.log(picker.selectedIndex)
+    this.user.test = this.typeTestList[picker.selectedIndex];
+  }
 
   
 

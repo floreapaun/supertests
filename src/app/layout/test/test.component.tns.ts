@@ -27,8 +27,8 @@ export class TestComponent implements OnInit {
       this.timeRem = new Date();
     }, 1000);
    
-   // this.user = JSON.parse(this.storage.getData('user'));
-   // this.getQuestions();
+   this.user = JSON.parse(this.storage.getData('user'));
+   this.getQuestions();
   }
 
   answeredValue(val: string) {
