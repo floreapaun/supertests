@@ -11,7 +11,7 @@ import { Page } from 'tns-core-modules/ui/page/page';
   styleUrls: ['./test.component.scss']
 })
 export class TestComponent implements OnInit {
-  timeRem: any = new Date();
+  timeRem: string = '00:00:00';
   question: any;
   itr = 0;
   user;
@@ -26,9 +26,19 @@ export class TestComponent implements OnInit {
 
   ngOnInit() {
     this.page.actionBarHidden = true;
+
+
+    let timer = (2 * 60 + 30) * 60 + 20;
     setInterval(() => {
-      this.timeRem = new Date();
-    }, 1000);
+      let sec = 0, totalmin = 0, hour = 0, min = 0;
+      sec = timer % 60;
+      totalmin = Math.floor(timer / 60);
+      hour = Math.floor(totalmin / 60);
+      min = totalmin % 60;
+
+      this.timeRem = `${hour}:${min}:${sec}`
+      timer--;
+    }, 1000)
 
     this.user = JSON.parse(this.storage.getData('user'));
     this.getQuestions();
