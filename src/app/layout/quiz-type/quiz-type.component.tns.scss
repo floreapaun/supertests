@@ -1,21 +1,39 @@
 /* Add mobile styles for the component here.  */
 #mainWrapper {
-    margin: 20;
+   // margin: 20;
 
 .h1 {
     font-size: 28;
     color: #666666;
     font-weight: bold;
     text-align: center;
+    margin: 10 0;
 }
+.quiz-area {
+    margin: 10;
 .quiz {
     padding: 20;
     background: #ffffff;
     border-width: 1;
     border-color: #cccccc;
+    margin: 10;
+    border-radius: 10;
+    width: 100%;
+   
+    Label {
+        font-weight: bold;
+        color: #000000;
+        text-align: center;
+    }
+    // FlexboxLayout{
+    //     width: 50%;
+    // }
 }
-
-Button{
+.active{
+    background: red;
+}
+}
+.next{
     background: cornflowerblue;
     color: #ffffff;
     font-size: 14;

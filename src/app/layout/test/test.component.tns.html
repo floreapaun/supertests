@@ -1,25 +1,32 @@
-<StackLayout> 
-<Label textWrap="true" text="Test"></Label>
+<StackLayout id="testWrapper" class="mainWrapper">
+    <StackLayout class="m20">
+            <Label class="label" text="Candidate Name"></Label>
+            <Label textWrap="true" [text]="user.name"></Label>
+            <Label class="label" text="Subject Name"></Label>
+            <Label textWrap="true" [text]="user.test.name"></Label>
+            <Label class="label" text="Remaning Time :"></Label>
+            <Label [text]="timeRem"></Label>
+    </StackLayout>
+<DockLayout height="100%">
+    <StackLayout dock="bottom">
+            <Button (tap)="saveAndNext();" text="Save & Next"></Button>
+            <Button (tap)="finishTest()" text="Submit"></Button>
+            <Button (tap)="navigateToScore()" text="Proceed"></Button>
+    </StackLayout>
 
-<Label text="Remaning Time :"></Label>
-<Label >
-    {{timeRem}}
-</Label>
+    <StackLayout *ngIf="questionList.length>0" class="m20">
 
-<StackLayout *ngIf="questionList.length>0"> 
+        <Label text="{{'QUESTION ' + (itr + 1) + '/' + questionList.length}}"></Label>
+        <Label text="Answered: {{(itr * 100 / questionList.length).toFixed(2) + '%'}}"></Label>
 
-<Label  text="{{'QUESTION ' + (itr + 1) + '/' + questionList.length}}"></Label>
-<Label  text="Answered: {{(itr * 100 / questionList.length).toFixed(2) + '%'}}"></Label>
+        <Label class="label"  textWrap="true" text="{{question.question}}"></Label>
 
-<Label textWrap="true" text="{{question.question}}" ></Label>
+        <Label (tap)="answeredValue(0)" text="{{question.options[0]}}"></Label>
+        <Label (tap)="answeredValue(1)" text="{{question.options[1]}}"></Label>
+        <Label (tap)="answeredValue(2)" text="{{question.options[2]}}"></Label>
+        <Label (tap)="answeredValue(3)" text="{{question.options[3]}}"></Label>
 
-<Label (tap)="answeredValue(0)" text="{{question.options[0]}}"></Label>
-<Label (tap)="answeredValue(1)" text="{{question.options[1]}}"></Label>
-<Label (tap)="answeredValue(2)" text="{{question.options[2]}}"></Label>
-<Label (tap)="answeredValue(3)" text="{{question.options[3]}}"></Label>
-
-<Button  (tap)="saveAndNext();" text="Save & Next"></Button>
-<Button (tap)="finishTest()"text="Submit" ></Button>
-      <Button (tap)="navigateToScore()" text="Proceed"></Button>
-      </StackLayout>
+        
+    </StackLayout>
+</DockLayout>
 </StackLayout>

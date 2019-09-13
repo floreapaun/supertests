@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { StorageMobService } from '../../storage-mob.service';
+import { Page } from 'tns-core-modules/ui/page/page';
 
 @Component({
   selector: 'app-score',
@@ -11,11 +12,13 @@ export class ScoreComponent implements OnInit {
  user:any;
  result: any;
   constructor(private router : Router,
-    private storage: StorageMobService) { }
+    private storage: StorageMobService,
+    private page: Page) { }
 
   ngOnInit() {
-  //  this.user = JSON.parse(this.storage.getData('user'));
-  //  this.result = JSON.parse(this.storage.getData('result'));
+    this.page.actionBarHidden = true;
+   this.user = JSON.parse(this.storage.getData('user'));
+   this.result = JSON.parse(this.storage.getData('result'));
 
   }
 

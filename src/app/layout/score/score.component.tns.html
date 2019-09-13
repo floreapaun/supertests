@@ -1,9 +1,14 @@
 
-<StackLayout>
-    <Label text="Exam Summary !"></Label>
-    <Label text=" Welcome {{user.name}} , You have score {{result.marks}} of {{result.total}}">
-      
-    </Label>
-    <Button (tap)="testAgain()" text="Do you want to do it again? :)"></Button>
+<StackLayout id="resultWrapper" class="mainWrapper">
+  <DockLayout height="100%">
+        <StackLayout dock="bottom">
+                <Button (tap)="testAgain()" text="Do you want to do it again? :)"></Button>
+        </StackLayout>
+      <StackLayout class="content">
+            <Label horizontalAlignment="center" class="h1" text="Exam Summary !"></Label>
+        <Label horizontalAlignment="center" text="Welcome {{user.name}} , You have score {{result.marks}} of {{result.total}}"></Label>
+      </StackLayout>
+  </DockLayout>
+   
 </StackLayout>
 

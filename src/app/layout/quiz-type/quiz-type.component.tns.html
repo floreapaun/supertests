@@ -3,15 +3,21 @@
 
 <!-- <ListPicker [items]="typeTestList" selectedIndex="0" textField="name"
     (selectedIndexChange)="selectedIndexChanged($event)" class="p-15"></ListPicker> -->
-
+<DockLayout height="100%">
+    <StackLayout dock="bottom">
+            <Button class="next" text="Next" (tap)="submit()"></Button>
+    </StackLayout>
     <ScrollView>
-        <StackLayout class="quiz">
-            <ListView height="150" [items]="typeTestList">
-                <ng-template let-item="item" let-i="index" let-odd="odd" let-even="even">
-                    <Label (tap)="testTypeTap(item.name)" [text]="item.name"></Label>
-                </ng-template>
-            </ListView>
+        <StackLayout class="quiz-area" horizontalAlignment="center">
+                <FlexboxLayout justifyContent="center" width="100%" flexWrap="wrap" flexDirection="row" 
+                (tap)="testTypeTap(item)"  class="quiz" *ngFor="let item of typeTestList" 
+                [ngClass]="{'active' : item.name == user.test.name }" >
+                      <Image horizontalAlignment="center" height="50" width="50" stretch="none" 
+                      src="https://image.shutterstock.com/image-vector/download-icon-upload-button-load-600w-1065865670.jpg"></Image> 
+                    <Label   horizontalAlignment="center"  [text]="item.name"></Label>
+                </FlexboxLayout>
         </StackLayout>
     </ScrollView>
-    <Button text="Next" (tap)="submit()"></Button>
+  
+</DockLayout>
 </StackLayout>
