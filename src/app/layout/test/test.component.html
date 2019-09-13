@@ -6,7 +6,8 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-12">
                             <div class="row">
-                                <div class="col-md-4 text-sm-center"><img src="assets/images/ip.png" class="img-fluid"></div>
+                                <div class="col-md-4 text-sm-center"><img src="assets/images/ip.png" class="img-fluid">
+                                </div>
                                 <div class="col-md-8 text-sm-center text-md-left">
                                     <h1 class="mb-0 text-primary">iPriksha</h1>
                                     <p class="lead">Excellence in Assessment</p>
@@ -57,19 +58,27 @@
                             <div class="row ">
                                 <div class="col-md-12">
                                     <div class="custom-control custom-radio d-inline-block mr-3">
-                                        <input class="custom-control-input" id="a" value="0" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">
+                                        <input class="custom-control-input" id="a" value="0"
+                                            (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer"
+                                            name="answer" type="radio">
                                         <label class="custom-control-label" for="a">{{question.options[0]}}</label>
                                     </div>
                                     <div class="custom-control custom-radio d-inline-block mr-3">
-                                        <input class="custom-control-input" id="b" value="1" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">
+                                        <input class="custom-control-input" id="b" value="1"
+                                            (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer"
+                                            name="answer" type="radio">
                                         <label class="custom-control-label" for="b">{{question.options[1]}}</label>
                                     </div>
                                     <div class="custom-control custom-radio d-inline-block mr-3">
-                                        <input class="custom-control-input" id="c" value="2" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">
-                                        <label class="custom-control-label" for="c" >{{question.options[2]}}</label>
+                                        <input class="custom-control-input" id="c" value="2"
+                                            (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer"
+                                            name="answer" type="radio">
+                                        <label class="custom-control-label" for="c">{{question.options[2]}}</label>
                                     </div>
                                     <div class="custom-control custom-radio d-inline-block">
-                                        <input class="custom-control-input" id="d" value="3" (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer" name="answer" type="radio">
+                                        <input class="custom-control-input" id="d" value="3"
+                                            (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer"
+                                            name="answer" type="radio">
                                         <label class="custom-control-label" for="d"> {{question.options[3]}}</label>
                                     </div>
                                 </div>
@@ -79,11 +88,13 @@
                                 <div class="col-xl-12">
                                     <div class="row">
                                         <div class="col-xl-6 col-sm-12">
-                                            <button class="btn btn-light btn-block-sm" (click)="clearResponse();">Clear Response</button>
+                                            <button class="btn btn-light btn-block-sm" (click)="clearResponse();">Clear
+                                                Response</button>
 
                                         </div>
                                         <div class="col-xl-6 col-sm-12 text-right">
-                                            <button class="btn btn-primary mr-2" (click)="saveAndNext();">Save & Next</button>
+                                            <button class="btn btn-primary mr-2" (click)="saveAndNext();">Save &
+                                                Next</button>
                                             <button class="btn btn-primary" (click)="finishTest()">Submit</button>
                                         </div>
                                     </div>
