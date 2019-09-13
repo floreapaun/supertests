@@ -2,38 +2,50 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { StorageMobService } from '../../storage-mob.service';
- //import { StorageMobService } from 'src/app/services/storage-mob.service';
+import { Page } from 'tns-core-modules/ui/page/page';
+//import { StorageMobService } from 'src/app/services/storage-mob.service';
 
 @Component({
-  selector: 'app-test', 
+  selector: 'app-test',
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.scss']
 })
 export class TestComponent implements OnInit {
-  timeRem : any = new Date();
-  question : any ;
+  timeRem: string = '00:00:00';
+  question: any;
   itr = 0;
   user;
-  questionList =  [];
+  questionList = [];
   answerList = [];
-  currentAnswer : any;
-  testMarks: number = 0 ;
-  constructor(private router: Router, 
-              private http: HttpClient,
-              private storage: StorageMobService) { }
+  currentAnswer: any;
+  testMarks: number = 0;
+  constructor(private router: Router,
+    private http: HttpClient,
+    private storage: StorageMobService,
+    private page: Page) { }
 
   ngOnInit() {
-    setInterval(()=>{
-      this.timeRem = new Date();
-    }, 1000);
-   
-   this.user = JSON.parse(this.storage.getData('user'));
-   console.log(this.user);
-   this.getQuestions();
+    this.page.actionBarHidden = true;
+
+
+    let timer = (2 * 60 + 30) * 60 + 20;
+    setInterval(() => {
+      let sec = 0, totalmin = 0, hour = 0, min = 0;
+      sec = timer % 60;
+      totalmin = Math.floor(timer / 60);
+      hour = Math.floor(totalmin / 60);
+      min = totalmin % 60;
+
+      this.timeRem = `${hour}:${min}:${sec}`
+      timer--;
+    }, 1000)
+
+    this.user = JSON.parse(this.storage.getData('user'));
+    this.getQuestions();
   }
 
   answeredValue(val: string) {
-    console.log('anweris', val);
+
     const index = this.answerList.findIndex(e => {
       return e.no == this.itr;
     });
@@ -42,12 +54,12 @@ export class TestComponent implements OnInit {
     } else {
       this.answerList.push({ no: this.itr, answer: val });
     }
-    if(this.questionList[this.itr].answer == val){
+    if (this.questionList[this.itr].answer == val) {
       this.testMarks++;
     }
   }
 
-  clearResponse(){
+  clearResponse() {
     const index = this.answerList.findIndex(e => {
       return e.no == this.itr;
     });
@@ -74,7 +86,7 @@ export class TestComponent implements OnInit {
   }
 
   saveAndNext(): void {
-   ++this.itr;
+    ++this.itr;
 
     if (this.itr >= this.questionList.length) {
       const result = {
@@ -93,11 +105,10 @@ export class TestComponent implements OnInit {
   getQuestions(): void {
     console.log(this.user.test.name);
     this.http.get(`https://raw.githubusercontent.com/acharyaks90/questionjson/master/json/questions${this.user.test.name}.json`)
-    .subscribe(res => {
-      console.log('mydata', res);
-      this.questionList = res['TEST'];
-      this.question = this.questionList[0];
-    });
+      .subscribe(res => {
+        this.questionList = res['TEST'];
+        this.question = this.questionList[0];
+      });
   }
 
 
