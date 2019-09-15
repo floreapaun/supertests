@@ -17,6 +17,7 @@ export class WelcomeComponent implements OnInit {
     email: '',
     test : ''
   };
+  title :string = "ipriksha";
 
 picked ;
 

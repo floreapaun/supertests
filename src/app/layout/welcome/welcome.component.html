@@ -7,8 +7,8 @@
                         <img width="180" alt="iPriksha Logo" src="/assets/images/ip.png">
                     </div>
                     <h3>
-                        Welcome to <span class="text-primary">iPriksha</span> {{ title | secondLetterCapital }}
-                        <span (click)="child.testChild()">{{counter}}</span>
+                        Welcome to <span class="text-primary">{{ title | secondLetterCapital }}</span> 
+                       
                     </h3>
                     <hr>
                     <form id="test" class="col-12" #signupform="ngForm" (ngSubmit)="submit(signupform)">
