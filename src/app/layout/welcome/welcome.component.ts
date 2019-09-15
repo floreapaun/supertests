@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { HttpClient } from '@angular/common/http';
 import { StorageService } from 'src/app/services/storage.service';
+import { SaveUserinfoService } from 'src/app/services/save-userinfo.service';
 //import { ListPicker } from "tns-core-modules/ui/list-picker";
 
 
@@ -25,7 +26,8 @@ picked ;
   constructor(private router: Router,
               private auth: AuthService,
               private http: HttpClient,
-               private storage: StorageService) { }
+               private storage: StorageService,
+               private userSave: SaveUserinfoService) { }
 
   ngOnInit() {
 
@@ -42,7 +44,8 @@ picked ;
   submit(singnupForm) {
     console.log('notification', this.user);
     if (this.user.email != '' && this.user.name != '' && this.user.test != '' ){
-      this.saveDataToServer();
+      //this.saveDataToServer();
+      this.userSave.saveDataToServer(this.user); //
       console.log(this.user.test);
       this.storage.setData('user', JSON.stringify(this.user));
       this.router.navigate(['/notification']);

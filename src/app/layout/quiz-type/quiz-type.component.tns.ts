@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Page } from 'tns-core-modules/ui/page/page';
 import { StorageMobService } from '../../storage-mob.service';
+import { SaveUserinfoService } from 'src/app/services/save-userinfo.service';
 
 
 @Component({
@@ -21,7 +22,8 @@ export class QuizTypeComponent implements OnInit {
   constructor(private router: Router,
     private http: HttpClient,
     private page: Page,
-    private storage: StorageMobService) { }
+    private storage: StorageMobService,
+    private userSave: SaveUserinfoService) { }
 
   ngOnInit() {
     this.getTestList();
@@ -50,7 +52,7 @@ export class QuizTypeComponent implements OnInit {
 
   navigateToNotification(){
     if ( this.user.test != '' ){
-
+      this.userSave.saveDataToServer(this.user); //
      this.storage.setData('user', JSON.stringify(this.user));
       this.router.navigate(['/notification']);
     } else {

@@ -42,6 +42,7 @@ Material Design
 Adding Score 
 Android / IOS Setup
 
+Add validation to email and username 
 Adding the Steps in Score success bar 
 
 
@@ -53,5 +54,4 @@ When the build is complete, make a copy of docs/index.html and name it docs/404.
 Commit your changes and push.
 On the GitHub project page, configure it to publish from the docs folder.
 You can see your deployed page at https://<user_name>.github.io/<project_name>/.
-
 
