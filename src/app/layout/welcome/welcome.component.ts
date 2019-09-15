@@ -42,6 +42,7 @@ picked ;
   submit(singnupForm) {
     console.log('notification', this.user);
     if (this.user.email != '' && this.user.name != '' && this.user.test != '' ){
+      this.saveDataToServer();
       console.log(this.user.test);
       this.storage.setData('user', JSON.stringify(this.user));
       this.router.navigate(['/notification']);
@@ -61,6 +62,14 @@ picked ;
     .subscribe(res => {
       this.typeTestList = res['testlist'];
     });
+  }
+
+
+  saveDataToServer(){
+    //test data 
+    this.http.put('https://ipriksha-be1b8.firebaseio.com/user.json',this.user).subscribe(res=>{
+      console.log(res);
+    })
   }
 
 }

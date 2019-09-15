@@ -1,9 +1,9 @@
-# Ipriksha
+# iPriksha
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
 # Chekout the Demo
 
-This project was generated with [Demo](https://acharyaks90.github.io/ipriksha)
+Checkout with [https://acharyaks90.github.io/ipriksha](https://acharyaks90.github.io/ipriksha)
 
 ## Development server
 
@@ -30,7 +30,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 
-## Todo 
+# Todo 
 Mobile storage service
 Linking of data input
 App Icon 
@@ -44,9 +44,8 @@ Android / IOS Setup
 
 Adding the Steps in Score success bar 
 
-# https://acharyaks90.github.io/ipriksha
 
-#How to publish to GitHub pages 
+# How to publish to GitHub pages 
 
 Create a repo at github 
 ng build --prod --output-path docs --base-href /<project_name>/
