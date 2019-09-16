@@ -30,40 +30,40 @@
           <div class="card">
               <div class="card-body">
                   <div class="row">
-                      <div class="col-md-6 col-sm-12">
+                      <div class="col-md-4 col-sm-12">
                           <div class="row">
                               <div class="col-md-4 text-sm-center"><img src="assets/images/ip.png" class="img-fluid"></div>
                               <div class="col-md-8 text-sm-center text-md-left">
                                   <h1 class="mb-0 text-primary">iPriksha</h1>
-                                  <p class="lead">Excellence in Assessment</p>
+                                  <p>Excellence in Assessment</p>
                               </div>
                           </div>
                       </div>
-                      <div class="col-md-6 col-sm-12">
-                          <form class="candidate-details">
-                              <div class="p-3 mb-2 bg-light text-dark">
-                                  <div class="row form-group">
-                                      <div class="col-4"> <strong>Candidate Name</strong> </div>
-                                      <div class="col-8">
-                                          {{user.name}}
-                                      </div>
-                                  </div>
-                                  <div class="row form-group">
-                                      <div class="col-4"> <strong>Subject Name</strong> </div>
-                                      <div class="col-8">
-                                          {{user.test.name}}
-                                      </div>
-                                  </div>
-                                  
-                              </div>
-                          </form>
+                      <div class="col-md-8 col-sm-12">
+                            <form class="candidate-details">
+                                    <div class="p-3 mb-2 bg-light text-dark row">
+                                        <div class="row form-group">
+                                            <div class="col-12"> <strong>Candidate Name</strong> </div>
+                                            <div class="col-12">
+                                                {{user.name}}
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col-12"> <strong>Subject Name</strong> </div>
+                                            <div class="col-12">
+                                                {{user.test.name}}
+                                            </div>
+                                        </div>
+                                      
+                                    </div>
+                                </form>
                       </div>
                   </div>
                   <hr>
                   <div class="row">
-                      <div class="col-md-12">
+                      <!-- <div class="col-md-12">
                           <h4> <span class="badge badge-danger">{{user.test.name}}</span> </h4>
-                      </div>
+                      </div> -->
                       <div  class="col-12">
                           <div class="d-flex justify-content-between">
                             <b>Exam Summary !</b>
@@ -76,7 +76,7 @@
                               <div class="col-md-12">
                                 <div class="text-align">
                                   <span>
-                                     Welcome {{user.name}} , You have score {{result.marks}} of {{result.total}}
+                                     Hi {{user.name}} , You have score {{result.marks}} of {{result.total}}
                                   </span>
                                  <!-- <pre><b>Are you sure you want to submit for final marking ?
                                 No change will be allowed after submission.</b>
@@ -91,7 +91,7 @@
                                   <div class="row">
                                     
                                       <div class="col-xl-6 col-sm-12 text-right">
-                                          <button class="btn btn-primary" (click)="testAgain()">Do you want to do it again? :)</button>
+                                          <button class="btn btn-primary" (click)="testAgain()">Try Again!</button>
                                       </div>
                                   </div>
                               </div>

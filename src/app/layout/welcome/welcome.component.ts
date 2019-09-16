@@ -39,7 +39,9 @@ picked ;
     this.getTestList();
    
   }
-
+  // submitBtn (){
+  //   alert ("hello")
+  // }
 
   submit(singnupForm) {
     console.log('notification', this.user);

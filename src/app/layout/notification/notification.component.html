@@ -1,8 +1,9 @@
 <div class="container">
-
-    <div class="row mt-5">
+        <div class="card mt-5">
+                <div class="card-body">
+    <div class="row">
         <div class="col-sm-12">
-            <h2>General Instructions</h2>
+            <h2 class="ge">General Instructions</h2>
             <p class="lead">Please read the instructions carefully</p>
             <ol>
                 <li>
@@ -36,10 +37,12 @@
                 </div>
             </form>
         </div>
-        <div class="col-12 mt-3">
-            <button class="btn btn-primary" (click)="navigateToTest()">Proceed</button>
+        <div class="col-12 mt-3 text-right">
+            <button [disabled]="!agree" [ngClass]="{'btn-secondary' : !agree}" class="btn btn-primary" (click)="navigateToTest()">Proceed</button>
         </div>
     </div>
 
+</div>
+</div>
 
 </div>

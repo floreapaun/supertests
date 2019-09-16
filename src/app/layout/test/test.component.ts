@@ -79,6 +79,21 @@ export class TestComponent implements OnInit {
     this.router.navigate(['/score']);
   }
 
+
+  previousQuestion(): void {
+    if (this.itr > 0) {
+      --this.itr;
+      this.currentAnswer = '';
+      this.question = this.questionList[this.itr];
+    }
+  }
+
+  questionLoad (index){
+    this.itr = index;
+    this.currentAnswer = '';
+    this.question = this.questionList[this.itr];
+  }
+
   saveAndNext(): void {
    ++this.itr;
 

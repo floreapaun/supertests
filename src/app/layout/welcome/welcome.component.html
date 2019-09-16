@@ -13,27 +13,28 @@
                     <hr>
                     <form id="test" class="col-12" #signupform="ngForm" (ngSubmit)="submit(signupform)">
                         <div class="row form-group">
-                            <label class="col-sm-4 col-form-label" for="name">Name:</label>
+                            <label class="col-sm-4 col-form-label" for="name">Name</label>
                             <div class="col-sm-8">
-                                <input class="form-control" name="name" [(ngModel)]="user.name" type="text" placeholder="Name" required>
+                                <input minlength="3" maxlength="26" class="form-control" name="name" [(ngModel)]="user.name" type="text" placeholder="Enter Name" required>
                             </div>
                         </div>
                         <div class="row form-group">
-                            <label class="col-sm-4 col-form-label" for="email">Email:</label>
+                            <label class="col-sm-4 col-form-label" for="email">Email</label>
                             <div class="col-sm-8">
-                                <input class="form-control" name="email" [(ngModel)]="user.email" type="email" placeholder="Email" required> </div>
+                                <input class="form-control" name="email" [(ngModel)]="user.email" type="text" placeholder="Enter Email" required> </div>
                         </div>
                         <div class="row form-group">
-                            <label class="col-sm-4 col-form-label" for="email">Type Of Test:</label>
+                            <label class="col-sm-4 col-form-label" for="email">Type Of Assessment</label>
                             <div class="col-sm-8">
                                 <select class="form-control" name="test" [(ngModel)]="user.test" required>
+                                        <option value="">Please Select any</option>
                                    <option [ngValue]="testType" *ngFor="let testType of typeTestList">{{testType.name}}</option>
                                 </select>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <button class="btn btn-primary btn-block" [disabled]="signupform.invalid" type="submit">Next</button>
+                                <button [ngClass]="{'btn-secondary' : signupform.invalid}" class="btn btn-primary btn-block" [disabled]="signupform.invalid" type="submit">Next</button>
                             </div>
                         </div>
                     </form>
