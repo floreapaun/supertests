@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, RouterEvent, NavigationStart, NavigationEnd } from '@angular/router';
+import { LoaderService } from './services/loader.service';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +11,13 @@ export class AppComponent {
   title = 'ipriksha';
   counter : number;
   loading:boolean;
+  progress:boolean;
   childDataRecieved(data:number):void{
     this.counter = data;
   }
 
-  constructor(router:Router){
+  constructor(router:Router,
+              private loaderService: LoaderService){
     this.loading = false;
     router.events.subscribe(
       (event: RouterEvent): void => {
@@ -24,7 +27,11 @@ export class AppComponent {
           this.loading = false;
         }
       }
-    )
+    );
+
+    this.loaderService.statusBSObser.subscribe(res=>{
+      this.progress = res;
+    })
 
   }
 

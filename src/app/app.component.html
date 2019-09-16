@@ -2,6 +2,8 @@
 <router-outlet>
   <div class="lds-heart"  *ngIf="loading" ><div></div></div>
 <!-- <span class="loader" *ngIf="loading"></span> -->
+<div class="spinner-border"  *ngIf="progress" ></div>
+
 </router-outlet>
 <app-footer #child  (passData)="childDataRecieved($event)" [year]="'2019'"></app-footer>
 <!-- <div class="lds-heart"><div></div></div> -->

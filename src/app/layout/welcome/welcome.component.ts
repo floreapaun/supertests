@@ -4,6 +4,7 @@ import { AuthService } from '../../services/auth.service';
 import { HttpClient } from '@angular/common/http';
 import { StorageService } from 'src/app/services/storage.service';
 import { SaveUserinfoService } from 'src/app/services/save-userinfo.service';
+import { LoaderService } from 'src/app/services/loader.service';
 //import { ListPicker } from "tns-core-modules/ui/list-picker";
 
 
@@ -27,7 +28,8 @@ picked ;
               private auth: AuthService,
               private http: HttpClient,
                private storage: StorageService,
-               private userSave: SaveUserinfoService) { }
+               private userSave: SaveUserinfoService,
+               private loaderSer: LoaderService) { }
 
   ngOnInit() {
 
@@ -63,8 +65,10 @@ picked ;
   }
 
   getTestList() {
+    this.loaderSer.show(true);
     this.http.get('https://raw.githubusercontent.com/acharyaks90/questionjson/master/json/testlist.json')
     .subscribe(res => {
+      this.loaderSer.show(false);
       this.typeTestList = res['testlist'];
     });
   }

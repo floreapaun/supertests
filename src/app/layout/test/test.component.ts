@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
  import { StorageService } from 'src/app/services/storage.service';
+import { LoaderService } from 'src/app/services/loader.service';
 
 @Component({
   selector: 'app-test', 
@@ -19,7 +20,8 @@ export class TestComponent implements OnInit {
   testMarks: number = 0 ;
   constructor(private router: Router, 
               private http: HttpClient,
-              private storage: StorageService) { }
+              private storage: StorageService,
+              private loaderSer: LoaderService) { }
 
   ngOnInit() {
     let timer =  (2 * 60 + 30 )* 60 + 20;
@@ -112,8 +114,10 @@ export class TestComponent implements OnInit {
 
 
   getQuestions(): void {
+    this.loaderSer.show(true);
     this.http.get(`https://raw.githubusercontent.com/acharyaks90/questionjson/master/json/questions${this.user.test.name}.json`)
     .subscribe(res => {
+      this.loaderSer.show(false);
       console.log('mydata', res);
       this.questionList = res['TEST'];
       this.question = this.questionList[0];
