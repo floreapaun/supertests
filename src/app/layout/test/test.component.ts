@@ -55,7 +55,7 @@ export class TestComponent implements OnInit {
     }
   }
 
-  clearResponse(){
+  clearResponse():void{
     const index = this.answerList.findIndex(e => {
       return e.no == this.itr;
     });
@@ -68,6 +68,18 @@ export class TestComponent implements OnInit {
   }
 
   finishTest(): void {
+    if(this.answerList.length == this.questionList.length){
+      this.finalSubmit();
+    }else{
+      if(confirm(`You have  ${this.questionList.length - this.answerList.length} question un-answered`)){
+        this.finalSubmit();
+       }
+    }
+  
+   
+  }
+
+  finalSubmit():void{
     let result = {
       marks: this.testMarks,
       total: this.questionList.length
@@ -87,6 +99,12 @@ export class TestComponent implements OnInit {
       --this.itr;
       this.currentAnswer = '';
       this.question = this.questionList[this.itr];
+      const index = this.answerList.findIndex(e => {
+        return e.no == this.itr;
+      });
+      if (index > -1) {
+        this.currentAnswer = this.answerList[this.itr].answer;
+      }
     }
   }
 
@@ -94,6 +112,23 @@ export class TestComponent implements OnInit {
     this.itr = index;
     this.currentAnswer = '';
     this.question = this.questionList[this.itr];
+    const ind = this.answerList.findIndex(e => {
+      return e.no == this.itr;
+    });
+    if (ind > -1) {
+      this.currentAnswer = this.answerList[this.itr].answer;
+    }
+  }
+
+  checkAnswered(index:number):boolean{
+    const ind = this.answerList.findIndex(e => {
+      return e.no == index;
+    });
+    if (ind > -1) {
+      return true;
+    }else{
+      return false;
+    }
   }
 
   saveAndNext(): void {

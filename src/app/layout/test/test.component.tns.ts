@@ -72,6 +72,18 @@ export class TestComponent implements OnInit {
   }
 
   finishTest(): void {
+    if(this.answerList.length == this.questionList.length){
+      this.finalSubmit();
+    }else{
+      if(confirm(`You have Question ${this.questionList.length - this.answerList.length} Un-Answered`)){
+        this.finalSubmit();
+       }
+    }
+  
+   
+  }
+
+  finalSubmit(){
     let result = {
       marks: this.testMarks,
       total: this.questionList.length
@@ -83,6 +95,21 @@ export class TestComponent implements OnInit {
   navigateToScore(): void {
 
     this.router.navigate(['/score']);
+  }
+
+
+  previousQuestion(): void {
+    if (this.itr > 0) {
+      --this.itr;
+      this.currentAnswer = '';
+      this.question = this.questionList[this.itr];
+      const index = this.answerList.findIndex(e => {
+        return e.no == this.itr;
+      });
+      if (index > -1) {
+        this.currentAnswer = this.answerList[this.itr].answer;
+      }
+    }
   }
 
   saveAndNext(): void {
@@ -110,6 +137,19 @@ export class TestComponent implements OnInit {
         this.question = this.questionList[0];
       });
   }
+
+  questionLoad (index){
+    this.itr = index;
+    this.currentAnswer = '';
+    this.question = this.questionList[this.itr];
+    const ind = this.answerList.findIndex(e => {
+      return e.no == this.itr;
+    });
+    if (ind > -1) {
+      this.currentAnswer = this.answerList[this.itr].answer;
+    }
+  }
+
 
 
 }
