@@ -44,6 +44,13 @@ Android / IOS Setup
 
 Add validation to email and username 
 Adding the Steps in Score success bar 
+Loader  done but not immplemente 
+Add email validation
+Added name validation
+Answer selected 
+Save Score of User 
+Time submitted over 
+you have 5 minutes more 
 
 
 # How to publish to GitHub pages 

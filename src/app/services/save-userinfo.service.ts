@@ -18,6 +18,12 @@ export class SaveUserinfoService {
         })
       }
 
+      saveScoreDataToServer(user){
+        this.http.post('https://ipriksha-be1b8.firebaseio.com/user.json',user).subscribe(res=>{
+          // console.log(res);
+        })
+      }
+
 
 
 }

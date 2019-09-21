@@ -24,8 +24,8 @@ export class TestComponent implements OnInit {
               private loaderSer: LoaderService) { }
 
   ngOnInit() {
-    let timer =  (2 * 60 + 30 )* 60 + 20;
-    setInterval(()=>{
+    let timer =  (1 * 60 + 30 )* 60 + 20;   // (2 h * 60 + 30 m )* 60 + 20 s; 
+    let clearint = setInterval(()=>{
       let sec =0,totalmin =0 , hour =0 , min  = 0;
      sec = timer % 60;
      totalmin = Math.floor(timer / 60);
@@ -34,6 +34,11 @@ export class TestComponent implements OnInit {
     
     this.timeRem = `${hour}:${min}:${sec}`
     timer--;
+    if(timer == 0){
+      clearInterval(clearint);
+      alert('Test time is over.')
+      this.finalSubmit();
+    }
     },1000)
    
     this.user = JSON.parse(this.storage.getData('user'));
@@ -82,7 +87,8 @@ export class TestComponent implements OnInit {
   finalSubmit():void{
     let result = {
       marks: this.testMarks,
-      total: this.questionList.length
+      total: this.questionList.length,
+       unanswered : this.questionList.length - this.answerList.length
     };
     this.storage.setData('result', JSON.stringify(result));
     this.navigateToScore();

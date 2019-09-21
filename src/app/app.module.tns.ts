@@ -8,7 +8,6 @@ import { WelcomeComponent } from './layout/welcome/welcome.component';
 import { NotificationComponent } from './layout/notification/notification.component';
 import { TestComponent } from './layout/test/test.component';
 import { ScoreComponent } from './layout/score/score.component';
-import { HttpClientModule } from '@angular/common/http';
 
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
