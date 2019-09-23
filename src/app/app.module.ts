@@ -18,6 +18,7 @@ import { ChangeColorDirective } from './change-color.directive';
 import { SecondLetterCapitalPipe } from './second-letter-capital.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { QuizTypeComponent } from './layout/quiz-type/quiz-type.component';
+import { CustomPopupModalComponent } from "./common/custom-popup-modal/custom-popup-modal.component";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { QuizTypeComponent } from './layout/quiz-type/quiz-type.component';
     FooterComponent,
     QuizTypeComponent,
     ChangeColorDirective,
-    SecondLetterCapitalPipe
+    SecondLetterCapitalPipe,
+    CustomPopupModalComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +42,7 @@ import { QuizTypeComponent } from './layout/quiz-type/quiz-type.component';
     NgbModule
   ],
   providers: [ ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [CustomPopupModalComponent]
 })
 export class AppModule { }
