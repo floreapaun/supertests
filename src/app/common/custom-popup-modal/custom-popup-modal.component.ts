@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -7,6 +7,12 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class CustomPopupModalComponent {
   @Input() message;
+  @Output() passData: EventEmitter<any> = new EventEmitter();
 
   constructor(public activeModal: NgbActiveModal) {}
+
+  passBack(val:boolean) {
+    this.passData.emit(val);
+    this.activeModal.dismiss('Cross click')
+    }
 }

@@ -85,6 +85,11 @@ export class TestComponent implements OnInit {
       //  }
       const modalRef = this.modalService.open(CustomPopupModalComponent);
       modalRef.componentInstance.message = `You have  ${this.questionList.length - this.answerList.length} question un-answered`;
+      modalRef.componentInstance.passData.subscribe(res=>{
+        if(res){
+          this.finalSubmit();
+        }
+      })
     }
    
    
