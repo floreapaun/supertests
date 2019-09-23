@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
  import { StorageService } from 'src/app/services/storage.service';
 import { LoaderService } from 'src/app/services/loader.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CustomPopupModalComponent } from "../../common/custom-popup-modal/custom-popup-modal.component";
+
 
 @Component({
   selector: 'app-test', 
@@ -21,7 +24,8 @@ export class TestComponent implements OnInit {
   constructor(private router: Router, 
               private http: HttpClient,
               private storage: StorageService,
-              private loaderSer: LoaderService) { }
+              private loaderSer: LoaderService,
+              private modalService: NgbModal) { }
 
   ngOnInit() {
     let timer =  (1 * 60 + 30 )* 60 + 20;   // (2 h * 60 + 30 m )* 60 + 20 s; 
@@ -76,11 +80,13 @@ export class TestComponent implements OnInit {
     if(this.answerList.length == this.questionList.length){
       this.finalSubmit();
     }else{
-      if(confirm(`You have  ${this.questionList.length - this.answerList.length} question un-answered`)){
-        this.finalSubmit();
-       }
+      // if(confirm(`You have  ${this.questionList.length - this.answerList.length} question un-answered`)){
+      //   this.finalSubmit();
+      //  }
+      const modalRef = this.modalService.open(CustomPopupModalComponent);
+      modalRef.componentInstance.message = `You have  ${this.questionList.length - this.answerList.length} question un-answered`;
     }
-  
+   
    
   }
 
