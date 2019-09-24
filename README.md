@@ -80,7 +80,10 @@ browser supported ---
 all image
 dynamic random question --
 enter email and name -- Select assesment  
-removal of two times subject
+removal of two times subject done 
+Clear response not working 
+answered % 
+previous question
 
 
 # How to publish to GitHub pages 
