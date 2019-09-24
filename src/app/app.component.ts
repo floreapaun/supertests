@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { Router, RouterEvent, NavigationStart, NavigationEnd } from '@angular/router';
 import { LoaderService } from './services/loader.service';
 
@@ -7,7 +7,7 @@ import { LoaderService } from './services/loader.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   title = 'ipriksha';
   counter : number;
   loading:boolean;
@@ -17,7 +17,8 @@ export class AppComponent {
   }
 
   constructor(router:Router,
-              private loaderService: LoaderService){
+              private loaderService: LoaderService,
+              private cd: ChangeDetectorRef){
     this.loading = false;
     router.events.subscribe(
       (event: RouterEvent): void => {
@@ -29,10 +30,16 @@ export class AppComponent {
       }
     );
 
-    this.loaderService.statusBSObser.subscribe(res=>{
-      this.progress = res;
-    })
+   
 
+  }
+
+  ngAfterViewInit(){
+    this.loaderService.statusBSObser.subscribe(res=>{
+     // this.progress = res;
+      //this.cd.checkNoChanges();
+    })
+   
   }
 
 

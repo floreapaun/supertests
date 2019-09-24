@@ -6,7 +6,7 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-12">
                             <div class="row">
-                                <div class="col-md-4 text-sm-center"><img src="assets/images/ip.png" class="img-fluid">
+                                <div class="col-md-4 text-sm-center d-none d-sm-block" ><img src="assets/images/ip.png" class="img-fluid">
                                 </div>
                                 <div class="col-md-8 text-sm-center text-md-left">
                                     <h1 class="mb-0 text-primary">iPriksha</h1>
@@ -30,12 +30,12 @@
                                         </div>
                                     </div>
                                     <div class="row form-group">
-                                            <!-- <i class="material-icons">watch_later</i> -->
-                                        <div class="col-12"> 
-                                                <strong>Time Remaining</strong>  </div>
+                                        <!-- <i class="material-icons">watch_later</i> -->
+                                        <div class="col-12">
+                                            <strong>Time Remaining</strong> </div>
                                         <!-- <strong>Remaning Time</strong> -->
                                         <div class="col-12">
-                                            {{timeRem}}  
+                                            {{timeRem}}
                                         </div>
                                     </div>
                                 </div>
@@ -44,14 +44,16 @@
                     </div>
                     <hr>
                     <div class="row">
-                            <div class="container">
-                                    <ul class="pagination pagination-sm d-flex flex-wrap">
-                                        <li *ngFor="let i of questionList; index as test" class="page-item"><a [ngClass]="{'bg-primary text-white': itr == test, 'bg-info text-white':checkAnswered(test)}" class="page-link" (click)="questionLoad(test)">{{test +1}}</a></li>
-                                      
-                                      
-                                      </ul>
-                                    </div>
-                                </div>
+                        <div class="container">
+                            <ul class="pagination pagination-sm d-flex flex-wrap">
+                                <li *ngFor="let i of questionList; index as test" class="page-item"><a
+                                        [ngClass]="{'bg-primary text-white': itr == test, 'bg-info text-white':checkAnswered(test)}"
+                                        class="page-link" (click)="questionLoad(test)">{{test +1}}</a></li>
+
+
+                            </ul>
+                        </div>
+                    </div>
                     <div class="row">
                         <!-- <div class="col-md-12">
                             <h4> <span class="badge badge-danger">{{user.test.name}}</span> </h4>
@@ -97,20 +99,42 @@
                                 </div>
                             </div>
                             <hr>
-                            <div class="row">
-                                <div class="col-xl-12">
+                            <div class="row d-none d-sm-block">
+                                <div class="col-xl-12 ">
                                     <div class="row">
                                         <div class="col-xl-6 col-sm-12">
-                                                <button class="btn btn-primary btn-block-sm" (click)="previousQuestion();">Preview Question</button>
+                                            <button class="btn btn-primary btn-block-sm"
+                                                (click)="previousQuestion();">Preview Question</button>
 
                                         </div>
-                                        <div class="col-xl-6 col-sm-12 text-right">
-                                                <button class="btn btn-primary btn-block-sm mr-2" (click)="clearResponse();">Clear
-                                                        Response</button>
-                                            <button class="btn btn-primary mr-2" (click)="saveAndNext();">Save &
+                                        <div class="col-xl-6 col-sm-12 text-right ">
+                                            <button class="btn btn-primary btn-block-sm mr-2 "
+                                                (click)="clearResponse();">Clear
+                                                Response</button>
+                                            <button class="btn btn-primary mr-2 " (click)="saveAndNext();">Save &
                                                 Next</button>
-                                            <button class="btn btn-primary" (click)="finishTest()">Submit</button>
+                                            <button class="btn btn-primary " (click)="finishTest()">Submit</button>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row d-block d-sm-none">
+                                <div class="col-xl-12 col-12">
+                                   
+
+                                    <div class="row">
+                                            <button type="button" class="btn btn-primary btn-lg btn-block"
+                                            (click)="clearResponse();">Clear
+                                            Response</button>
+                                            <button type="button" class="btn btn-primary btn-lg btn-block"
+                                                (click)="previousQuestion();">Preview Question</button>
+                                          
+                                            <button type="button" class="btn btn-primary btn-lg btn-block" (click)="saveAndNext();">Save &
+                                                Next</button>
+                                            <button type="button" class="btn btn-primary btn-lg btn-block"
+                                                (click)="finishTest()">Submit</button>
+                                        
                                     </div>
                                 </div>
                             </div>
