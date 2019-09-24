@@ -52,6 +52,36 @@ Save Score of User
 Time submitted over 
 you have 5 minutes more 
 
+keep -- enable proceed button after check
+
+Time Left -
+last 5 minut  notification - color change highligh 
+Clear button should be app
+previous button --
+all question 
+header candidate in header ---
+list all anwer 
+time elapsed forcefull submit 
+Submit -- question left and not answered 
+confirm for submit
+Previous and next disable on last --- 
+
+How was test ... issue  review 
+area dropdown .... suryvery 
+Welcome should not in last 
+
+--
+submit -- in correct correct and not attempted
+Assesment typ of test ---
+
+validation message alert 
+
+browser supported --- 
+all image
+dynamic random question --
+enter email and name -- Select assesment  
+removal of two times subject
+
 
 # How to publish to GitHub pages 
 
