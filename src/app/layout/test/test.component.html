@@ -61,7 +61,7 @@
                         <div *ngIf="questionList.length>0" class="col-12">
                             <div class="d-flex justify-content-between">
                                 <strong> {{'QUESTION ' + (itr + 1) + '/' + questionList.length}}</strong>
-                                <strong> Answered % : {{(itr * 100 / questionList.length).toFixed(2) + '%'}}</strong>
+                                <strong> Answered % : {{(answerList.length * 100 / questionList.length).toFixed(2) + '%'}}</strong>
                             </div>
                         </div>
                         <div class="col-12" *ngIf="questionList.length==0">

@@ -21,6 +21,7 @@ export class TestComponent implements OnInit {
   answerList = [];
   currentAnswer : any;
   testMarks: number = 0 ;
+  minutes : number = 0;
   constructor(private router: Router, 
               private http: HttpClient,
               private storage: StorageService,
@@ -28,7 +29,13 @@ export class TestComponent implements OnInit {
               private modalService: NgbModal) { }
 
   ngOnInit() {
-    let timer =  (1 * 60 + 30 )* 60 + 20;   // (2 h * 60 + 30 m )* 60 + 20 s; 
+   // let timer =  (1 * 60 + 30 )* 60 + 20;   // (2 h * 60 + 30 m )* 60 + 20 s; // todo from test json
+  
+
+    this.user = JSON.parse(this.storage.getData('user'));
+    this.minutes = this.user.test.duration;
+    let timer =  this.minutes * 60;   // (2 h * 60 + 30 m )* 60 + 20 s; // todo from test json
+
     let clearint = setInterval(()=>{
       let sec =0,totalmin =0 , hour =0 , min  = 0;
      sec = timer % 60;
@@ -44,8 +51,6 @@ export class TestComponent implements OnInit {
       this.finalSubmit();
     }
     },1000)
-   
-    this.user = JSON.parse(this.storage.getData('user'));
     this.getQuestions();
   }
 
