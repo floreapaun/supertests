@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ipriksha": {
+    "ipariksha": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ipriksha",
+            "outputPath": "dist/ipariksha",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -57,18 +57,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ipriksha:build"
+            "browserTarget": "ipariksha:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ipriksha:build:production"
+              "browserTarget": "ipariksha:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ipriksha:build"
+            "browserTarget": "ipariksha:build"
           }
         },
         "test": {
@@ -111,11 +111,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ipriksha:serve"
+            "devServerTarget": "ipariksha:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ipriksha:serve:production"
+              "devServerTarget": "ipariksha:serve:production"
             }
           }
         },
@@ -131,7 +131,7 @@
       }
     }
   },
-  "defaultProject": "ipriksha",
+  "defaultProject": "ipariksha",
   "cli": {
     "defaultCollection": "@nativescript/schematics"
   }

@@ -8,7 +8,7 @@ import { LoaderService } from './services/loader.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit {
-  title = 'ipriksha';
+  title = 'ipariksha';
   counter : number;
   loading:boolean;
   progress:boolean;

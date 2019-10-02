@@ -1,9 +1,9 @@
-# iPriksha
+# iPariksha
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
 # Chekout the Demo
 
-Checkout with [https://acharyaks90.github.io/ipriksha](https://acharyaks90.github.io/ipriksha)
+Checkout with [https://acharyaks90.github.io/ipariksha](https://acharyaks90.github.io/ipariksha)
 
 ## Development server
 
