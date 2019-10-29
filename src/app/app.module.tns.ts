@@ -16,6 +16,7 @@ import { ScoreComponent } from './layout/score/score.component';
 // Uncomment and add to NgModule imports  if you need to use the HTTP wrapper
  import { NativeScriptHttpClientModule } from 'nativescript-angular/http-client';
 import { QuizTypeComponent } from './layout/quiz-type/quiz-type.component';
+import { SaveUserinfoService } from './services/save-userinfo.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { QuizTypeComponent } from './layout/quiz-type/quiz-type.component';
     NativeScriptHttpClientModule,
     NativeScriptFormsModule
   ],
-  providers: [ ],
+  providers: [SaveUserinfoService ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })

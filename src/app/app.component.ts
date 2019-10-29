@@ -17,7 +17,7 @@ export class AppComponent implements AfterViewInit {
   }
 
   constructor(router:Router,
-              private loaderService: LoaderService,
+              public loaderService: LoaderService,
               private cd: ChangeDetectorRef){
     this.loading = false;
     router.events.subscribe(
@@ -35,9 +35,9 @@ export class AppComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(){
-    this.loaderService.statusBSObser.subscribe(res=>{
-     // this.progress = res;
-      //this.cd.checkNoChanges();
+    this.loaderService.status.subscribe(res=>{
+      this.progress = res;
+      this.cd.detectChanges();
     })
    
   }

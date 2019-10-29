@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 
 
@@ -45,7 +45,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class LoaderService {
 
-    public status: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+    public status: Subject<boolean> = new Subject<boolean>();
 
     //public statusBS: BehaviorSubject<boolean> = new BehaviorSubject<boolean>({});
     public statusBSObser = this.status.asObservable();

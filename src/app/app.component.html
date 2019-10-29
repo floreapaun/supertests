@@ -1,5 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <router-outlet>
+  <div *ngIf="!(loaderService.status | async)">Loading</div>
   <div class="lds-heart"  *ngIf="loading" ><div></div></div>
 <!-- <span class="loader" *ngIf="loading"></span> -->
 <div class="spinner-border"  *ngIf="progress" ></div>
