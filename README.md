@@ -78,12 +78,12 @@ validation message alert
 
 browser supported --- 
 all image
-dynamic random question --
-enter email and name -- Select assesment  
+dynamic random question -- 
+enter email and name -- Select assesment  done
 removal of two times subject done 
-Clear response not working 
-answered % 
-previous question
+Clear response not working done
+answered %  done
+previous question done
 
 
 # How to publish to GitHub pages 

@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Page } from 'tns-core-modules/ui/page/page';
 import { StorageMobService } from '../../storage-mob.service';
-import { SaveUserinfoService } from 'src/app/services/save-userinfo.service';
+import { SaveUserinfoService } from '../../services/save-userinfo.service';
 
 
 @Component({
