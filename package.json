@@ -58,7 +58,7 @@
     "typescript": "3.4.5"
   },
   "nativescript": {
-    "id": "org.nativescript.ngsample",
+    "id": "org.thakurinfotech.ipariksha",
     "tns-ios": {
       "version": "6.1.0"
     },
