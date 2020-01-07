@@ -8,7 +8,7 @@
 android {  
   defaultConfig {  
     generatedDensities = []
-    applicationId = "oorg.thakurinfotech.ipariksha" 
+    applicationId = "org.thakurinfotech.ipariksha" 
     
     //override supported platforms
     // ndk {

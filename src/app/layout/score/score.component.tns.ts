@@ -24,7 +24,7 @@ export class ScoreComponent implements OnInit {
 
   testAgain(){
     
-    this.router.navigate(['/']);
+    this.router.navigate(['/quiz']);
   }
 
 }

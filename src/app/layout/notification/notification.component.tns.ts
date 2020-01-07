@@ -28,7 +28,8 @@ export class NotificationComponent implements OnInit {
   }
 
   accept() : void{
-    this.agree = true;
+    // this.agree = true;
+    this.router.navigate(['/test']);
   }
 
 
