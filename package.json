@@ -1,6 +1,6 @@
 {
   "name": "ipariksha",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "android": "tns run android --bundle",
     "ios": "tns run ios --bundle",
@@ -58,7 +58,7 @@
     "typescript": "3.4.5"
   },
   "nativescript": {
-    "id": "org.thakurinfotech.ipariksha",
+    "id": "oorg.thakurinfotech.ipariksha",
     "tns-ios": {
       "version": "6.1.0"
     },

@@ -17,5 +17,12 @@ export class StorageMobService {
    }
    clear(){
        appSettings.clear();
+     
    }
+
+   removeData(key){
+    appSettings.remove(key);
+   }
+
+
 }

@@ -23,7 +23,10 @@ export class ScoreComponent implements OnInit {
   }
 
   testAgain(){
-    
+    this.storage.removeData('result');
+    delete this.user.test
+    this.storage.setData('result', JSON.stringify(this.user));
+
     this.router.navigate(['/quiz']);
   }
 

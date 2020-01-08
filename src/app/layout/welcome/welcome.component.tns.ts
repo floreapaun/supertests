@@ -48,7 +48,6 @@ export class WelcomeComponent implements OnInit {
   submit() {
     console.log('notification', this.user);
     if (this.user.email != '' && this.user.name != ''){
-      console.log(this.user.test);
       this.storage.setData('user', JSON.stringify(this.user));
       this.router.navigate(['/quiz']);
     } else {

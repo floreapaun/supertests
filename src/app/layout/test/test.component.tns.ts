@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { StorageMobService } from '../../storage-mob.service';
 import { Page } from 'tns-core-modules/ui/page/page';
 //import { StorageMobService } from 'src/app/services/storage-mob.service';
+import * as dialogs from "tns-core-modules/ui/dialogs";
 
 @Component({
   selector: 'app-test',
@@ -75,9 +76,17 @@ export class TestComponent implements OnInit {
     if(this.answerList.length == this.questionList.length){
       this.finalSubmit();
     }else{
-      if(confirm(`You have Question ${this.questionList.length - this.answerList.length} Un-Answered`)){
-        this.finalSubmit();
-       }
+      // if(confirm(`You have Question ${this.questionList.length - this.answerList.length} Un-Answered`)){
+      //   this.finalSubmit();
+      //  }
+
+       dialogs.confirm(`You have Question ${this.questionList.length - this.answerList.length} Un-Answered`).then(result => {
+        console.log("Dialog result: " + result);
+        if(result){
+          this.finalSubmit();
+
+        }
+    });
     }
   
    
