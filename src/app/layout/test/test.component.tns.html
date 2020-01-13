@@ -1,5 +1,5 @@
 <StackLayout id="testWrapper" class="mainWrapper">
-    <FlexLayout   class="m20">
+    <FlexboxLayout flexWrap="nowrap" justifyContent="space-between" class="m20">
             <!-- <Label class="label" text="Candidate Name"></Label>
             <Label textWrap="true" [text]="user.name"></Label> -->
             <Label class="label" text="Subject"></Label>
@@ -7,7 +7,7 @@
             <Label text="{{'QUESTION ' + (itr + 1) + '/' + questionList.length}}"></Label>
             <Label class="label" text="Timer :"></Label>
             <Label [text]="timeRem"></Label>
-    </FlexLayout>
+    </FlexboxLayout>
 <DockLayout height="100%">
     <StackLayout dock="bottom">
             <Button (tap)="saveAndNext();" text="Save & Next"></Button>
@@ -22,10 +22,10 @@
 
         <Label class="question"  textWrap="true" text="{{question.question}}"></Label>
 
-        <Label class="answer"  (tap)="answeredValue(0)" text="{{question.options[0]}}"></Label>
-        <Label class="answer" (tap)="answeredValue(1)" text="{{question.options[1]}}"></Label>
-        <Label class="answer" (tap)="answeredValue(2)" text="{{question.options[2]}}"></Label>
-        <Label class="answer" (tap)="answeredValue(3)" text="{{question.options[3]}}"></Label>
+        <Label class="answer"  [ngClass]="{'selected':currentAnswer== 0}"  textWrap="true" (tap)="answeredValue(0)" text="{{question.options[0]}}"></Label>
+        <Label class="answer" [ngClass]="{'selected':currentAnswer== 1}"   textWrap="true" (tap)="answeredValue(1)" text="{{question.options[1]}}"></Label>
+        <Label class="answer" [ngClass]="{'selected':currentAnswer== 2}"    textWrap="true" (tap)="answeredValue(2)" text="{{question.options[2]}}"></Label>
+        <Label class="answer" [ngClass]="{'selected':currentAnswer== 3}"   textWrap="true" (tap)="answeredValue(3)" text="{{question.options[3]}}"></Label>
 
         
     </StackLayout>

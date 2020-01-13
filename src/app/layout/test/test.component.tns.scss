@@ -25,7 +25,7 @@ Label {
 .answer{
     font-size: 16;
     margin-bottom: 10;
-    background: #808080;
+    background: rgb(175, 125, 223);
     color:#fff;
     padding: 10 15;
     border-radius: 5;
@@ -36,6 +36,12 @@ Label {
     text-align: center;
     margin: 30 0;
     font-weight: bold;
-    color: #666666;
+    background: #808080;
+    border-radius: 5;
 
+
+}
+
+.selected{
+  background:  blueviolet
 }

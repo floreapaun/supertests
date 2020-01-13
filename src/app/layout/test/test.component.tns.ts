@@ -47,6 +47,7 @@ export class TestComponent implements OnInit {
 
   answeredValue(val: string) {
 
+    this.currentAnswer = val;
     const index = this.answerList.findIndex(e => {
       return e.no == this.itr;
     });
@@ -58,6 +59,10 @@ export class TestComponent implements OnInit {
     if (this.questionList[this.itr].answer == val) {
       this.testMarks++;
     }
+  }
+
+  checkAnswerList():boolean{
+    return true;
   }
 
   clearResponse() {
@@ -110,7 +115,7 @@ export class TestComponent implements OnInit {
   previousQuestion(): void {
     if (this.itr > 0) {
       --this.itr;
-      this.currentAnswer = '';
+      this.currentAnswer = null;
       this.question = this.questionList[this.itr];
       const index = this.answerList.findIndex(e => {
         return e.no == this.itr;
@@ -132,7 +137,7 @@ export class TestComponent implements OnInit {
       this.storage.setData('result', JSON.stringify(result));
       this.navigateToScore();
     } else {
-      this.currentAnswer = '';
+      this.currentAnswer = null;
       this.question = this.questionList[this.itr];
     }
   }
