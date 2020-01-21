@@ -17,4 +17,8 @@ export class StorageService {
   clear(){
     window.sessionStorage.clear();
   }
+
+  removeData(key){
+    window.sessionStorage.removeItem(key);
+ }
 }

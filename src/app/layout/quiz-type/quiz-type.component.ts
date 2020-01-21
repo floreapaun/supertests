@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { StorageService } from 'src/app/services/storage.service';
 
 
 @Component({
@@ -17,9 +18,11 @@ export class QuizTypeComponent implements OnInit {
   };
   constructor(private router: Router,
     private http: HttpClient,
+    private storage: StorageService
    ) { }
 
   ngOnInit() {
+    this.user = JSON.parse(this.storage.getData('user'));
     this.getTestList();
    
 
@@ -40,7 +43,7 @@ export class QuizTypeComponent implements OnInit {
 
   navigateToNotification(){
     if ( this.user.test != '' ){
-     // this.storage.setData('user', JSON.stringify(this.user));
+      this.storage.setData('user', JSON.stringify(this.user));
       this.router.navigate(['/notification']);
     } else {
       alert('Please fill all information!');

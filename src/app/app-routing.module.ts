@@ -4,6 +4,7 @@ import { NotificationComponent } from './layout/notification/notification.compon
 import { WelcomeComponent } from './layout/welcome/welcome.component';
 import { TestComponent } from './layout/test/test.component';
 import { ScoreComponent } from './layout/score/score.component';
+import { QuizTypeComponent } from './layout/quiz-type/quiz-type.component';
 
 const routes: Routes = [
   { path: '',
@@ -13,7 +14,9 @@ const routes: Routes = [
   { path: 'test',
     component: TestComponent},
   { path: 'score',
-    component: ScoreComponent}
+    component: ScoreComponent},
+    {  path: 'quiz',
+    component: QuizTypeComponent}
 ];
 
 @NgModule({

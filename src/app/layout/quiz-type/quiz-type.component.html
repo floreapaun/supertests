@@ -1,3 +1,20 @@
 <p>
-  quiz-type works!
+ Hi, {{user.name}}!
+ Welcome back :).
 </p>
+<form id="test" class="col-12" #quiztypeform="ngForm" (ngSubmit)="submit(signupform)">
+<div class="row form-group">
+  <label class="col-sm-4 col-form-label" for="email">Type Of Assessment</label>
+  <div class="col-sm-8">
+      <select class="form-control" name="test" [(ngModel)]="user.test" required>
+              <option value="">Please Select any</option>
+         <option [ngValue]="testType" *ngFor="let testType of typeTestList">{{testType.name}}</option>
+      </select>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+      <button [ngClass]="{'btn-secondary' : quiztypeform.invalid}" class="btn btn-primary btn-block" [disabled]="quiztypeform.invalid" type="submit">Next</button>
+  </div>
+</div>
+</form>

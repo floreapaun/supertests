@@ -61,7 +61,6 @@ export class QuizTypeComponent implements OnInit {
   }
 
   testTypeTap(val:string){
-    console.log(val);
     this.user.test = val;
     this.navigateToNotification();
   }
