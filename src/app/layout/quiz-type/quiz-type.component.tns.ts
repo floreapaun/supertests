@@ -19,6 +19,7 @@ export class QuizTypeComponent implements OnInit {
     email: '',
     test : ''
   };
+  public loader:boolean = false;
   constructor(private router: Router,
     private http: HttpClient,
     private page: Page,
@@ -33,19 +34,21 @@ export class QuizTypeComponent implements OnInit {
 
   }
 
-  selectedIndexChanged(args){
+  selectedIndexChanged(args:any){
     const picker = <ListPicker>args.object;
-    console.log(picker.selectedIndex)
     this.user.test = this.typeTestList[picker.selectedIndex];
   }
 
   
 
   getTestList() : void {
+    this.loader = true
     this.http.get('https://raw.githubusercontent.com/acharyaks90/questionjson/master/json/testlist.json')
     .subscribe(res => {
+      this.loader = false
       this.typeTestList = res['testlist'];
-      console.log('Type list',this.typeTestList);
+    },error=>{
+      this.loader = false
     });
   }
 
@@ -60,13 +63,13 @@ export class QuizTypeComponent implements OnInit {
     }
   }
 
-  testTypeTap(val:string){
+  testTypeTap(val:string) : void{
     this.user.test = val;
     this.navigateToNotification();
   }
 
 
-  submit(){
+  submit(): void{
     this.navigateToNotification();
   }
 

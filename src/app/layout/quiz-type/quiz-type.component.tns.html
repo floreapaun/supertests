@@ -16,6 +16,7 @@
                       src="https://image.shutterstock.com/image-vector/download-icon-upload-button-load-600w-1065865670.jpg"></Image>  -->
                     <Label   horizontalAlignment="center"  [text]="item.name"></Label>
                 </FlexboxLayout>
+                <Label text="Data is loading..." *ngIf="loader" ></Label>
         </StackLayout>
     </ScrollView>
   
