@@ -20,6 +20,8 @@ export class TestComponent implements OnInit {
   answerList = [];
   currentAnswer: any;
   testMarks: number = 0;
+  intervalsub:any;
+  loaderFlag : boolean = false;
   constructor(private router: Router,
     private http: HttpClient,
     private storage: StorageMobService,
@@ -29,17 +31,7 @@ export class TestComponent implements OnInit {
     this.page.actionBarHidden = true;
 
 
-    let timer = (2 * 60 + 30) * 60 + 20;
-    setInterval(() => {
-      let sec = 0, totalmin = 0, hour = 0, min = 0;
-      sec = timer % 60;
-      totalmin = Math.floor(timer / 60);
-      hour = Math.floor(totalmin / 60);
-      min = totalmin % 60;
-
-      this.timeRem = `${hour}:${min}:${sec}`
-      timer--;
-    }, 1000)
+   
 
     this.user = JSON.parse(this.storage.getData('user'));
     this.getQuestions();
@@ -144,11 +136,28 @@ export class TestComponent implements OnInit {
 
 
   getQuestions(): void {
-    console.log(this.user.test.name);
+    if(this.intervalsub){
+      clearInterval( this.intervalsub )
+    }
+    this.loaderFlag = true;
     this.http.get(`https://raw.githubusercontent.com/acharyaks90/questionjson/master/json/questions${this.user.test.name}.json`)
       .subscribe(res => {
+        this.loaderFlag = false;
         this.questionList = res['TEST'];
         this.question = this.questionList[0];
+        let timer = (2 * 60 + 30) * 60 + 20;
+        this.intervalsub = setInterval(() => {
+          let sec = 0, totalmin = 0, hour = 0, min = 0;
+          sec = timer % 60;
+          totalmin = Math.floor(timer / 60);
+          hour = Math.floor(totalmin / 60);
+          min = totalmin % 60;
+    
+          this.timeRem = `${hour}:${min}:${sec}`
+          timer--;
+        }, 1000)
+      }, error=>{
+        this.loaderFlag = false;
       });
   }
 
@@ -164,6 +173,12 @@ export class TestComponent implements OnInit {
     }
   }
 
+  ngOnDestory(){
+    if(this.intervalsub){
+      clearInterval( this.intervalsub )
+
+    }
+  }
 
 
 }

@@ -8,7 +8,7 @@
             <Label class="label" text="Timer :"></Label>
             <Label [text]="timeRem"></Label>
     </FlexboxLayout>
-<DockLayout height="100%">
+<DockLayout *ngIf="!loaderFlag" height="100%">
     <StackLayout dock="bottom">
             <Button (tap)="saveAndNext();" text="Save & Next"></Button>
             <Button (tap)="finishTest()" text="Submit"></Button>
@@ -30,4 +30,5 @@
         
     </StackLayout>
 </DockLayout>
+<Label  *ngIf="loaderFlag"  text="Loading...." ></Label>
 </StackLayout>
