@@ -31,7 +31,6 @@ export class QuizTypeComponent implements OnInit {
     this.http.get('https://raw.githubusercontent.com/acharyaks90/questionjson/master/json/testlist.json')
     .subscribe(res => {
       this.typeTestList = res['testlist'];
-      console.log('Type list',this.typeTestList);
     });
   }
 

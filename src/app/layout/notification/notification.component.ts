@@ -19,7 +19,6 @@ export class NotificationComponent implements OnInit {
   ngOnInit() {
     
     this.user = JSON.parse(this.storage.getData('user'));
-    console.log('user', this.user)
   }
 
 

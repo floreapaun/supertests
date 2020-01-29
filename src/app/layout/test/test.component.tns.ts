@@ -78,7 +78,6 @@ export class TestComponent implements OnInit {
       //  }
 
        dialogs.confirm(`You have Question ${this.questionList.length - this.answerList.length} Un-Answered`).then(result => {
-        console.log("Dialog result: " + result);
         if(result){
           this.finalSubmit();
 

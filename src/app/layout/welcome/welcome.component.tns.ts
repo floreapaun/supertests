@@ -44,7 +44,6 @@ export class WelcomeComponent implements OnInit {
       }
     }
     this.auth.name().subscribe(res => {
-      console.log('Auth',res);
     });
 
    
@@ -52,7 +51,6 @@ export class WelcomeComponent implements OnInit {
 
 
   submit() {
-    console.log('notification', this.user);
     if (this.user.email != '' && this.user.name != ''){
       this.storage.setData('user', JSON.stringify(this.user));
       this.router.navigate(['/quiz']);

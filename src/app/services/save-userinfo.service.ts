@@ -12,7 +12,6 @@ export class SaveUserinfoService {
 
 
     saveDataToServer(user){
-        console.log('test data ');
         this.http.post('https://ipriksha-be1b8.firebaseio.com/user.json',user).subscribe(res=>{
           // console.log(res);
         })

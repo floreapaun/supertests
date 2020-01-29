@@ -41,7 +41,7 @@ picked ;
       }
     
     this.auth.name().subscribe(res => {
-      console.log('Auth',res);
+     
     });
 
     this.getTestList();
@@ -52,11 +52,9 @@ picked ;
   // }
 
   submit(singnupForm) {
-    console.log('notification', this.user);
     if (this.user.email != '' && this.user.name != '' && this.user.test != '' ){
       //this.saveDataToServer();
       this.userSave.saveDataToServer(this.user); //
-      console.log(this.user.test);
       this.storage.setData('user', JSON.stringify(this.user));
       this.router.navigate(['/notification']);
     } else {
@@ -83,7 +81,7 @@ picked ;
   saveDataToServer(){
     //test data 
     this.http.put('https://ipriksha-be1b8.firebaseio.com/user.json',this.user).subscribe(res=>{
-      console.log(res);
+      
     })
   }
 
