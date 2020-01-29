@@ -13,16 +13,17 @@
     margin: 10;
 .quiz {
     padding: 20;
-    background: #ffffff;
+    background: rgb(175, 125, 223);
     border-width: 1;
     border-color: #cccccc;
     margin: 10;
     border-radius: 10;
     width: 100%;
+
    
     Label {
         font-weight: bold;
-        color: #000000;
+       color:#fff;
         text-align: center;
     }
     // FlexboxLayout{
@@ -41,5 +42,6 @@
     border-radius: 0;
     padding: 10;  
 }
+
 
 }

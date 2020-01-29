@@ -10,13 +10,13 @@
     <ScrollView>
         <StackLayout class="quiz-area" horizontalAlignment="center">
                 <FlexboxLayout justifyContent="center" width="100%" flexWrap="wrap" flexDirection="row" 
-                (tap)="testTypeTap(item)"  class="quiz" *ngFor="let item of typeTestList" 
+                (tap)="testTypeTap(item)"   class="quiz option" *ngFor="let item of typeTestList" 
                 [ngClass]="{'active' : item.name == user.test.name }" >
                       <!-- <Image horizontalAlignment="center" height="50" width="50" stretch="none" 
                       src="https://image.shutterstock.com/image-vector/download-icon-upload-button-load-600w-1065865670.jpg"></Image>  -->
                     <Label   horizontalAlignment="center"  [text]="item.name"></Label>
                 </FlexboxLayout>
-                <Label text="Data is loading..." *ngIf="loader" ></Label>
+                <Label  text="Data is loading..." *ngIf="loader" ></Label>
         </StackLayout>
     </ScrollView>
   
