@@ -5,6 +5,7 @@ import { WelcomeComponent } from './layout/welcome/welcome.component';
 import { TestComponent } from './layout/test/test.component';
 import { ScoreComponent } from './layout/score/score.component';
 import { QuizTypeComponent } from './layout/quiz-type/quiz-type.component';
+import { FeedbackComponent } from './layout/feedback/feedback.component';
 
 const routes: Routes = [
   { path: '',
@@ -15,8 +16,16 @@ const routes: Routes = [
     component: TestComponent},
   { path: 'score',
     component: ScoreComponent},
-    {  path: 'quiz',
-    component: QuizTypeComponent}
+  {  path: 'quiz',
+    component: QuizTypeComponent},
+  { path: 'feedback',
+    component:FeedbackComponent
+  },
+  {
+    path : 'admin',
+    loadChildren:()=> import('./admin/admin.module').then(m=>m.AdminModule)
+  }
+  
 ];
 
 @NgModule({
