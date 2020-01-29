@@ -23,6 +23,7 @@ export class QuizTypeComponent implements OnInit {
 
   ngOnInit() {
     this.user = JSON.parse(this.storage.getData('user'));
+    this.user.test = '';
     this.getTestList();
   }
 

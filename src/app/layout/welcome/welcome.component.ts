@@ -33,7 +33,13 @@ picked ;
 
   ngOnInit() {
 
-    this.storage.clear();
+    // this.storage.clear();
+    
+      let user = JSON.parse(this.storage.getData('user'));
+      if(user&& user.name){
+        this.router.navigate(['/quiz']);
+      }
+    
     this.auth.name().subscribe(res => {
       console.log('Auth',res);
     });
