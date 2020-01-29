@@ -24,5 +24,9 @@ export class StorageMobService {
     appSettings.remove(key);
    }
 
+   isKeyExist(key):boolean{
+   return appSettings.hasKey(key);
+   }
+
 
 }

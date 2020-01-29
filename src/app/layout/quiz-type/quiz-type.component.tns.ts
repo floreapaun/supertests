@@ -30,6 +30,7 @@ export class QuizTypeComponent implements OnInit {
     this.getTestList();
     this.page.actionBarHidden = true;
     this.user = JSON.parse(this.storage.getData('user'));
+    this.user.test = '';
 
 
   }

@@ -36,7 +36,13 @@ export class WelcomeComponent implements OnInit {
 
     this.page.actionBarHidden = true;
 
-    this.storage.clear();
+    //this.storage.clear();
+    if(this.storage.isKeyExist('user')){
+      let user = JSON.parse(this.storage.getData('user'));
+      if(user&& user.name){
+        this.router.navigate(['/quiz']);
+      }
+    }
     this.auth.name().subscribe(res => {
       console.log('Auth',res);
     });
