@@ -19,6 +19,7 @@ import { SecondLetterCapitalPipe } from './second-letter-capital.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { QuizTypeComponent } from './layout/quiz-type/quiz-type.component';
 import { CustomPopupModalComponent } from "./common/custom-popup-modal/custom-popup-modal.component";
+import { FeedbackComponent } from './layout/feedback/feedback.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CustomPopupModalComponent } from "./common/custom-popup-modal/custom-po
     QuizTypeComponent,
     ChangeColorDirective,
     SecondLetterCapitalPipe,
-    CustomPopupModalComponent
+    CustomPopupModalComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,
