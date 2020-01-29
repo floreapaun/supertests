@@ -14,7 +14,7 @@ export class QuizTypeComponent implements OnInit {
   user  = {
     name: '',
     email: '',
-    test : ''
+    test : '' 
   };
   constructor(private router: Router,
     private http: HttpClient,
@@ -24,13 +24,7 @@ export class QuizTypeComponent implements OnInit {
   ngOnInit() {
     this.user = JSON.parse(this.storage.getData('user'));
     this.getTestList();
-   
-
   }
-
-  
-
-  
 
   getTestList() : void {
     this.http.get('https://raw.githubusercontent.com/acharyaks90/questionjson/master/json/testlist.json')
@@ -55,7 +49,7 @@ export class QuizTypeComponent implements OnInit {
   }
 
 
-  submit(){
+  submit(submitform){
     this.navigateToNotification();
   }
 

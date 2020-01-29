@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-feedback',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feedback.component.css']
 })
 export class FeedbackComponent implements OnInit {
-
-  constructor() { }
+  public feedbacktext:string;
+  constructor( private router : Router) { }
 
   ngOnInit() {
+  }
+
+  sendFeedback(feedbackform){
+
+    this.router.navigate(['/quiz'])
   }
 
 }
