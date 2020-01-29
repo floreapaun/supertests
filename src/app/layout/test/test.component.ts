@@ -30,32 +30,12 @@ export class TestComponent implements OnInit {
 
   ngOnInit() {
    // let timer =  (1 * 60 + 30 )* 60 + 20;   // (2 h * 60 + 30 m )* 60 + 20 s; // todo from test json
-  
-
     this.user = JSON.parse(this.storage.getData('user'));
-    this.minutes = this.user.test.duration;
-    let timer =  this.minutes * 60;   // (2 h * 60 + 30 m )* 60 + 20 s; // todo from test json
-
-    let clearint = setInterval(()=>{
-      let sec =0,totalmin =0 , hour =0 , min  = 0;
-     sec = timer % 60;
-     totalmin = Math.floor(timer / 60);
-     hour = Math.floor(totalmin / 60);
-     min = totalmin % 60;
-    
-    this.timeRem = `${hour}:${min}:${sec}`
-    timer--;
-    if(timer == 0){
-      clearInterval(clearint);
-      alert('Test time is over.')
-      this.finalSubmit();
-    }
-    },1000)
+   
     this.getQuestions();
   }
 
   answeredValue(val: string) {
-    console.log('anweris', val);
     const index = this.answerList.findIndex(e => {
       return e.no == this.itr;
     });
@@ -179,9 +159,26 @@ export class TestComponent implements OnInit {
     this.http.get(`https://raw.githubusercontent.com/acharyaks90/questionjson/master/json/questions${this.user.test.name}.json`)
     .subscribe(res => {
       this.loaderSer.show(false);
-      console.log('mydata', res);
       this.questionList = res['TEST'];
       this.question = this.questionList[0];
+      this.minutes = this.user.test.duration;
+      let timer =  this.minutes * 60;   // (2 h * 60 + 30 m )* 60 + 20 s; // todo from test json
+  
+      let clearint = setInterval(()=>{
+        let sec =0,totalmin =0 , hour =0 , min  = 0;
+       sec = timer % 60;
+       totalmin = Math.floor(timer / 60);
+       hour = Math.floor(totalmin / 60);
+       min = totalmin % 60;
+      
+      this.timeRem = `${hour}:${min}:${sec}`
+      timer--;
+      if(timer == 0){
+        clearInterval(clearint);
+        alert('Test time is over.')
+        this.finalSubmit();
+      }
+      },1000)
     });
   }
 
