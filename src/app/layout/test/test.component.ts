@@ -22,6 +22,7 @@ export class TestComponent implements OnInit {
   currentAnswer : any;
   testMarks: number = 0 ;
   minutes : number = 0;
+  clearint:any;
   constructor(private router: Router, 
               private http: HttpClient,
               private storage: StorageService,
@@ -164,7 +165,7 @@ export class TestComponent implements OnInit {
       this.minutes = this.user.test.duration;
       let timer =  this.minutes * 60;   // (2 h * 60 + 30 m )* 60 + 20 s; // todo from test json
   
-      let clearint = setInterval(()=>{
+      this.clearint = setInterval(()=>{
         let sec =0,totalmin =0 , hour =0 , min  = 0;
        sec = timer % 60;
        totalmin = Math.floor(timer / 60);
@@ -174,12 +175,16 @@ export class TestComponent implements OnInit {
       this.timeRem = `${hour}:${min}:${sec}`
       timer--;
       if(timer == 0){
-        clearInterval(clearint);
+        clearInterval(this.clearint);
         alert('Test time is over.')
         this.finalSubmit();
       }
       },1000)
     });
+  }
+
+  ngOnDestroy(){
+    clearInterval(this.clearint);
   }
 
 

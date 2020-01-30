@@ -1,9 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <router-outlet>
-  <div *ngIf="!(loaderService.status | async)">Loading</div>
-  <div class="lds-heart"  *ngIf="loading" ><div></div></div>
+  <!-- <div *ngIf="!(loaderService.status | async)">Loading</div> -->
+
+    <div  class="loaderCen" *ngIf="progress">
+      <div class="lds-heart"   > <div></div></div>
+    </div>
+
+ 
+ 
 <!-- <span class="loader" *ngIf="loading"></span> -->
-<div class="spinner-border"  *ngIf="progress" ></div>
+<!-- <div class="spinner-border"  *ngIf="progress" ></div> -->
 
 </router-outlet>
 <app-footer #child  (passData)="childDataRecieved($event)" [year]="'2019'"></app-footer>
