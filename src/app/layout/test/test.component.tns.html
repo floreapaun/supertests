@@ -22,7 +22,7 @@
 
         <Label class="question"  textWrap="true" text="{{question.question}}"></Label>
 
-        <Label class="answer"  [ngClass]="{'selected':currentAnswer== 0}"  textWrap="true" (tap)="answeredValue(0)" text="{{question.options[0]}}"></Label>
+        <Label class="answer" [ngClass]="{'selected':currentAnswer== 0}"  textWrap="true" (tap)="answeredValue(0)" text="{{question.options[0]}}"></Label>
         <Label class="answer" [ngClass]="{'selected':currentAnswer== 1}"   textWrap="true" (tap)="answeredValue(1)" text="{{question.options[1]}}"></Label>
         <Label class="answer" [ngClass]="{'selected':currentAnswer== 2}"    textWrap="true" (tap)="answeredValue(2)" text="{{question.options[2]}}"></Label>
         <Label class="answer" [ngClass]="{'selected':currentAnswer== 3}"   textWrap="true" (tap)="answeredValue(3)" text="{{question.options[3]}}"></Label>

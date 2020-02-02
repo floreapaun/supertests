@@ -11,7 +11,7 @@ import { SaveUserinfoService } from 'src/app/services/save-userinfo.service';
 export class ScoreComponent implements OnInit {
  user:any;
  result: any;
- percentage : number;
+ percentage : string;
   constructor(private router : Router,
     private storage: StorageService,
      private userSave: SaveUserinfoService) { }
@@ -19,7 +19,7 @@ export class ScoreComponent implements OnInit {
   ngOnInit() {
     this.user = JSON.parse(this.storage.getData('user'));
     this.result = JSON.parse(this.storage.getData('result'));
-    this.percentage =  (this.result.marks * 100) / this.result.total;
+    this.percentage =  ((this.result.marks * 100) / this.result.total).toFixed(2);
     this.userSave.saveScoreDataToServer({user:this.user, score: this.result.marks, unanswered: this.result.unanswered});
   }
 
