@@ -91,7 +91,9 @@ export class TestComponent implements OnInit {
   finalSubmit(){
     let result = {
       marks: this.testMarks,
-      total: this.questionList.length
+      total: this.questionList.length,
+      unanswered : this.questionList.length - this.answerList.length,
+      answerList:this.answerList
     };
     this.storage.setData('result', JSON.stringify(result));
     this.navigateToScore();
