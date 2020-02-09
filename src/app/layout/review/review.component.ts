@@ -6,7 +6,7 @@ import { LoaderService } from 'src/app/services/loader.service';
 @Component({
   selector: 'app-review',
   templateUrl: './review.component.html',
-  styleUrls: ['./review.component.css']
+  styleUrls: ['./review.component.scss']
 })
 export class ReviewComponent implements OnInit {
 
@@ -113,6 +113,9 @@ export class ReviewComponent implements OnInit {
         this.currentAnswer = this.answerList[this.itr].answer;
       }
     }
+  }
+  correctAnswer(answer):number{
+    return parseInt(answer)+1;
   }
 
 

@@ -103,6 +103,12 @@
                                                           name="answer" type="radio">
                                                       <label class="custom-control-label" for="d"> {{question.options[3]}}</label>
                                                   </div>
+                                                  <div class="custom-control custom-radio" [ngClass]="{'greenbg': question.answer === '3'}">
+                                                    <label class="notanwered" *ngIf="currentAnswer === '' "   >You have not Answered</label>
+                                                    <label class="correctanswer"   >Correct Answer is {{ correctAnswer(question.answer)}}</label>
+
+                                                  </div>
+                                                
                                               </div> 
                                           </div>
                                       </div>
