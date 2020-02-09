@@ -125,7 +125,10 @@ export class TestComponent implements OnInit {
     if (this.itr >= this.questionList.length) {
       const result = {
         marks: this.testMarks,
-        total: this.questionList.length
+        total: this.questionList.length,
+        unanswered : this.questionList.length - this.answerList.length,
+        answerList:this.answerList
+
       };
       this.storage.setData('result', JSON.stringify(result));
       this.navigateToScore();

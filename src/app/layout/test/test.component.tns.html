@@ -10,6 +10,7 @@
     </FlexboxLayout>
 <DockLayout *ngIf="!loaderFlag" height="100%">
     <StackLayout dock="bottom">
+            <Button (tap)="previousQuestion()" text="Previous"></Button>
             <Button (tap)="saveAndNext();" text="Save & Next"></Button>
             <Button (tap)="finishTest()" text="Submit"></Button>
             <!-- <Button (tap)="navigateToScore()" text="Proceed"></Button> -->

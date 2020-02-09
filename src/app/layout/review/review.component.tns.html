@@ -1,0 +1,38 @@
+<StackLayout id="testWrapper" class="mainWrapper">
+    <FlexboxLayout flexWrap="nowrap" justifyContent="space-between" class="m20">
+            <!-- <Label class="label" text="Candidate Name"></Label>
+            <Label textWrap="true" [text]="user.name"></Label> -->
+            <Label class="label" text="Subject"></Label>
+            <Label textWrap="true" [text]="user.test.name"></Label>
+            <Label text="{{'QUESTION ' + (itr + 1) + '/' + questionList.length}}"></Label>
+            <Label class="label" text="Timer :"></Label>
+            <Label [text]="timeRem"></Label>
+    </FlexboxLayout>
+<DockLayout *ngIf="!loaderFlag" height="100%">
+    <StackLayout dock="bottom">
+            <Button (tap)="previousQuestion()" text="Previous"></Button>
+            <Button (tap)="next();" text="Next"></Button>
+            <Button (tap)="tryAgainTest()" text="Try Again!"></Button>
+            <!-- <Button (tap)="navigateToScore()" text="Proceed"></Button> -->
+    </StackLayout>
+
+    <StackLayout *ngIf="questionList.length>0" class="m20">
+
+        <!-- <Label text="{{'QUESTION ' + (itr + 1) + '/' + questionList.length}}"></Label> -->
+        <!-- <Label text="Answered: {{(itr * 100 / questionList.length).toFixed(2) + '%'}}"></Label> -->
+
+        <Label class="question"  textWrap="true" text="{{question.question}}"></Label>
+
+        <Label class="answer" [ngClass]="{'selected':currentAnswer=== '0' , 'greenBg': question.answer === '0'}"  textWrap="true"  text="{{question.options[0]}}"></Label>
+        <Label class="answer" [ngClass]="{'selected':currentAnswer=== '1', 'greenBg': question.answer === '1'}"   textWrap="true" text="{{question.options[1]}}"></Label>
+        <Label class="answer" [ngClass]="{'selected':currentAnswer=== '2', 'greenBg': question.answer === '2'}"    textWrap="true"  text="{{question.options[2]}}"></Label>
+        <Label class="answer" [ngClass]="{'selected':currentAnswer=== '3', 'greenBg': question.answer === '3'}"   textWrap="true"  text="{{question.options[3]}}"></Label>
+        <Label class="notanswered" *ngIf="currentAnswer === '' "  textWrap="true"  text="You have not Answered"></Label>
+        <Label class="correctanswer"   textWrap="true"  text="Correct Answer is {{ correctAnswer(question.answer)}}"></Label>
+
+
+        
+    </StackLayout>
+</DockLayout>
+<Label  *ngIf="loaderFlag"  text="Loading...." ></Label>
+</StackLayout>
