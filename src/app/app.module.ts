@@ -20,6 +20,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { QuizTypeComponent } from './layout/quiz-type/quiz-type.component';
 import { CustomPopupModalComponent } from "./common/custom-popup-modal/custom-popup-modal.component";
 import { FeedbackComponent } from './layout/feedback/feedback.component';
+import { ReviewComponent } from './layout/review/review.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FeedbackComponent } from './layout/feedback/feedback.component';
     ChangeColorDirective,
     SecondLetterCapitalPipe,
     CustomPopupModalComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,

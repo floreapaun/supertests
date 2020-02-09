@@ -32,5 +32,9 @@ export class ScoreComponent implements OnInit {
     // this.router.navigate(['/']);
   }
 
+  review(){
+    this.router.navigate(['/review']);
+  }
+
 }
 

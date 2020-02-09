@@ -6,6 +6,7 @@ import { TestComponent } from './layout/test/test.component';
 import { ScoreComponent } from './layout/score/score.component';
 import { QuizTypeComponent } from './layout/quiz-type/quiz-type.component';
 import { FeedbackComponent } from './layout/feedback/feedback.component';
+import { ReviewComponent } from './layout/review/review.component';
 
 const routes: Routes = [
   { path: '',
@@ -24,7 +25,9 @@ const routes: Routes = [
   {
     path : 'admin',
     loadChildren:()=> import('./admin/admin.module').then(m=>m.AdminModule)
-  }
+  },
+  {  path: 'review',
+  component: ReviewComponent}
   
 ];
 
