@@ -8,8 +8,8 @@
                           <div class="row">
                               <div class="col-md-4 text-sm-center"><img src="assets/images/logo_ls.png" class="img-fluid"></div>
                               <div class="col-md-8 text-sm-center text-md-left">
-                                  <h1 class="mb-0 text-primary">iPariksha</h1>
-                                  <p>Excellence in Assessment</p>
+                                  <h1 class="mb-0 text-primary">{{ title }}</h1>
+                                  <p>Excelenta in testare</p>
                               </div>
                           </div>
                       </div>
@@ -17,13 +17,13 @@
                             <form class="candidate-details">
                                     <div class="p-3 mb-2 bg-light text-dark row">
                                         <div class="row form-group">
-                                            <div class="col-12"> <strong>Candidate Name</strong> </div>
+                                            <div class="col-12"> <strong>Numele candidatului</strong> </div>
                                             <div class="col-12">
                                                 {{user.name}}
                                             </div>
                                         </div>
                                         <div class="row form-group">
-                                            <div class="col-12"> <strong>Assessment Name</strong> </div>
+                                            <div class="col-12"> <strong>Numele testului</strong> </div>
                                             <div class="col-12">
                                                 {{user.test.name}}
                                             </div>
@@ -42,7 +42,7 @@
                             </div> -->
                             <div  class="col-12">
                                 <div class="d-flex justify-content-center">
-                                  <b>Assessment Summary !</b>
+                                  <b>Rezultatul testului</b>
                                 </div>
                             </div>
                         
@@ -52,10 +52,10 @@
                                     <div class="col-md-12">
                                       <div class="text-align">
                                         <span>
-                                           Hi {{user.name}} , You have scored {{result.marks}} marks out of {{result.total}} marks.
+                                           Salut {{user.name}} , ai {{result.marks}} rezultate corecte din cele {{result.total}} intrebari.
                                         </span>
                                         <ul>
-                                            <li>You have not answered {{result.unanswered }} question</li>
+                                            <li> Nu ai raspuns deloc la un numar de {{result.unanswered }} intrebari</li>
                                         </ul>
                                        <!-- <pre><b>Are you sure you want to submit for final marking ?
                                       No change will be allowed after submission.</b>
@@ -70,12 +70,12 @@
                                         <div class="row">
                                           
                                             <div class="col-xl-6 col-sm-12 text-right">
-                                                <button class="btn btn-primary" (click)="testAgain()">Try Again!</button>
+                                                <button class="btn btn-primary" (click)="testAgain()">Incearca din nou!</button>
                                                
                                                 <!-- <button class="btn btn-primary" (click)="Feedback()"> Give Feedback!</button> -->
                                             </div>
                                             <div class="col-xl-6 col-sm-12 text-right">
-                                                 <button class="btn btn-primary" (click)="review()">Review the test!</button>
+                                                 <button class="btn btn-primary" (click)="review()">Vezi ce ai gresit!</button>
                                                
                                             </div>
                                         </div>

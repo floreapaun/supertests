@@ -10,8 +10,8 @@
                                         class="img-fluid">
                                 </div>
                                 <div class="col-md-8 text-sm-center text-md-left">
-                                    <h1 class="mb-0 text-primary">iPariksha</h1>
-                                    <p>Excellence in Assessment</p>
+                                    <h1 class="mb-0 text-primary">{{ title }}</h1>
+                                    <p>Excelenta in testare</p>
                                 </div>
                             </div>
                         </div>
@@ -19,13 +19,13 @@
                             <form class="candidate-details">
                                 <div class="p-3 mb-2 bg-light text-dark row">
                                     <div class="row form-group">
-                                        <div class="col-12"> <strong>Candidate Name</strong> </div>
+                                        <div class="col-12"> <strong>Numele candidatului</strong> </div>
                                         <div class="col-12">
                                             {{user.name}}
                                         </div>
                                     </div>
                                     <div class="row form-group">
-                                        <div class="col-12"> <strong>Assessment Name</strong> </div>
+                                        <div class="col-12"> <strong>Numele testului</strong> </div>
                                         <div class="col-12">
                                             {{user.test.name}}
                                         </div>
@@ -33,7 +33,7 @@
                                     <div class="row form-group">
                                         <!-- <i class="material-icons">watch_later</i> -->
                                         <div class="col-12">
-                                            <strong>Time Remaining</strong> </div>
+                                            <strong>Timp ramas</strong> </div>
                                         <!-- <strong>Remaning Time</strong> -->
                                         <div class="col-12">
                                             {{timeRem}}
@@ -62,7 +62,7 @@
                         <div *ngIf="questionList.length>0" class="col-12">
                             <div class="d-flex justify-content-between">
                                 <strong> {{'QUESTION ' + (itr + 1) + '/' + questionList.length}}</strong>
-                                <strong> Answered % :
+                                <strong> Raspunsuri oferite % :
                                     {{(answerList.length * 100 / questionList.length).toFixed(2) + '%'}}</strong>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                                         <div class="col-lg-6 col-sm-6">
                                             <select (click)="changeSection()">
                                                 <option>
-                                                    Select the Section
+                                                   Alege sectiunea 
                                                 </option>
                                             </select>
                                             <div class="d-flex" style="overflow-y: scroll;">
@@ -133,16 +133,16 @@
                                     <div class="row">
                                         <div class="col-xl-6 col-sm-12">
                                             <button class="btn btn-primary btn-block-sm"
-                                                (click)="previousQuestion();">Previous Question</button>
+                                                (click)="previousQuestion();">Inapoi</button>
 
                                         </div>
                                         <div class="col-xl-6 col-sm-12 text-right ">
                                             <button class="btn btn-primary btn-block-sm mr-2 "
-                                                (click)="clearResponse();">Clear
-                                                Response</button>
-                                            <button class="btn btn-primary mr-2 " (click)="saveAndNext();">Save &
-                                                Next</button>
-                                            <button class="btn btn-primary " (click)="finishTest()">Submit</button>
+                                                (click)="clearResponse();">Sterge
+                                                raspunsul</button>
+                                            <button class="btn btn-primary mr-2 " (click)="saveAndNext();"> Salveaza &
+                                                Inainte</button>
+                                            <button class="btn btn-primary " (click)="finishTest()">Termina testul</button>
                                         </div>
                                     </div>
                                 </div>
@@ -154,16 +154,16 @@
 
                                     <div class="row">
                                         <button type="button" class="btn btn-primary btn-lg btn-block"
-                                            (click)="clearResponse();">Clear
-                                            Response</button>
+                                            (click)="clearResponse();">Sterge
+                                            Raspunsul</button>
                                         <button type="button" class="btn btn-primary btn-lg btn-block"
                                             (click)="previousQuestion();">Preview </button>
 
                                         <button type="button" class="btn btn-primary btn-lg btn-block"
-                                            (click)="saveAndNext();">Save &
-                                            Next</button>
+                                            (click)="saveAndNext();">Salveaza &
+                                            Inainte</button>
                                         <button type="button" class="btn btn-primary btn-lg btn-block"
-                                            (click)="finishTest()">Submit</button>
+                                            (click)="finishTest()">Termina testul</button>
 
                                     </div>
                                 </div>

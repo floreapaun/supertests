@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { LoaderService } from 'src/app/services/loader.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CustomPopupModalComponent } from "../../common/custom-popup-modal/custom-popup-modal.component";
-
+import { TitleService } from 'src/app/services/title.service';
 
 @Component({
   selector: 'app-test', 
@@ -27,7 +27,8 @@ export class TestComponent implements OnInit {
               private http: HttpClient,
               private storage: StorageService,
               private loaderSer: LoaderService,
-              private modalService: NgbModal) { }
+              private modalService: NgbModal,
+              private TitleService:TitleService) { }
 
   ngOnInit() {
    // let timer =  (1 * 60 + 30 )* 60 + 20;   // (2 h * 60 + 30 m )* 60 + 20 s; // todo from test json
@@ -188,6 +189,10 @@ export class TestComponent implements OnInit {
 
   ngOnDestroy(){
     clearInterval(this.clearint);
+  }
+
+  get title() {
+    return this.TitleService.getValue();
   }
 
 

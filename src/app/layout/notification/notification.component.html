@@ -4,19 +4,19 @@
     <div class="row">
         <div class="col-sm-12">
             <h2 class="ge">General Instructions</h2>
-            <p class="lead">Please read the instructions carefully</p>
+            <p class="lead">Citeste instructiunile cu atentie</p>
             <ol>
                 <li>
-                    Total duration of {{user.test.name}} ( {{user.test.duration}} min).
+                    Durata totala a testului {{user.test.name}} ( {{user.test.duration}} minute).
                 </li>
                 <li>
-                    The clock will be set at the server. The countdown timer in the top right corner of screen will display the remaining time available for you to complete the examination
+                    Ceasul este setat la nivelul server-ului. Cronometrul in coltul din dreapta sus va afisa tipul ramas la dispozitie pentru rezolvararea testului
                 </li>
                 <li>
-                    When the timer reaches zero,the examination will end by itself .you will not be required to end or submit your examination.
+                    Cand cronometrul va ajunge la zero, testarea se va termina. Nu va fi necesar sa opresti sau sa trimiti testul.
                 </li>
                 <li>
-                    The Questions Palette displayed on the right of screen will show the status of reach questions using one of the following symbols.
+                    Chenarul intrebarilor afisat in dreapta ecranului va arata statusul intrebarilor.
                 </li>
             </ol>
         </div>
@@ -27,11 +27,10 @@
             <form class="instruction-block">
                 <div class="custom-control custom-checkbox">
                     <input class="custom-control-input" id="check" name="agree" [(ngModel)]="agree" type="checkbox" />
-                    <label class="custom-control-label" for="check">I have read and understood the instructions.
-                     All computer hardware alloted to me are in proper working condition . I declare that I am not in
-                     possession of / not wearing/ not carring and prohibited gadget like mobile phone, bluetooth device etc.
-                     / any prohibited material with me into the Examination Hall. I agree that in case of not adering to the instruction , I shall be liable
-                     to be declared from this test and/or to disciplinary action , which may include ban from future Tests/ Examinations.
+                    <label class="custom-control-label" for="check">
+                    Am citit si inteles instructiunile.
+                    Calculatorul de unde rulez testul este in conditie buna. Declar ca nu sunt in posesia nici unui dispozitiv interzis precum telefonul, casca, etc.  Sunt de acord in cazul in care nu voi respecta instructiunile ca voi fi declarat neadmis si 
+ca nu voi mai avea posibilitatea de a da testul din nou.
                    </label>
 
                 </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { StorageService } from 'src/app/services/storage.service';
 import { SaveUserinfoService } from 'src/app/services/save-userinfo.service';
+import { TitleService } from 'src/app/services/title.service';
 
 @Component({
   selector: 'app-score',
@@ -14,7 +15,8 @@ export class ScoreComponent implements OnInit {
  percentage : string;
   constructor(private router : Router,
     private storage: StorageService,
-     private userSave: SaveUserinfoService) { }
+    private userSave: SaveUserinfoService,
+    private TitleService: TitleService) { }
 
   ngOnInit() {
     this.user = JSON.parse(this.storage.getData('user'));
@@ -34,6 +36,10 @@ export class ScoreComponent implements OnInit {
 
   review(){
     this.router.navigate(['/review']);
+  }
+
+  get title() {
+    return this.TitleService.getValue();
   }
 
 }
