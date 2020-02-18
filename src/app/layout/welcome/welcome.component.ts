@@ -30,7 +30,7 @@ picked ;
               private storage: StorageService,
               private userSave: SaveUserinfoService,
               private loaderSer: LoaderService,
-              private TitleService:TitleService) { }
+              private TitleService: TitleService) { }
 
   ngOnInit() {
 
