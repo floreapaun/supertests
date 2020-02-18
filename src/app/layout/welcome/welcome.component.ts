@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { StorageService } from 'src/app/services/storage.service';
 import { SaveUserinfoService } from 'src/app/services/save-userinfo.service';
 import { LoaderService } from 'src/app/services/loader.service';
+import { TitleService } from 'src/app/services/title.service';
 //import { ListPicker } from "tns-core-modules/ui/list-picker";
 
 
@@ -19,7 +20,6 @@ export class WelcomeComponent implements OnInit {
     email: '',
     test : ''
   };
-  title :string = "ipariksha";
 
 picked ;
 
@@ -27,9 +27,10 @@ picked ;
   constructor(private router: Router,
               private auth: AuthService,
               private http: HttpClient,
-               private storage: StorageService,
-               private userSave: SaveUserinfoService,
-               private loaderSer: LoaderService) { }
+              private storage: StorageService,
+              private userSave: SaveUserinfoService,
+              private loaderSer: LoaderService,
+              private TitleService:TitleService) { }
 
   ngOnInit() {
 
@@ -77,12 +78,15 @@ picked ;
     });
   }
 
-
   saveDataToServer(){
     //test data 
     this.http.put('https://ipriksha-be1b8.firebaseio.com/user.json',this.user).subscribe(res=>{
       
     })
+  }
+
+  get title() {
+    return this.TitleService.getValue();
   }
 
 }
