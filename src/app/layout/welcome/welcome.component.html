@@ -8,34 +8,33 @@
                         <img width="180" alt="UPG-LS Logo" src="assets/images/logo_ls.png">
                     </div>
                     <h3>
-                        Welcome to <span class="text-primary">{{ title | secondLetterCapital }}</span> 
-                       
+                        Testeaza-ti cunostintele prin <span class="text-primary">{{ title }}</span> 
                     </h3>
                     <hr>
                     <form id="test" class="col-12" #signupform="ngForm" (ngSubmit)="submit(signupform)">
                         <div class="row form-group">
-                            <label class="col-sm-4 col-form-label" for="name">Name</label>
+                            <label class="col-sm-4 col-form-label" for="name">Nume</label>
                             <div class="col-sm-8">
-                                <input minlength="3" maxlength="26" class="form-control" name="name" [(ngModel)]="user.name" type="text" placeholder="Enter Name" required>
+                                <input minlength="3" maxlength="26" class="form-control" name="name" [(ngModel)]="user.name" type="text" placeholder="Introdu numele" required>
                             </div>
                         </div>
                         <div class="row form-group">
                             <label class="col-sm-4 col-form-label" for="email">Email</label>
                             <div class="col-sm-8">
-                                <input class="form-control" name="email" [(ngModel)]="user.email" type="text" placeholder="Enter Email" required> </div>
+                                <input class="form-control" name="email" [(ngModel)]="user.email" type="text" placeholder="Introdu email-ul" required> </div>
                         </div>
                         <div class="row form-group">
-                            <label class="col-sm-4 col-form-label" for="email">Type Of Assessment</label>
+                            <label class="col-sm-4 col-form-label" for="email">Tipul testului</label>
                             <div class="col-sm-8">
                                 <select class="form-control" name="test" [(ngModel)]="user.test" required>
-                                        <option value="">Please Select any</option>
+                                        <option value="">Alege</option>
                                    <option [ngValue]="testType" *ngFor="let testType of typeTestList">{{testType.name}}</option>
                                 </select>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <button [ngClass]="{'btn-secondary' : signupform.invalid}" class="btn btn-primary btn-block" [disabled]="signupform.invalid" type="submit">Next</button>
+                                <button [ngClass]="{'btn-secondary' : signupform.invalid}" class="btn btn-primary btn-block" [disabled]="signupform.invalid" type="submit">Inainte</button>
                             </div>
                         </div>
                     </form>
