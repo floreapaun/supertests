@@ -20,7 +20,7 @@ export class FooterComponent implements OnInit {
 
   @Input()
   set year(Year:string){
-    this._year = Year && Year.trim() || '2019' ;
+    this._year = Year && Year.trim() || '2020' ;
   }
 
   get year(){
