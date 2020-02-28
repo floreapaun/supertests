@@ -70,12 +70,73 @@ picked ;
   }
 
   getTestList() {
+    
+    /*
     this.loaderSer.show(true);
     this.http.get('https://raw.githubusercontent.com/acharyaks90/questionjson/master/json/testlist.json')
     .subscribe(res => {
       this.loaderSer.show(false);
       this.typeTestList = res['testlist'];
     });
+    */
+    
+    let res = 
+       
+    {
+        "testlist": [
+            {
+                "id": 1,
+                "name": "HTET",
+                "duration": 30,
+                "question": 10
+            },
+            {
+                "id": 2,
+                "name": "CTET",
+                "duration": 30,
+                "question": 10
+            },
+            {
+                "id": 3,
+                "name": "ANGULAR",
+                "duration": 30,
+                "question": 10
+            },
+            {
+                "id": 4,
+                "name": "JAVASCRIPT",
+                "duration": 10,
+                "question": 10
+            },
+            {
+                "id": 5,
+                "name": "CSS",
+                "duration": 5,
+                "question": 2
+            },
+            {
+                "id": 6,
+                "name": "YOGA",
+                "duration": 10,
+                "question": 10
+            },
+           {
+                "id": 7,
+                "name": "JAVA",
+                "duration": 5,
+                "question": 5
+            },
+            {
+                "id": 7,
+                "name": "SQL",
+                "duration": 5,
+                "question": 5
+            }
+        ]
+    }
+
+    this.typeTestList = res['testlist'];
+ 
   }
 
   saveDataToServer(){
