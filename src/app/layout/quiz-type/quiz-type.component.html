@@ -8,29 +8,32 @@
                       <img width="180" alt="UPG-LS Logo" src="assets/images/logo_ls.png">
                   </div>
                   <h3 class="text-center">
-                    Hi, <span class="text-primary"> {{user.name}}!</span> 
+                    Salut, <span class="text-primary"> {{user.firstName}}!</span> 
                      
                   </h3>
+                    
+                  <!--
                   <h3  class="text-center">
                     Welcome back
                      
                   </h3>
+                  -->
+
                   <hr>
                   <form id="test" class="col-12" #quiztypeform="ngForm" (ngSubmit)="submit(quiztypeform)">
                    
                      
                       <div class="row form-group">
-                          <label class="col-sm-4 col-form-label" for="email">Type Of Assessment</label>
+                          <label class="col-sm-4 col-form-label" for="email">Tipul examinarii</label>
                           <div class="col-sm-8">
-                            <select class="form-control" name="test" [(ngModel)]="user.test" required>
-                              <option value="">Please Select any</option>
-                         <option [ngValue]="testType" *ngFor="let testType of typeTestList">{{testType.name}}</option>
-                      </select>
+                            <select class="form-control" name="test" [(ngModel)]="test" required>
+                              <option [ngValue]="testType" *ngFor="let testType of typeTestList">{{testType.name}}</option>
+                            </select>
                           </div>
                       </div>
                       <div class="row">
                           <div class="col-12">
-                            <button [ngClass]="{'btn-secondary' : quiztypeform.invalid}" class="btn btn-primary btn-block" [disabled]="quiztypeform.invalid" type="submit">Next</button>
+                            <button [ngClass]="{'btn-secondary' : quiztypeform.invalid}" class="btn btn-primary btn-block" [disabled]="quiztypeform.invalid" type="submit">Inainte</button>
                           </div>
                       </div>
                   </form>

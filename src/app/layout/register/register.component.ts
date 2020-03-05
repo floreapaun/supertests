@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { TitleService } from 'src/app/services/title.service';
 //import { AlertService, UserService, AuthenticationService } from 'src/app/services/';
 
 import { AlertService } from 'src/app/services/alert.service';
@@ -24,7 +25,8 @@ export class RegisterComponent implements OnInit {
         private router: Router,
         private authenticationService: AuthenticationService,
         private userService: UserService,
-        private alertService: AlertService
+        private alertService: AlertService,
+        private TitleService: TitleService,
     ) {
         // redirect to home if already logged in
         if (this.authenticationService.currentUserValue) {
@@ -67,5 +69,9 @@ export class RegisterComponent implements OnInit {
                     this.alertService.error(error);
                     this.loading = false;
                 });
+    }
+
+    get title() {
+        return this.TitleService.getValue();
     }
 }
