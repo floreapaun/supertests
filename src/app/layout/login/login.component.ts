@@ -2,17 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
+import { TitleService } from 'src/app/services/title.service';
 //import { AlertService, UserService, AuthenticationService } from 'src/app/services/';
 
 import { AlertService } from 'src/app/services/alert.service';
 import { UserService } from 'src/app/services/user.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
-
 @Component({ templateUrl: 'login.component.html' })
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
     loading = false;
     submitted = false;
+
+    //the route where the app will go after the login button 
+    //it's pressed
     returnUrl: string;
 
     constructor(
@@ -20,11 +23,12 @@ export class LoginComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private authenticationService: AuthenticationService,
-        private alertService: AlertService
+        private alertService: AlertService,
+        private TitleService: TitleService,
     ) {
-        // redirect to home if already logged in
+        // redirect to quiz route if user already logged in
         if (this.authenticationService.currentUserValue) {
-            this.router.navigate(['/']);
+            this.router.navigate(['/quiz']);
         }
     }
 
@@ -34,8 +38,8 @@ export class LoginComponent implements OnInit {
             password: ['', Validators.required]
         });
 
-        // get return url from route parameters or default to '/'
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+        // get route from the reffered page or default to '/quiz'
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/quiz';
     }
 
     // convenience getter for easy access to form fields
@@ -64,5 +68,11 @@ export class LoginComponent implements OnInit {
                     this.loading = false;
                 });
     }
+
+    get title() {
+        return this.TitleService.getValue();
+    }
+
+    
 }
 
