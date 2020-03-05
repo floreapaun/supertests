@@ -14,38 +14,67 @@ import { ReviewComponent } from './layout/review/review.component';
 
 import { RegisterComponent } from './layout/register/register.component';
 import { LoginComponent } from './layout/login/login.component';
+import { AuthGuard } from './helpers';
 
 const routes: Routes = [
+
   { path: '',
-    component: WelcomeComponent},
+    redirectTo: '/login',
+    pathMatch: 'full',
+  },
+
   { path: 'register',
-    component: RegisterComponent},
+    component: RegisterComponent,
+  },
 
   { path: 'login',
-    component: LoginComponent},
+    component: LoginComponent
+  },
 
   { path: 'notification',
-    component: NotificationComponent},
-  { path: 'test',
-    component: TestComponent},
-  { path: 'score',
-    component: ScoreComponent},
-  {  path: 'quiz',
-    component: QuizTypeComponent},
-  { path: 'feedback',
-    component:FeedbackComponent
+    component: NotificationComponent,
+    canActivate: [AuthGuard],
   },
+
+  { path: 'test',
+    component: TestComponent,
+    canActivate: [AuthGuard]
+  },
+
+  { path: 'score',
+    component: ScoreComponent,
+    canActivate: [AuthGuard]
+  },
+
+  { path: 'quiz',
+    component: QuizTypeComponent,
+    canActivate: [AuthGuard]
+  },
+
+  { path: 'feedback',
+    component:FeedbackComponent,
+    canActivate: [AuthGuard]
+  },
+
   {
     path : 'admin',
     loadChildren:()=> import('./admin/admin.module').then(m=>m.AdminModule)
   },
-  {  path: 'review',
-  component: ReviewComponent}
+
+  { path: 'review',
+    component: ReviewComponent,
+    canActivate: [AuthGuard],
+  },
+
+  // otherwise redirect to root route 
+  { path: '**', 
+    redirectTo: '' 
+  },
   
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true }), BrowserModule, FormsModule, ReactiveFormsModule],
+  imports: [RouterModule.forRoot(routes), BrowserModule, FormsModule, ReactiveFormsModule],
   exports: [RouterModule, ReactiveFormsModule]
 })
 export class AppRoutingModule { }
