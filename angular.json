@@ -133,6 +133,7 @@
   },
   "defaultProject": "ipariksha",
   "cli": {
-    "defaultCollection": "@nativescript/schematics"
+    "defaultCollection": "@nativescript/schematics",
+    "analytics": "632c5565-33c6-4a76-acd5-6bde91f297db"
   }
 }

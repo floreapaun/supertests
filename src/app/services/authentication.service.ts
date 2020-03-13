@@ -19,6 +19,15 @@ export class AuthenticationService {
         return this.currentUserSubject.value;
     }
 
+    deleteUser() {
+
+        localStorage.removeItem('currentUser');
+
+        //update Observable stream
+        this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
+        this.currentUser = this.currentUserSubject.asObservable();
+    }
+
     login(username, password) {
         console.log("authentication.service: login() started ");
         return this.http.post<any>(`${this.url}/users/authenticate`, { username, password })

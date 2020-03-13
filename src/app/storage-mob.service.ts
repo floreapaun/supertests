@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as appSettings from 'tns-core-modules/application-settings'
+//import * as appSettings from 'tns-core-modules/application-settings'
 @Injectable({
   providedIn: 'root'
 })
@@ -7,6 +7,7 @@ export class StorageMobService {
 
   constructor() { }
 
+  /*
   getData(key){
     return appSettings.getString(key);
    }
@@ -27,6 +28,6 @@ export class StorageMobService {
    isKeyExist(key):boolean{
    return appSettings.hasKey(key);
    }
-
+    */
 
 }

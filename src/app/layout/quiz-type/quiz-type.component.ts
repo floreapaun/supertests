@@ -1,8 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChildren, ElementRef, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { StorageService } from 'src/app/services/storage.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+
+import {HttpClientModule} from '@angular/common/http';
+import {NgModule} from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+//import {MatNativeDateModule} from '@angular/material';
+import {BrowserModule} from '@angular/platform-browser';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {DemoMaterialModule} from 'src/app/material-module';
+//import { MatExpansionPanel } from '@angular/material';
 
 
 @Component({
@@ -24,6 +34,14 @@ export class QuizTypeComponent implements OnInit {
     this.user = this.authenticationService.currentUserValue; 
     this.getTestList();
   }
+    
+  deleteUser() {
+    this.authenticationService.deleteUser();
+    
+    //go to a route where after user sign in checking redirects to login 
+    this.router.navigate(['/notification']);
+  }
+    
 
   getTestList() : void {
     

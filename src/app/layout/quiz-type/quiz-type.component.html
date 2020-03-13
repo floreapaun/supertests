@@ -1,3 +1,15 @@
+<mat-accordion>
+    <mat-expansion-panel style="width: 280px; float: right;" #panel>
+        <mat-expansion-panel-header>
+            <mat-panel-description style="float: right;">
+                Panoul utilizatorului
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        Salut, {{user.firstName}}
+        <button (click)="deleteUser()" type="button">Iesi din cont</button>
+    </mat-expansion-panel>
+</mat-accordion>
+<br><br><br>
 <div class="container" style="background-image: url(assets/images/b4.jpg)">
     
   <div class="row mt-5">
@@ -8,8 +20,6 @@
                       <img width="180" alt="UPG-LS Logo" src="assets/images/logo_ls.png">
                   </div>
                   <h3 class="text-center">
-                    Salut, <span class="text-primary"> {{user.firstName}}!</span> 
-                     
                   </h3>
                     
                   <!--

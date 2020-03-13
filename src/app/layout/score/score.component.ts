@@ -42,6 +42,13 @@ export class ScoreComponent implements OnInit {
     // this.router.navigate(['/']);
   }
 
+  deleteUser() {
+    this.authenticationService.deleteUser();
+    
+    //go to a route where after user sign in checking redirects to login 
+    this.router.navigate(['/notification']);
+  }
+
   review(){
     this.router.navigate(['/review']);
   }

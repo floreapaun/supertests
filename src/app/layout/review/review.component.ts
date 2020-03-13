@@ -44,6 +44,13 @@ export class ReviewComponent implements OnInit {
     this.getQuestions();
   }
 
+  deleteUser() {
+    this.authenticationService.deleteUser();
+    
+    //go to a route where after user sign in checking redirects to login 
+    this.router.navigate(['/notification']);
+  }
+
 
 
   changeSection():any{

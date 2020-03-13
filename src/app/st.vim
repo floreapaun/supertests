@@ -38,7 +38,6 @@ tabnew
 tabnew
 tabnew
 tabnew
-tabnew
 tabrewind
 edit app-routing.module.ts
 set splitbelow splitright
@@ -173,14 +172,14 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 16) / 33)
+let s:l = 46 - ((31 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+46
 normal! 0
 tabnext
-edit app.module.ts
+edit /srv/http/angular-8-registration-login-example/src/app/app.routing.ts
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -313,14 +312,14 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 16) / 33)
+let s:l = 6 - ((5 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
+6
 normal! 0
 tabnext
-edit /srv/http/angular-8-registration-login-example/src/app/app.module.ts
+edit layout/quiz-type/quiz-type.component.ts
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -453,14 +452,14 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 31 - ((23 * winheight(0) + 16) / 33)
+let s:l = 40 - ((15 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-31
-normal! 05|
+40
+normal! 029|
 tabnext
-edit ./services/alert.service.ts
+edit layout/quiz-type/quiz-type.component.html
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -504,8 +503,8 @@ setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal expandtab
-if &filetype != 'typescript'
-setlocal filetype=typescript
+if &filetype != 'html'
+setlocal filetype=html
 endif
 setlocal fixendofline
 setlocal foldcolumn=0
@@ -530,7 +529,7 @@ setlocal includeexpr=
 setlocal indentexpr=
 setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
 setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255,$
+setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
@@ -571,148 +570,8 @@ setlocal statusline=
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != 'typescript'
-setlocal syntax=typescript
-endif
-setlocal tabstop=4
-setlocal tagcase=
-setlocal tagfunc=
-setlocal tags=
-setlocal termwinkey=
-setlocal termwinscroll=10000
-setlocal termwinsize=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal undolevels=-123456
-setlocal varsofttabstop=
-setlocal vartabstop=
-setlocal wincolor=
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 16) / 33)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
-tabnext
-edit ./services/user.service.ts
-set splitbelow splitright
-set nosplitbelow
-set nosplitright
-wincmd t
-set winminheight=0
-set winheight=1
-set winminwidth=0
-set winwidth=1
-argglobal
-setlocal keymap=
-setlocal noarabic
-setlocal noautoindent
-setlocal backupcopy=
-setlocal balloonexpr=
-setlocal nobinary
-setlocal nobreakindent
-setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
-setlocal buftype=
-setlocal nocindent
-setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-setlocal colorcolumn=
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal cursorlineopt=both
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'typescript'
-setlocal filetype=typescript
-endif
-setlocal fixendofline
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcq
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatprg=
-setlocal grepprg=
-setlocal iminsert=0
-setlocal imsearch=-1
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255,$
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal lispwords=
-setlocal nolist
-setlocal makeencoding=
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal modeline
-setlocal modifiable
-setlocal nrformats=bin,octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal scrolloff=-1
-setlocal shiftwidth=4
-setlocal noshortname
-setlocal showbreak=
-setlocal sidescrolloff=-1
-setlocal signcolumn=auto
-setlocal nosmartindent
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'typescript'
-setlocal syntax=typescript
+if &syntax != 'html'
+setlocal syntax=html
 endif
 setlocal tabstop=4
 setlocal tagcase=
@@ -873,14 +732,14 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 16) / 33)
+let s:l = 25 - ((24 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 018|
+25
+normal! 051|
 tabnext
-edit /srv/http/angular-8-registration-login-example/src/app/app.routing.ts
+edit helpers/auth.guard.ts
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -1013,35 +872,46 @@ setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
-let s:l = 1 - ((0 * winheight(0) + 16) / 33)
+let s:l = 17 - ((16 * winheight(0) + 16) / 33)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+17
+normal! 037|
 tabnext 3
 set stal=1
 badd +1 app-routing.module.ts
-badd +1 app.module.ts
-badd +0 ./layout/register/register.component.ts
-badd +0 ~/Desktop/login/login.component.ts
-badd +1 ./services/alert.service.ts
-badd +1 ./services/user.service.ts
-badd +1 ./services/authentication.service.ts
-badd +0 /srv/http/angular-8-registration-login-example/src/app/_helpers/auth.guard.ts
 badd +1 /srv/http/angular-8-registration-login-example/src/app/app.routing.ts
-badd +5 ./layout/register/register.component.html
-badd +1 ~/Desktop/register/register.component.html
+badd +1 layout/quiz-type/quiz-type.component.ts
+badd +1 layout/quiz-type/quiz-type.component.html
+badd +1 layout/welcome/welcome.component.ts
+badd +1 layout/welcome/welcome.component.html
 badd +1 layout/login/login.component.ts
 badd +1 layout/login/login.component.html
+badd +1 ./layout/register/register.component.ts
+badd +1 ./layout/register/register.component.html
+badd +21 layout/notification/notification.component.ts
+badd +18 ./services/authentication.service.ts
+badd +1 helpers/auth.guard.ts
+badd +67 app.module.ts
+badd +1 services/auth.service.ts
+badd +40 /srv/http/angular-8-registration-login-example/src/app/app.module.ts
+badd +1 ./services/alert.service.ts
+badd +1 ./services/user.service.ts
+badd +1 ~/Desktop/login/login.component.ts
+badd +1 /srv/http/angular-8-registration-login-example/src/app/_helpers/auth.guard.ts
+badd +1 ~/Desktop/register/register.component.html
 badd +1 ~/Desktop/login/login.component.html
-badd +12 /srv/http/angular-8-registration-login-example/src/app/app.module.ts
 badd +1 /srv/http/angular-8-registration-login-example/src/app/app.component.ts
-badd +0 /srv/http/angular-8-registration-login-example/src/app/_helpers/fake-backend.ts
-badd +0 /srv/http/angular-8-registration-login-example/src/app/_helpers/error.interceptor.ts
-badd +0 /srv/http/angular-8-registration-login-example/src/app/_helpers/jwt.interceptor.ts
+badd +1 /srv/http/angular-8-registration-login-example/src/app/_helpers/fake-backend.ts
+badd +1 /srv/http/angular-8-registration-login-example/src/app/_helpers/error.interceptor.ts
+badd +1 /srv/http/angular-8-registration-login-example/src/app/_helpers/jwt.interceptor.ts
 badd +19 /srv/http/angular-8-registration-login-example/src/app/_components/alert.component.ts
-badd +0 /srv/http/angular-8-registration-login-example/src/app/_components/alert.component.html
+badd +1 /srv/http/angular-8-registration-login-example/src/app/_components/alert.component.html
+badd +1 helpers/fake-backend.ts
+badd +5 helpers/jwt.interceptor.ts
+badd +6 helpers/error.interceptor.ts
+badd +0 services/storage.service.ts
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
@@ -1053,7 +923,6 @@ if file_readable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &so = s:so_save | let &siso = s:siso_save
-nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
