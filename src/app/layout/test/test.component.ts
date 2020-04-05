@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
- import { StorageService } from 'src/app/services/storage.service';
+import { StorageService } from 'src/app/services/storage.service';
 import { LoaderService } from 'src/app/services/loader.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CustomPopupModalComponent } from "../../common/custom-popup-modal/custom-popup-modal.component";
@@ -17,7 +17,7 @@ export class TestComponent implements OnInit {
   timeRem : string = '00:00:00';
   question : any ;
   itr = 0;
-  user;
+  user: any; 
   test: any;
   questionList =  [];
   answerList = [];
@@ -35,9 +35,7 @@ export class TestComponent implements OnInit {
 
   ngOnInit() {
    // let timer =  (1 * 60 + 30 )* 60 + 20;   // (2 h * 60 + 30 m )* 60 + 20 s; // todo from test json
-    //this.user = JSON.parse(this.storage.getData('user'));
     this.user = this.authenticationService.currentUserValue; 
-
     
     //get test object from storage
     this.test = JSON.parse(localStorage.getItem('test'));
@@ -59,13 +57,6 @@ export class TestComponent implements OnInit {
     if(this.questionList[this.itr].answer == val){
       this.testMarks++;
     }
-  }
-
-  deleteUser() {
-    this.authenticationService.deleteUser();
-    
-    //go to a route where after user sign in checking redirects to login 
-    this.router.navigate(['/notification']);
   }
 
   changeSection():any{

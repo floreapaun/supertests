@@ -5,8 +5,8 @@
                 Panoul utilizatorului
             </mat-panel-description>
         </mat-expansion-panel-header>
-        Salut, {{user.firstName}}
-        <button (click)="deleteUser()" type="button">Iesi din cont</button>
+        <app-user-panel-content [user_firstName]="user">
+        </app-user-panel-content>
     </mat-expansion-panel>
 </mat-accordion>
 <br><br><br>
@@ -19,7 +19,7 @@
             <p class="lead">Citeste instructiunile cu atentie</p>
             <ol>
                 <li>
-                    Durata totala a testului {{user.test.name}} ( {{user.test.duration}} minute).
+                    Durata totala a testului {{test.name}} este de {{test.duration}} minute.
                 </li>
                 <li>
                     Ceasul este setat la nivelul server-ului. Cronometrul in coltul din dreapta sus va afisa tipul ramas la dispozitie pentru rezolvararea testului

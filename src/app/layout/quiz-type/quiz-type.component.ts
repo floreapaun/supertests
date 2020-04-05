@@ -4,16 +4,15 @@ import { Router } from '@angular/router';
 import { StorageService } from 'src/app/services/storage.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
-import {HttpClientModule} from '@angular/common/http';
-import {NgModule} from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-//import {MatNativeDateModule} from '@angular/material';
-import {BrowserModule} from '@angular/platform-browser';
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {DemoMaterialModule} from 'src/app/material-module';
-//import { MatExpansionPanel } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DemoMaterialModule } from 'src/app/material-module';
 
+import User from '../../models/User';
 
 @Component({
   selector: 'app-quiz-type',
@@ -22,7 +21,7 @@ import {DemoMaterialModule} from 'src/app/material-module';
 })
 export class QuizTypeComponent implements OnInit {
   typeTestList:  any;
-  user: any;
+  user: any; 
   test: any;
   constructor(private router: Router,
     private http: HttpClient,
@@ -41,7 +40,7 @@ export class QuizTypeComponent implements OnInit {
     //go to a route where after user sign in checking redirects to login 
     this.router.navigate(['/notification']);
   }
-    
+
 
   getTestList() : void {
     

@@ -11,12 +11,11 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./score.component.scss']
 })
 export class ScoreComponent implements OnInit {
- user:any;
+ user: any; 
  test: any;
  result: any;
  percentage : string;
   constructor(private router : Router,
-    private storage: StorageService,
     private userSave: SaveUserinfoService,
     private authenticationService: AuthenticationService,
     private TitleService: TitleService) { }
@@ -27,7 +26,7 @@ export class ScoreComponent implements OnInit {
     //get test object from storage
     this.test = JSON.parse(localStorage.getItem('test'));
 
-    this.result = JSON.parse(this.storage.getData('result'));
+    this.result = JSON.parse(sessionStorage.getItem('result'));
     this.percentage =  ((this.result.marks * 100) / this.result.total).toFixed(2);
     //this.userSave.saveScoreDataToServer({user:this.user, score: this.result.marks, unanswered: this.result.unanswered});
   }
@@ -35,11 +34,10 @@ export class ScoreComponent implements OnInit {
   testAgain(){
     
     //storage is of type session
-    this.storage.removeData('result');
-    this.storage.setData('result', JSON.stringify(this.user));
+    sessionStorage.removeItem('result');
+    sessionStorage.setItem('result', JSON.stringify(this.user));
 
     this.router.navigate(['/quiz']);
-    // this.router.navigate(['/']);
   }
 
   deleteUser() {

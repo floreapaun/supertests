@@ -34,7 +34,6 @@ export class ReviewComponent implements OnInit {
   ngOnInit() {
    // let timer =  (1 * 60 + 30 )* 60 + 20;   // (2 h * 60 + 30 m )* 60 + 20 s; // todo from test json
 
-    //this.user = JSON.parse(this.storage.getData('user'));
     this.user = this.authenticationService.currentUserValue; 
 
     //get test object from storage
@@ -43,14 +42,6 @@ export class ReviewComponent implements OnInit {
     this.answerList = JSON.parse(this.storage.getData('result')).answerList;
     this.getQuestions();
   }
-
-  deleteUser() {
-    this.authenticationService.deleteUser();
-    
-    //go to a route where after user sign in checking redirects to login 
-    this.router.navigate(['/notification']);
-  }
-
 
 
   changeSection():any{
@@ -69,15 +60,10 @@ export class ReviewComponent implements OnInit {
     }
   }
 
- 
-
- 
-
   navigateToScore(): void {
 
     this.router.navigate(['/score']);
   }
-
 
   previousQuestion(): void {
     if (this.itr > 0) {

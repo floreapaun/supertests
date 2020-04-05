@@ -30,6 +30,22 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label for="faculty">Facultate</label>
+                            <input type="text" id="faculty" formControlName="faculty" class="form-control" 
+                              [ngClass]="{ 'is-invalid': submitted && f.faculty.errors }" />
+                            <div *ngIf="submitted && f.faculty.errors" class="invalid-feedback">
+                                <div *ngIf="f.faculty.errors.required">Campul Facultate e obligatoriu!</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="degree">Specializare</label>
+                            <input type="text" formControlName="degree" class="form-control" 
+                              [ngClass]="{ 'is-invalid': submitted && f.degree.errors }" />
+                            <div *ngIf="submitted && f.degree.errors" class="invalid-feedback">
+                                <div *ngIf="f.degree.errors.required">Campul Specializare e obligatoriu</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label for="username">Utilizator</label>
                             <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
                             <div *ngIf="submitted && f.username.errors" class="invalid-feedback">

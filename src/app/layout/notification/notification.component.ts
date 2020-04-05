@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { StorageService } from 'src/app/services/storage.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
@@ -9,33 +8,23 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./notification.component.scss']
 })
 export class NotificationComponent implements OnInit {
-   user  = { test: {
-     name:'',
-     duration:''
-   }};
+  user: any; 
+  test: any;
   agree: boolean ;
   constructor(private router: Router,
-              private storage: StorageService,
               private authenticationService: AuthenticationService,
               ) { }
 
   ngOnInit() {
-    
-    //this.user = JSON.parse(this.storage.getData('user'));
-  }
-
-  deleteUser() {
-    this.authenticationService.deleteUser();
-    
-    //go to a route where after user sign in checking redirects to login 
-    this.router.navigate(['/notification']);
+    this.user = this.authenticationService.currentUserValue; 
+    this.test = JSON.parse(localStorage.getItem('test'));
   }
 
   navigateToTest() {
     if(this.agree){
       this.router.navigate(['/test']);
     } else {
-      alert('Please agree term and conditions');
+      alert('Bifeaza ca ai citit continutul paginii!');
     }
   }
 }

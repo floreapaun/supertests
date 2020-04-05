@@ -5,8 +5,8 @@
                 Panoul utilizatorului
             </mat-panel-description>
         </mat-expansion-panel-header>
-        Salut, {{user.firstName}}
-        <button (click)="deleteUser()" type="button">Iesi din cont</button>
+        <app-user-panel-content [user_firstName]="user">
+        </app-user-panel-content>
     </mat-expansion-panel>
 </mat-accordion>
 <br><br><br>
