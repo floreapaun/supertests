@@ -11,9 +11,9 @@ import { ScoreComponent } from './layout/score/score.component';
 import { QuizTypeComponent } from './layout/quiz-type/quiz-type.component';
 import { FeedbackComponent } from './layout/feedback/feedback.component';
 import { ReviewComponent } from './layout/review/review.component';
-
 import { RegisterComponent } from './layout/register/register.component';
 import { LoginComponent } from './layout/login/login.component';
+
 import { AuthGuard } from './helpers';
 
 const routes: Routes = [
@@ -36,6 +36,11 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
 
+  { path: 'quiz',
+    component: QuizTypeComponent,
+    canActivate: [AuthGuard]
+  },
+
   { path: 'test',
     component: TestComponent,
     canActivate: [AuthGuard]
@@ -46,14 +51,14 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
 
-  { path: 'quiz',
-    component: QuizTypeComponent,
-    canActivate: [AuthGuard]
-  },
-
   { path: 'feedback',
     component:FeedbackComponent,
     canActivate: [AuthGuard]
+  },
+
+  { path: 'review',
+    component: ReviewComponent,
+    canActivate: [AuthGuard],
   },
 
   {
@@ -61,9 +66,9 @@ const routes: Routes = [
     loadChildren:()=> import('./admin/admin.module').then(m=>m.AdminModule)
   },
 
-  { path: 'review',
-    component: ReviewComponent,
-    canActivate: [AuthGuard],
+  {
+    path : 'admin',
+    loadChildren:()=> import('./admin/admin.module').then(m=>m.AdminModule)
   },
 
   // otherwise redirect to root route 
