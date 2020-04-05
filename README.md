@@ -4,7 +4,7 @@ Steps for building application
 1. Change location to the API directory
 2. Run 'npm install' to have all packages installed
 2. Run 'nodemon servers.js' to start server
-Make sure your MongoDB server it's on.
+<p>Make sure your MongoDB server it's on.</p>
  
 
 ## Angular Frontend Server
