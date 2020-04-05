@@ -1,8 +1,9 @@
-﻿export class User {
-    id: number;
+export default class User {
     username: string;
     password: string;
     firstName: string;
     lastName: string;
-    token: string;
+    faculty: string;
+    degree: string;
 }
+

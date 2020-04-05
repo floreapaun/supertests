@@ -1,11 +1,10 @@
 ﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-import { User } from 'src/app/models/';
+import User from '../models/User';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-    url = 'http://localhost:4200/';
+    url = 'http://localhost:3000';
 
     constructor(private http: HttpClient) { }
 
@@ -14,7 +13,7 @@ export class UserService {
     }
 
     register(user: User) {
-        return this.http.post(`${this.url}/users/register`, user);
+        return this.http.post(`${this.url}/user/register`, user);
     }
 
     delete(id: number) {
