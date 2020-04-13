@@ -10,6 +10,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./score.component.scss']
 })
 export class ScoreComponent implements OnInit {
+ timeRem : string = '00:00:00';
  user: any; 
  test: any;
  result: any;
