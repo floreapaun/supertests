@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { StorageService } from 'src/app/services/storage.service';
 import { LoaderService } from 'src/app/services/loader.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CustomPopupModalComponent } from "../../common/custom-popup-modal/custom-popup-modal.component";
 import { TitleService } from 'src/app/services/title.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { DataObject } from 'src/app/data-object';
 
 @Component({
   selector: 'app-test', 
@@ -19,7 +19,7 @@ export class TestComponent implements OnInit {
   itr = 0;
   user: any; 
   test: any;
-  questionList =  [];
+  questionList: Array<DataObject>;
   answerList = [];
   currentAnswer : any;
   testMarks: number = 0 ;
@@ -27,20 +27,17 @@ export class TestComponent implements OnInit {
   clearint:any;
   constructor(private router: Router, 
               private http: HttpClient,
-              private storage: StorageService,
               private loaderSer: LoaderService,
               private modalService: NgbModal,
               private authenticationService: AuthenticationService,
               private TitleService:TitleService) { }
 
   ngOnInit() {
-   // let timer =  (1 * 60 + 30 )* 60 + 20;   // (2 h * 60 + 30 m )* 60 + 20 s; // todo from test json
     this.user = this.authenticationService.currentUserValue; 
     
     //get test object from storage
-    this.test = JSON.parse(localStorage.getItem('test'));
-    console.log("test.component: this.test: " + this.test);
-    console.log(this.test);
+    //test information
+    this.test = JSON.parse(window.localStorage.getItem('test'));
 
     this.getQuestions();
   }
@@ -54,7 +51,7 @@ export class TestComponent implements OnInit {
     } else {
       this.answerList.push({ no: this.itr, answer: val });
     }
-    if(this.questionList[this.itr].answer == val){
+    if(this.questionList[this.itr].answer == Number(val)){
       this.testMarks++;
     }
   }
@@ -101,7 +98,7 @@ export class TestComponent implements OnInit {
        unanswered : this.questionList.length - this.answerList.length,
        answerList:this.answerList
     };
-    this.storage.setData('result', JSON.stringify(result));
+    window.localStorage.setItem('result', JSON.stringify(result));
     this.navigateToScore();
   }
 
@@ -126,12 +123,19 @@ export class TestComponent implements OnInit {
   }
 
   questionLoad (index){
+    //array index of the question to be loaded
     this.itr = index;
+
     this.currentAnswer = '';
     this.question = this.questionList[this.itr];
+
+    //check if the question has been answered before
     const ind = this.answerList.findIndex(e => {
       return e.no == this.itr;
     });
+
+    //if the question has been answered before 
+    //copy the old answer to the currentAnswer variable
     if (ind > -1) {
       this.currentAnswer = this.answerList[this.itr].answer;
     }
@@ -158,7 +162,7 @@ export class TestComponent implements OnInit {
         unanswered : this.questionList.length - this.answerList.length,
         answerList:this.answerList
       };
-      this.storage.setData('result', JSON.stringify(result));
+      window.localStorage.setItem('result', JSON.stringify(result));
       this.navigateToScore();
     } else {
       this.currentAnswer = '';
@@ -169,142 +173,35 @@ export class TestComponent implements OnInit {
 
   getQuestions(): void {
     this.loaderSer.show(true);
-    
-    /*
-    this.http.get(`https://raw.githubusercontent.com/acharyaks90/questionjson/master/json/questions${this.test.name}.json`)
-    .subscribe(res => {
-      this.loaderSer.show(false);
-      this.questionList = res['TEST'];
-      this.question = this.questionList[0];
-      this.minutes = this.test.duration;
-      let timer =  this.minutes * 60;   // (2 h * 60 + 30 m )* 60 + 20 s; // todo from test json
-  
-      this.clearint = setInterval(()=>{
-        let sec =0,totalmin =0 , hour =0 , min  = 0;
-       sec = timer % 60;
-       totalmin = Math.floor(timer / 60);
-       hour = Math.floor(totalmin / 60);
-       min = totalmin % 60;
+    this.http.get<Array<DataObject>>(`http://localhost:3000/user/questionsList?test_id=${this.test._id}`, {responseType : 'json'})
+      .subscribe(
+        (res: Array<DataObject>) => {
+          this.loaderSer.show(false);
+          this.questionList = res;
+          this.question = this.questionList[0];
+          this.minutes = this.test.duration;
+          let timer =  this.minutes * 60;   
       
-      this.timeRem = `${hour}:${min}:${sec}`
-      timer--;
-      if(timer == 0){
-        clearInterval(this.clearint);
-        alert('Test time is over.')
-        this.finalSubmit();
-      }
-      },1000)
-    });
-    */
-
-    let res = 
-    
-    {
-        "TEST": [
-            {
-                "question": "What is Flexbox?",
-                "answer": "2",
-                "options": [
-                    "A Tag HTML",
-                    "a HTML alignment",
-                    "A layout specification for css",
-                    "A HTML attribute"
-                ]
-            },
-            {
-                "question": "Which is the purpose of translate property on CSS3?",
-                "answer": "2",
-                "options": [
-                    "It is not a CSS property",
-                    "It is for translate texts",
-                    "It is to reposition an element in horizontal and veritical direction",
-                    "None"
-                ]
-            },
-            {
-                "question": " What mean of the a in RGBa?",
-                "answer": "1",
-                "options": [
-                    "alpha",
-                    "alpha color",
-                    "arrow",
-                    "any"
-                ]
-            },
-            {
-                "question": "Can you set multiple box-shadows?",
-                "answer": "1",
-                "options": [
-                    "Yes",
-                    "No"
-                ]
-            },
-            {
-                "question": "How do four values work on padding",
-                "answer": "3",
-                "options": [
-                    "top, bottom, left, right",
-                    "up, down, front, behind",
-                    "top, right, bottom, left",
-                    "left, right, right, left"
-                ]
-            },
-            {
-                "question": "Which of the following property is used to underline color change.",
-                "answer": "2",
-                "options": [
-                    "text-decoration",
-                    "text-decoration-color",
-                    "text-decoration-style",
-                    "text-decoration-line"
-                ]
-            },
-            {
-                "question": "Can we set the float center?",
-                "answer": "2",
-                "options": [
-                    "Yes",
-                    "No"
-                ]
-            },
-            {
-                "question": "In CSS, what is the correct option to select only the heading with class name 'success'?",
-                "answer": "2",
-                "options": [
-                    "#success { }",
-                    ".success { }",
-                    "success { }",
-                    ".class success {}"
-                ]
+          this.clearint = setInterval(()=>{
+            let sec =0,totalmin =0 , hour =0 , min  = 0;
+            sec = timer % 60;
+            totalmin = Math.floor(timer / 60);
+            hour = Math.floor(totalmin / 60);
+            min = totalmin % 60;
+          
+            this.timeRem = `${hour}:${min}:${sec}`
+            timer--;
+            if(timer == 0){
+              clearInterval(this.clearint);
+              alert('Test time is over.')
+              this.finalSubmit();
             }
-        ]
-    }
+          },1000);
 
-      this.loaderSer.show(false);
-      this.questionList = res['TEST'];
-      this.question = this.questionList[0];
-      this.minutes = this.test.duration;
-      let timer =  this.minutes * 60;   // (2 h * 60 + 30 m )* 60 + 20 s; // todo from test json
-  
-      this.clearint = setInterval(()=>{
-        let sec =0,totalmin =0 , hour =0 , min  = 0;
-       sec = timer % 60;
-       totalmin = Math.floor(timer / 60);
-       hour = Math.floor(totalmin / 60);
-       min = totalmin % 60;
-      
-      this.timeRem = `${hour}:${min}:${sec}`
-      timer--;
-      if(timer == 0){
-        clearInterval(this.clearint);
-        alert('Test time is over.')
-        this.finalSubmit();
-      }
-      },1000);
-
+      });
   }
 
-  ngOnDestroy(){
+    ngOnDestroy(){
     clearInterval(this.clearint);
   }
 

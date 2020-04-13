@@ -33,7 +33,7 @@
                                     <div class="row form-group">
                                         <div class="col-12"> <strong>Numele candidatului</strong> </div>
                                         <div class="col-12">
-                                            {{user.firstName}}
+                                            {{user}}
                                         </div>
                                     </div>
                                     <div class="row form-group">
@@ -71,27 +71,25 @@
                         <!-- <div class="col-md-12">
                             <h4> <span class="badge badge-danger">{{user.test.name}}</span> </h4>
                         </div> -->
-                        <div *ngIf="questionList.length>0" class="col-12">
+                        <div *ngIf="questionList?.length>0" class="col-12">
                             <div class="d-flex justify-content-between">
-                                <strong> {{'QUESTION ' + (itr + 1) + '/' + questionList.length}}</strong>
+                                <strong> {{'Intrebarea ' + (itr + 1) + '/' + questionList.length}}</strong>
                                 <strong> Raspunsuri oferite % :
                                     {{(answerList.length * 100 / questionList.length).toFixed(2) + '%'}}</strong>
                             </div>
                         </div>
-                        <div class="col-12" *ngIf="questionList.length==0">
-                            <p> Question not loaded at yet</p>
+                        <div class="col-12" *ngIf="questionList?.length==0">
+                            <p>Intrebarea nu a fost incarcata deocamdata</p>
                         </div>
 
                         <div class="col-sm-12" *ngIf="question">
                             <div class="row">
                                
                                         <div class="col-sm-6 col-lg-6">
-                                            <h4>{{question.question}}</h4>
+                                            <h4>{{question.content}}</h4>
                                             <!-- <i class="material-icons">question_answer</i>  -->
                                             <div class="row ">
                                                 <div class="col-md-12">
-                                                  
-            
                                                     <div class="custom-control custom-radio mr-3">
                                                         <input class="custom-control-input" id="a" value="0"
                                                             (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer"
@@ -104,13 +102,13 @@
                                                             name="answer" type="radio">
                                                         <label class="custom-control-label" for="b">{{question.options[1]}}</label>
                                                     </div>
-                                                    <div class="custom-control custom-radio mr-3">
+                                                    <div *ngIf="question.options[2]" class="custom-control custom-radio mr-3">
                                                         <input class="custom-control-input" id="c" value="2"
                                                             (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer"
                                                             name="answer" type="radio">
                                                         <label class="custom-control-label" for="c">{{question.options[2]}}</label>
                                                     </div>
-                                                    <div class="custom-control custom-radio">
+                                                    <div *ngIf="question.options[3]" class="custom-control custom-radio">
                                                         <input class="custom-control-input" id="d" value="3"
                                                             (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer"
                                                             name="answer" type="radio">

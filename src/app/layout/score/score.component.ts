@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { StorageService } from 'src/app/services/storage.service';
 import { SaveUserinfoService } from 'src/app/services/save-userinfo.service';
 import { TitleService } from 'src/app/services/title.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
@@ -24,19 +23,15 @@ export class ScoreComponent implements OnInit {
     this.user = this.authenticationService.currentUserValue; 
 
     //get test object from storage
-    this.test = JSON.parse(localStorage.getItem('test'));
+    this.test = JSON.parse(window.localStorage.getItem('test'));
 
-    this.result = JSON.parse(sessionStorage.getItem('result'));
+    this.result = JSON.parse(window.localStorage.getItem('result'));
     this.percentage =  ((this.result.marks * 100) / this.result.total).toFixed(2);
     //this.userSave.saveScoreDataToServer({user:this.user, score: this.result.marks, unanswered: this.result.unanswered});
   }
 
   testAgain(){
-    
-    //storage is of type session
-    sessionStorage.removeItem('result');
-    sessionStorage.setItem('result', JSON.stringify(this.user));
-
+    window.localStorage.removeItem('result');
     this.router.navigate(['/quiz']);
   }
 
