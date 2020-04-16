@@ -39,6 +39,7 @@ export class TestComponent implements OnInit {
     //test information
     this.test = JSON.parse(window.localStorage.getItem('test'));
 
+    window.localStorage.setItem('test_time_started', new Date().toLocaleTimeString()); 
     this.getQuestions();
   }
 
