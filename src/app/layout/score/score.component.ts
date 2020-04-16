@@ -28,7 +28,15 @@ export class ScoreComponent implements OnInit {
 
     this.result = JSON.parse(window.localStorage.getItem('result'));
     this.percentage =  ((this.result.marks * 100) / this.result.total).toFixed(2);
-    //this.userSave.saveScoreDataToServer({user:this.user, score: this.result.marks, unanswered: this.result.unanswered});
+
+    this.userSave.saveScoreDataToServer({
+      time_started: window.localStorage.getItem('test_time_started'),
+      time_finished: new Date().toLocaleTimeString(),
+      score: this.result.marks,
+      unanswered: this.result.unanswered,
+      user: this.user,
+      test: this.test.name 
+    });
   }
 
   testAgain(){
