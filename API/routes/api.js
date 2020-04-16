@@ -3,6 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 
 var User = require('../models/User.js');
+var Finishedtest = require('../models/Finishedtest.js');
 
 //between Test and Question models it's a one-to-many (many) relationship
 var Test = require('../models/Test.js');
@@ -52,6 +53,7 @@ router.post('/login', function(req, res, next) {
     });
   })(req, res, next);
 });
+
 
 router.get('/logout', function(req, res) {
   req.logout();
@@ -170,6 +172,73 @@ router.get('/questionsList', function(req, res) {
     console.log("Response to send: " + test.questions);
     res.send(test.questions);
   });
+});
+
+router.post('/saveFinishedTest', function(req, res, next) {
+  var user_id = '0';
+  var test_id = '0';
+
+  var promise1 = new Promise( function(resolve, reject) {
+    User.find({ 'username': req.body.user }, function (err, docs) {
+      if (docs.length == 0) {
+        console.log('No users with username ' + req.body.user + ' found');
+        reject(Error("user_id not found"));
+      }
+      user_id = docs[0]._id;
+      resolve("user_id found");
+    });
+  });
+
+  promise1.then(function(result) {
+    var promise2 = new Promise( function(resolve, reject) {
+      Test.find({ 'name': req.body.test }, function (err, docs) {
+        if (docs.length == 0) {
+          console.log('No tests with name ' + req.body.test + ' found');
+          reject(Error("test_id not found"));
+        }
+        test_id = docs[0]._id;
+        resolve("test_id found");
+      });
+    });
+    
+    promise2.then(function(result) {
+
+      // Create an instance of model Question 
+      var finishedtest = new Finishedtest({
+        time_started : req.body.time_started,
+        time_finished : req.body.time_finished,
+        correct_answers: req.body.score,
+        blank_answers: req.body.unanswered,
+        user: user_id,
+        test: test_id,
+      });
+
+      // Save the new model instance, passing a callback
+      finishedtest.save(function (err) {
+        if (err) {
+          return res.status(500).json({
+            status: false,
+            message: 'Could not save the finished test',
+            error: handleError(err),
+          });
+          reject("Could not save the finished test");
+        }
+      });
+
+      return res.status(200).json({
+        status: true,
+        message: 'Created new finishedtest successfully',
+      });
+      resolve("Created new finishedtest successfully");
+
+      }, function(err) {
+        console.log(err);
+    });
+
+  }, function(err) {
+    console.log(err); 
+  });
+
 });
    
 
