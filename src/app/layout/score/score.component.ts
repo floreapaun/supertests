@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { SaveUserinfoService } from 'src/app/services/save-userinfo.service';
 import { TitleService } from 'src/app/services/title.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import User from '../../models/User';
 
 @Component({
   selector: 'app-score',
@@ -11,14 +12,14 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class ScoreComponent implements OnInit {
  timeRem : string = '00:00:00';
- user: any; 
+ user: User; 
  test: any;
  result: any;
  percentage : string;
   constructor(private router : Router,
     private userSave: SaveUserinfoService,
     private authenticationService: AuthenticationService,
-    private TitleService: TitleService) { }
+    private titleService: TitleService) { }
 
   ngOnInit() {
     this.user = this.authenticationService.currentUserValue; 
@@ -34,7 +35,7 @@ export class ScoreComponent implements OnInit {
       time_finished: new Date().toLocaleTimeString(),
       score: this.result.marks,
       unanswered: this.result.unanswered,
-      user: this.user,
+      user: this.user.username,
       test: this.test.name 
     });
   }
@@ -56,7 +57,7 @@ export class ScoreComponent implements OnInit {
   }
 
   get title() {
-    return this.TitleService.getValue();
+    return this.titleService.getValue();
   }
 
 }

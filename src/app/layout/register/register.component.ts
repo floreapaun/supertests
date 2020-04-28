@@ -3,11 +3,9 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { TitleService } from 'src/app/services/title.service';
-//import { AlertService, UserService, AuthenticationService } from 'src/app/services/';
-
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { AlertService } from 'src/app/services/alert.service';
 import { UserService } from 'src/app/services/user.service';
-import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-register',
@@ -26,7 +24,7 @@ export class RegisterComponent implements OnInit {
         private authenticationService: AuthenticationService,
         private userService: UserService,
         private alertService: AlertService,
-        private TitleService: TitleService,
+        private titleService: TitleService,
     ) {
         // redirect to home if already logged in
         if (this.authenticationService.currentUserValue) {
@@ -74,6 +72,6 @@ export class RegisterComponent implements OnInit {
     }
 
     get title() {
-        return this.TitleService.getValue();
+        return this.titleService.getValue();
     }
 }

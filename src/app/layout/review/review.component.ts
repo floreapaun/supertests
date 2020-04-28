@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { TitleService } from 'src/app/services/title.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { LoaderService } from 'src/app/services/loader.service';
-import { AuthenticationService } from 'src/app/services/authentication.service';
 import { DataObject } from 'src/app/data-object';
+import { LoaderService } from 'src/app/services/loader.service';
+import { TitleService } from 'src/app/services/title.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+import User from '../../models/User';
 
 @Component({
   selector: 'app-review',
@@ -16,7 +17,7 @@ export class ReviewComponent implements OnInit {
   timeRem : string = '00:00:00';
   question : any ;
   itr = 0;
-  user: any;
+  user: User;
   test: any;
   questionList: Array<DataObject>;
   answerList = [];

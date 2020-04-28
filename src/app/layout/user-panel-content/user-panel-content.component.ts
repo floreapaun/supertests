@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationService } from 'src/app/services/authentication.service';
 import { NgModule } from '@angular/core';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-user-panel-content',
@@ -10,10 +10,9 @@ import { NgModule } from '@angular/core';
 })
 
 export class UserPanelContentComponent implements OnInit {
-  @Input() user_firstName: string;
+  @Input() user_firstname: string;
 
-  constructor(private router: Router,
-    private authenticationService: AuthenticationService) { }
+  constructor(private authenticationService: AuthenticationService) {}
 
   ngOnInit(): void {
   }

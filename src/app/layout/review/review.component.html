@@ -5,7 +5,7 @@
                 Panoul utilizatorului
             </mat-panel-description>
         </mat-expansion-panel-header>
-        <app-user-panel-content [user_firstName]="user">
+        <app-user-panel-content [user_firstname]="user.firstname">
         </app-user-panel-content>
     </mat-expansion-panel>
 </mat-accordion>
@@ -33,7 +33,7 @@
                                   <div class="row form-group">
                                       <div class="col-12"> <strong>Numele candidatului</strong> </div>
                                       <div class="col-12">
-                                          {{user.firstName}}
+                                          {{user.firstname}}
                                       </div>
                                   </div>
                                   <div class="row form-group">

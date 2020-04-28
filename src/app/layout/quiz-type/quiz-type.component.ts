@@ -1,8 +1,6 @@
 import { Component, ViewChildren, ElementRef, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { AuthenticationService } from 'src/app/services/authentication.service';
-
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -10,8 +8,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from 'src/app/material-module';
-
 import User from '../../models/User';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-quiz-type',
@@ -20,7 +18,7 @@ import User from '../../models/User';
 })
 export class QuizTypeComponent implements OnInit {
   typeTestList:  any;
-  user: any; 
+  user: User; 
   test: any;
   constructor(private router: Router,
     private http: HttpClient,

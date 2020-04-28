@@ -7,6 +7,7 @@ import { CustomPopupModalComponent } from "../../common/custom-popup-modal/custo
 import { TitleService } from 'src/app/services/title.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { DataObject } from 'src/app/data-object';
+import User from '../../models/User';
 
 @Component({
   selector: 'app-test', 
@@ -17,7 +18,7 @@ export class TestComponent implements OnInit {
   timeRem : string = '00:00:00';
   question : any ;
   itr = 0;
-  user: any; 
+  user: User; 
   test: any;
   questionList: Array<DataObject>;
   answerList = [];
@@ -30,7 +31,7 @@ export class TestComponent implements OnInit {
               private loaderSer: LoaderService,
               private modalService: NgbModal,
               private authenticationService: AuthenticationService,
-              private TitleService:TitleService) { }
+              private titleService:TitleService) { }
 
   ngOnInit() {
     this.user = this.authenticationService.currentUserValue; 
@@ -207,7 +208,7 @@ export class TestComponent implements OnInit {
   }
 
   get title() {
-    return this.TitleService.getValue();
+    return this.titleService.getValue();
   }
 
 
