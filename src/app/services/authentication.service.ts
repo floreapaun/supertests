@@ -11,10 +11,10 @@ export class AuthenticationService {
     public currentUser: Observable<User>;
     url = 'http://localhost:3000';
 
-    constructor(private http: HttpClient, 
-                private router: Router,) {
-        this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
-        this.currentUser = this.currentUserSubject.asObservable();
+    constructor(private http: HttpClient,
+      private router: Router, ) {
+      this.currentUserSubject = new BehaviorSubject <User> ({} as any);
+      this.currentUser = this.currentUserSubject.asObservable();
     }
 
     public get currentUserValue(): User {
@@ -26,13 +26,10 @@ export class AuthenticationService {
     }
 
     login(username, password) {
-        console.log("authentication.service: login() started ");
         return this.http.post<any>(`${this.url}/user/login`, { username, password })
-            .pipe(map(user => {
-
-                //after successfully login the observable will contain the username
-                this.currentUserSubject.next(user.username);
-                return user.username;
+            .pipe(map(data => {
+                this.currentUserSubject.next(data.user);
+                return data.user;
             }));
     }
 
