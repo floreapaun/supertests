@@ -1,0 +1,12 @@
+<mat-accordion>
+    <mat-expansion-panel style="width: 280px; float: right;" #panel>
+        <mat-expansion-panel-header>
+            <mat-panel-description style="float: right;">
+                Panoul utilizatorului
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <app-user-panel-content [user_firstname]="user.firstname">
+        </app-user-panel-content>
+    </mat-expansion-panel>
+</mat-accordion>
+<p>dashboard works!</p>

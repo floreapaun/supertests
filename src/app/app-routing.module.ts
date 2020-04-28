@@ -11,6 +11,7 @@ import { FeedbackComponent } from './layout/feedback/feedback.component';
 import { ReviewComponent } from './layout/review/review.component';
 import { RegisterComponent } from './layout/register/register.component';
 import { LoginComponent } from './layout/login/login.component';
+import { DashboardComponent } from './layout/dashboard/dashboard.component';
 
 import { AuthGuard } from './helpers';
 
@@ -19,6 +20,12 @@ const routes: Routes = [
   { path: '',
     redirectTo: '/login',
     pathMatch: 'full',
+  },
+
+  { path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+    data: { roles: ['admin'] },
   },
 
   { path: 'register',
@@ -36,37 +43,27 @@ const routes: Routes = [
 
   { path: 'quiz',
     component: QuizTypeComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
 
   { path: 'test',
     component: TestComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
 
   { path: 'score',
     component: ScoreComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
 
   { path: 'feedback',
     component:FeedbackComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
 
   { path: 'review',
     component: ReviewComponent,
     canActivate: [AuthGuard],
-  },
-
-  {
-    path : 'admin',
-    loadChildren:()=> import('./admin/admin.module').then(m=>m.AdminModule)
-  },
-
-  {
-    path : 'admin',
-    loadChildren:()=> import('./admin/admin.module').then(m=>m.AdminModule)
   },
 
   // otherwise redirect to root route 
