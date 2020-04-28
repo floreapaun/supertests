@@ -3,11 +3,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { TitleService } from 'src/app/services/title.service';
-//import { AlertService, UserService, AuthenticationService } from 'src/app/services/';
-
 import { AlertService } from 'src/app/services/alert.service';
-import { UserService } from 'src/app/services/user.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+
 @Component({ templateUrl: 'login.component.html' })
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
@@ -24,7 +22,7 @@ export class LoginComponent implements OnInit {
         private router: Router,
         private authenticationService: AuthenticationService,
         private alertService: AlertService,
-        private TitleService: TitleService,
+        private titleService: TitleService,
     ) {
         // redirect to quiz route if user already logged in
         if (this.authenticationService.currentUserValue) {
@@ -61,7 +59,10 @@ export class LoginComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
-                    this.router.navigate([this.returnUrl]);
+                    if (data.role === 'admin')
+                        this.router.navigate(['/dashboard']);
+                    else
+                        this.router.navigate([this.returnUrl]);
                 },
                 error => {
                     this.alertService.error(error);
@@ -70,7 +71,7 @@ export class LoginComponent implements OnInit {
     }
 
     get title() {
-        return this.TitleService.getValue();
+        return this.titleService.getValue();
     }
 
     
