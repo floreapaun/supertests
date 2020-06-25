@@ -25,7 +25,8 @@ export class LoginComponent implements OnInit {
         private titleService: TitleService,
     ) {
         // redirect to quiz route if user already logged in
-        if (this.authenticationService.currentUserValue) {
+        // user is logged in if there is an user object saved in the authentication service
+        if (Object.keys(this.authenticationService.currentUserValue).length) {
             this.router.navigate(['/quiz']);
         }
     }
