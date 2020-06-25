@@ -78,19 +78,15 @@ export class TestComponent implements OnInit {
     if(this.answerList.length == this.questionList.length){
       this.finalSubmit();
     }else{
-      // if(confirm(`You have  ${this.questionList.length - this.answerList.length} question un-answered`)){
-      //   this.finalSubmit();
-      //  }
       const modalRef = this.modalService.open(CustomPopupModalComponent);
-      modalRef.componentInstance.message = `Ai  ${this.questionList.length - this.answerList.length} intrbari la care nu ai raspuns`;
+      modalRef.componentInstance.message = `Ai  ${this.questionList.length - this.answerList.length} 
+      intrebari la care nu ai raspuns`;
       modalRef.componentInstance.passData.subscribe(res=>{
         if(res){
           this.finalSubmit();
         }
       })
     }
-   
-   
   }
 
   finalSubmit():void{
