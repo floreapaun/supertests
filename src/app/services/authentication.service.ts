@@ -35,7 +35,7 @@ export class AuthenticationService {
 
     logout() {
         // we empty the observable
-        this.currentUserSubject.next(null);
+        this.currentUserSubject.next({} as any);
 
         this.router.navigate(['/login']); 
     }
