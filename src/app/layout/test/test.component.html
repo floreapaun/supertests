@@ -1,0 +1,190 @@
+<mat-accordion>
+    <mat-expansion-panel style="width: 280px; float: right;" #panel>
+        <mat-expansion-panel-header>
+            <mat-panel-description style="float: right;">
+                Panoul utilizatorului
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <app-user-panel-content [user_firstname]="user.firstname">
+        </app-user-panel-content>
+    </mat-expansion-panel>
+</mat-accordion>
+<br><br><br>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-12">
+                            <div class="row">
+                                <div class="col-md-4 text-sm-center d-none d-sm-block"><img src="assets/images/logo_ls.png"
+                                        class="img-fluid">
+                                </div>
+                                <div class="col-md-8 text-sm-center text-md-left">
+                                    <h1 class="mb-0 text-primary">{{ title }}</h1>
+                                    <p>Excelenta in testare</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <form class="candidate-details">
+                                <div class="p-3 mb-2 bg-light text-dark row">
+                                    <div class="row form-group">
+                                        <div class="col-12"> <strong>Numele candidatului</strong> </div>
+                                        <div class="col-12">
+                                            {{user.firstname}}
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-12"> <strong>Numele testului</strong> </div>
+                                        <div class="col-12">
+                                            {{test.name}}
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <!-- <i class="material-icons">watch_later</i> -->
+                                        <div class="col-12">
+                                            <strong>Timp ramas</strong> </div>
+                                        <!-- <strong>Remaning Time</strong> -->
+                                        <div class="col-12">
+                                            {{timeRem}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <!-- <div class="container">
+                            <ul class="pagination pagination-sm d-flex flex-wrap">
+                                <li *ngFor="let i of questionList; index as test" class="page-item"><a
+                                        [ngClass]="{'bg-primary text-white': itr == test, 'bg-info text-white':checkAnswered(test)}"
+                                        class="page-link" (click)="questionLoad(test)">{{test +1}}</a></li>
+
+
+                            </ul>
+                        </div> -->
+                    </div>
+                    <div class="row">
+                        <!-- <div class="col-md-12">
+                            <h4> <span class="badge badge-danger">{{user.test.name}}</span> </h4>
+                        </div> -->
+                        <div *ngIf="questionList?.length>0" class="col-12">
+                            <div class="d-flex justify-content-between">
+                                <strong> {{'Intrebarea ' + (itr + 1) + '/' + questionList.length}}</strong>
+                                <strong> Raspunsuri oferite % :
+                                    {{(answerList.length * 100 / questionList.length).toFixed(2) + '%'}}</strong>
+                            </div>
+                        </div>
+                        <div class="col-12" *ngIf="questionList?.length==0">
+                            <p>Intrebarea nu a fost incarcata deocamdata</p>
+                        </div>
+
+                        <div class="col-sm-12" *ngIf="question">
+                            <div class="row">
+                               
+                                        <div class="col-sm-6 col-lg-6">
+                                            <h4>{{question.content}}</h4>
+                                            <!-- <i class="material-icons">question_answer</i>  -->
+                                            <div class="row ">
+                                                <div class="col-md-12">
+                                                    <div class="custom-control custom-radio mr-3">
+                                                        <input class="custom-control-input" id="a" value="0"
+                                                            (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer"
+                                                            name="answer" type="radio">
+                                                        <label class="custom-control-label" for="a">{{question.options[0]}}</label>
+                                                    </div>
+                                                    <div class="custom-control custom-radio mr-3">
+                                                        <input class="custom-control-input" id="b" value="1"
+                                                            (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer"
+                                                            name="answer" type="radio">
+                                                        <label class="custom-control-label" for="b">{{question.options[1]}}</label>
+                                                    </div>
+                                                    <div *ngIf="question.options[2]" class="custom-control custom-radio mr-3">
+                                                        <input class="custom-control-input" id="c" value="2"
+                                                            (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer"
+                                                            name="answer" type="radio">
+                                                        <label class="custom-control-label" for="c">{{question.options[2]}}</label>
+                                                    </div>
+                                                    <div *ngIf="question.options[3]" class="custom-control custom-radio">
+                                                        <input class="custom-control-input" id="d" value="3"
+                                                            (ngModelChange)="answeredValue($event)" [(ngModel)]="currentAnswer"
+                                                            name="answer" type="radio">
+                                                        <label class="custom-control-label" for="d"> {{question.options[3]}}</label>
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-sm-6">
+                                            <select (click)="changeSection()">
+                                                <option>
+                                                   Alege sectiunea 
+                                                </option>
+                                            </select>
+                                            <div class="d-flex" style="overflow-y: scroll;">
+                                                    <ul class="pagination pagination-sm d-flex flex-wrap">
+                                                            <li *ngFor="let i of questionList; index as test" class="page-item"><a
+                                                                    [ngClass]="{'bg-primary text-white': itr == test, 'bg-info text-white':checkAnswered(test)}"
+                                                                    class="page-link" (click)="questionLoad(test)">{{test +1}}</a></li>
+                        
+                        
+                                                        </ul>
+                                            </div>
+                                         
+                                            </div>
+            
+                            </div>
+                          
+                            <hr>
+                            <div class="row d-none d-sm-block">
+                                <div class="col-xl-12 ">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-sm-12">
+                                            <button class="btn btn-primary btn-block-sm"
+                                                (click)="previousQuestion();">Inapoi</button>
+
+                                        </div>
+                                        <div class="col-xl-6 col-sm-12 text-right ">
+                                            <button class="btn btn-primary btn-block-sm mr-2 "
+                                                (click)="clearResponse();">Sterge
+                                                raspunsul</button>
+                                            <button class="btn btn-primary mr-2 " (click)="saveAndNext();"> Salveaza &
+                                                Inainte</button>
+                                            <button class="btn btn-primary " (click)="finishTest()">Termina testul</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row d-block d-sm-none">
+                                <div class="col-xl-12 col-12">
+
+
+                                    <div class="row">
+                                        <button type="button" class="btn btn-primary btn-lg btn-block"
+                                            (click)="clearResponse();">Sterge
+                                            Raspunsul</button>
+                                        <button type="button" class="btn btn-primary btn-lg btn-block"
+                                            (click)="previousQuestion();">Preview </button>
+
+                                        <button type="button" class="btn btn-primary btn-lg btn-block"
+                                            (click)="saveAndNext();">Salveaza &
+                                            Inainte</button>
+                                        <button type="button" class="btn btn-primary btn-lg btn-block"
+                                            (click)="finishTest()">Termina testul</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>

@@ -1,0 +1,101 @@
+<mat-accordion>
+    <mat-expansion-panel style="width: 280px; float: right;" #panel>
+        <mat-expansion-panel-header>
+            <mat-panel-description style="float: right;">
+                Panoul utilizatorului
+            </mat-panel-description>
+        </mat-expansion-panel-header>
+        <app-user-panel-content [user_firstname]="user.firstname">
+        </app-user-panel-content>
+    </mat-expansion-panel>
+</mat-accordion>
+<br><br><br>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <div class="row">
+                <div class="col-md-4 text-sm-center"><img src="assets/images/logo_ls.png" class="img-fluid"></div>
+                <div class="col-md-8 text-sm-center text-md-left">
+                    <h1 class="mb-0 text-primary">{{ title }}</h1>
+                    <p>Excelenta in testare</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8 col-sm-12">
+              <form class="candidate-details">
+                <div class="p-3 mb-2 bg-light text-dark row">
+                  <div class="row form-group">
+                      <div class="col-12"> <strong>Numele candidatului</strong> </div>
+                      <div class="col-12">
+                          {{user.firstname}}
+                      </div>
+                  </div>
+                  <div class="row form-group">
+                      <div class="col-12"> <strong>Numele testului</strong> </div>
+                      <div class="col-12">
+                          {{test.name}}
+                      </div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col-12">
+                      <strong>Timp ramas</strong> 
+                    </div>
+                    <div class="col-12">
+                      {{timeRem}}
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-12">
+              <div class="d-flex justify-content-center">
+                <b>Rezultatul testului</b>
+              </div>
+            </div>
+            <div class="col-sm-12 mt-4" >
+              <div class="row ">
+                <div class="col-md-12">
+                  <div class="text-align">
+                    <span>
+                      {{result.marks}} rezultate corecte din cele {{result.total}} intrebari.
+                    </span>
+                    <ul>
+                      <li>{{result.unanswered }} intrebari ai lasat fara raspuns</li>
+                    </ul>
+                    <p>
+                      <ngb-progressbar type="success" [value]="percentage" [striped]="true" [animated]="true">
+                        <i>{{percentage}}%</i>
+                      </ngb-progressbar>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-xl-12">
+                  <div class="row">
+                    <div class="col-xl-6 col-sm-12 text-left">
+                      <button class="btn btn-primary" (click)="testAgain()">Incearca din nou</button>
+                    </div>
+                    <div class="col-xl-6 col-sm-12 text-right">
+                       <button class="btn btn-primary" (click)="review()">Vezi ce ai gresit</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
