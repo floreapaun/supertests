@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  backend_dev_url: 'http://localhost:3000',
+  backend_prod_url: false,
+  //backend_prod_url: 'https://apptestino.herokuapp.com'
 };
 
 /*

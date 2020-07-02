@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { environment } from './../../environments/environment';
 import User from '../models/User';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
     private currentUserSubject: BehaviorSubject<User>;
     public currentUser: Observable<User>;
-    url = 'http://localhost:3000';
+    url = (environment.backend_prod_url) ? environment.backend_prod_url : environment.backend_dev_url;
 
     constructor(private http: HttpClient,
       private router: Router, ) {

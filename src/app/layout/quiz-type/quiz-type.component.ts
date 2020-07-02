@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from 'src/app/material-module';
 import User from '../../models/User';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { environment } from './../../../environments/environment';
 
 @Component({
   selector: 'app-quiz-type',
@@ -17,6 +18,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./quiz-type.component.scss']
 })
 export class QuizTypeComponent implements OnInit {
+  url = (environment.backend_prod_url) ? environment.backend_prod_url : environment.backend_dev_url;
   typeTestList:  any;
   user: User; 
   test: any;
@@ -39,7 +41,7 @@ export class QuizTypeComponent implements OnInit {
 
 
   getTestList() : void {
-    this.http.get('https://apptestino.herokuapp.com/user/testsInfoList')
+    this.http.get(`${this.url}/user/testsInfoList`)
       .subscribe(res => {
         this.typeTestList = res;
       });

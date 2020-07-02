@@ -1,10 +1,11 @@
 ﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import User from '../models/User';
+import { environment } from './../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
-    url = 'https://apptestino.herokuapp.com';
+    url = (environment.backend_prod_url) ? environment.backend_prod_url : environment.backend_dev_url;
 
     constructor(private http: HttpClient) { }
 
