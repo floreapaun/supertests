@@ -10,11 +10,10 @@ var path = require('path');
 var passport = require('passport');
 var localStrategy = require('passport-local' ).Strategy;
 
-// mongoose local
-//mongoose.connect('mongodb://localhost/stdb');
-
-//mongoose production
-mongoose.connect('mongodb://heroku_mxqw1p1q:ctpgaedlvpomjrluj076271mb7@ds159100.mlab.com:59100/heroku_mxqw1p1q');
+if (process.env.MONGODB_PROD_URI) 
+    mongoose.connect(process.env.MONGODB_PROD_URI);
+else
+    mongoose.connect(process.env.MONGODB_DEV_URI);
 
 // user schema/model
 var User = require('./models/User.js');
