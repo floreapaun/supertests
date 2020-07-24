@@ -6,10 +6,12 @@ import { TitleService } from 'src/app/services/title.service';
 import { AlertService } from 'src/app/services/alert.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { environment } from './../../../environments/environment';
+import { filter } from 'rxjs/operators';
 
 @Component({ templateUrl: 'login.component.html' })
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
+    loginError = '';
     loading = false;
     submitted = false;
 
@@ -30,6 +32,13 @@ export class LoginComponent implements OnInit {
         if (Object.keys(this.authenticationService.currentUserValue).length) {
             this.router.navigate(['/quiz']);
         }
+
+        this.alertService.getAlert()
+            .pipe(filter(value => value !== undefined))
+            .subscribe(data => {
+               this.loginError = data.text;
+            });
+        
     }
 
     ngOnInit() {
@@ -67,8 +76,11 @@ export class LoginComponent implements OnInit {
                         this.router.navigate([this.returnUrl]);
                 },
                 error => {
-                    this.alertService.error(error);
+                    //console.log(error);
+                    
+                    this.alertService.error(error.status);
                     this.loading = false;
+
                 });
     }
 

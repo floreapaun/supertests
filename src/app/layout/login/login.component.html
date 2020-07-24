@@ -35,6 +35,11 @@
                             </button>
                             <a routerLink="/register" class="btn btn-link">Inregistrare</a>
                         </div>
+                        <div class="form-group">
+                            <div *ngIf="loginError" class="alert alert-danger">
+                              <div>{{ loginError }}</div>
+                            </div>
+                        </div>
                     </form>
 
 

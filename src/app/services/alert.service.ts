@@ -30,10 +30,15 @@ export class AlertService {
         this.keepAfterRouteChange = keepAfterRouteChange;
         this.subject.next({ type: 'success', text: message });
     }
-
-    error(message: string, keepAfterRouteChange = false) {
+    
+    error(status: number, keepAfterRouteChange = false) {
         this.keepAfterRouteChange = keepAfterRouteChange;
-        this.subject.next({ type: 'error', text: message });
+        if (status == 401) {
+            this.subject.next({ 
+                type: 'error', 
+                text: 'Utilizatorul sau parola incorecta!'
+            });
+        }
     }
 
     clear() {
