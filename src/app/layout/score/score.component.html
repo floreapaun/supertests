@@ -1,15 +1,6 @@
-<mat-accordion>
-    <mat-expansion-panel style="width: 280px; float: right;" #panel>
-        <mat-expansion-panel-header>
-            <mat-panel-description style="float: right;">
-                Panoul utilizatorului
-            </mat-panel-description>
-        </mat-expansion-panel-header>
-        <app-user-panel-content [user_firstname]="user.firstname">
-        </app-user-panel-content>
-    </mat-expansion-panel>
-</mat-accordion>
-<br><br><br>
+<app-user-panel [user_firstname]="user.firstname">
+</app-user-panel>
+
 <div class="container">
   <div class="row mt-5">
     <div class="col-md-12">
