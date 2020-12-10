@@ -6,6 +6,7 @@ import { LoaderService } from 'src/app/services/loader.service';
 import { TitleService } from 'src/app/services/title.service';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import User from '../../models/User';
+import { environment } from './../../../environments/environment';
 
 @Component({
   selector: 'app-review',
@@ -13,7 +14,8 @@ import User from '../../models/User';
   styleUrls: ['./review.component.scss']
 })
 export class ReviewComponent implements OnInit {
-
+  url = (environment.production) ? 
+	environment.backend_prod_url : environment.backend_dev_url;
   timeRem : string = '00:00:00';
   question : any ;
   itr = 0;
@@ -123,7 +125,7 @@ export class ReviewComponent implements OnInit {
 
   getQuestions(): void {
     this.loaderSer.show(true);
-    this.http.get<Array<DataObject>>(`https://apptestino.herokuapp.com/user/questionsList?test_id=${this.test._id}`, {responseType : 'json'})
+    this.http.get<Array<DataObject>>(`${this.url}/user/questionsList?test_id=${this.test._id}`, {responseType : 'json'})
       .subscribe(
         (res: Array<DataObject>) => {
           this.loaderSer.show(false);

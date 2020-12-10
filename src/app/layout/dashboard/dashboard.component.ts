@@ -12,6 +12,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 import User from '../../models/User';
 import { LoaderService } from 'src/app/services/loader.service';
 import { FinishedTestObj } from 'src/app/finishedtest-object';
+import { environment } from './../../../environments/environment';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,6 +20,8 @@ import { FinishedTestObj } from 'src/app/finishedtest-object';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  url = (environment.production) ? 
+    environment.backend_prod_url : environment.backend_dev_url;
   user: User; 
   finishedTestsList: Array < FinishedTestObj >;
 
@@ -35,7 +38,7 @@ export class DashboardComponent implements OnInit {
 
   getFinishedTestsList(): void {
     this.loaderSer.show(true);
-    this.http.get < Array < FinishedTestObj >> (`https://apptestino.herokuapp.com/user/finishedTestsList`, {
+    this.http.get < Array < FinishedTestObj >> (`${this.url}/user/finishedTestsList`, {
         responseType: 'json'
       })
       .subscribe(

@@ -10,7 +10,8 @@ import User from '../models/User';
 export class AuthenticationService {
     private currentUserSubject: BehaviorSubject<User>;
     public currentUser: Observable<User>;
-    url = (environment.backend_prod_url) ? environment.backend_prod_url : environment.backend_dev_url;
+    url = (environment.production) ? 
+	environment.backend_prod_url : environment.backend_dev_url;
 
     constructor(private http: HttpClient,
       private router: Router, ) {

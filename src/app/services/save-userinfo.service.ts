@@ -4,7 +4,8 @@ import { environment } from './../../environments/environment';
 
 @Injectable({providedIn:'root'})
 export class SaveUserinfoService {
-    url = (environment.backend_prod_url) ? environment.backend_prod_url : environment.backend_dev_url;
+    url = (environment.production) ? 
+	environment.backend_prod_url : environment.backend_dev_url;
 
     constructor( private http: HttpClient  ){ 
 
