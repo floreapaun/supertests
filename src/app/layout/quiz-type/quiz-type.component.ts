@@ -18,7 +18,8 @@ import { environment } from './../../../environments/environment';
   styleUrls: ['./quiz-type.component.scss']
 })
 export class QuizTypeComponent implements OnInit {
-  url = (environment.backend_prod_url) ? environment.backend_prod_url : environment.backend_dev_url;
+  url = (environment.production) ? 
+    environment.backend_prod_url : environment.backend_dev_url;
   typeTestList:  any;
   user: User; 
   test: any;

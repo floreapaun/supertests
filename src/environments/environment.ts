@@ -5,8 +5,7 @@
 export const environment = {
   production: false,
   backend_dev_url: 'http://localhost:3000',
-  backend_prod_url: false,
-  //backend_prod_url: 'https://apptestino.herokuapp.com'
+  backend_prod_url: 'https://apptestino.herokuapp.com'
 };
 
 /*
