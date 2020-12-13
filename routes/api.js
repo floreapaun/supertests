@@ -14,8 +14,6 @@ router.post('/register', function(req, res) {
     username: req.body.username,
     firstname: req.body.firstname,
     lastname: req.body.lastname,
-    faculty: req.body.faculty,
-    degree: req.body.degree,
     role: 'user'
   }), req.body.password, function(err, account) {
     if (err) {
