@@ -36,7 +36,7 @@ export class AlertService {
         if (status == 401) {
             this.subject.next({ 
                 type: 'error', 
-                text: 'Utilizatorul sau parola incorecta!'
+                text: 'Username or password credentials are not valid!'
             });
         }
     }

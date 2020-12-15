@@ -6,20 +6,20 @@
                 <div class="card-body">
     <div class="row">
         <div class="col-sm-12">
-            <h2 class="ge">Instructiuni generale</h2>
-            <p class="lead">Citeste instructiunile cu atentie</p>
+            <h2 class="ge">General instructions</h2>
+            <p class="lead">Read carefully</p>
             <ol>
                 <li>
-                    Durata totala a testului {{test.name}} este de {{test.duration}} minute.
+                    Total duration of test {{test.name}} is {{test.duration}} minutes.
                 </li>
                 <li>
-                    Ceasul este setat la nivelul server-ului. Cronometrul in coltul din dreapta sus va afisa tipul ramas la dispozitie pentru rezolvararea testului
+		    Time remaining is showed in top-right corner.  
                 </li>
                 <li>
-                    Cand cronometrul va ajunge la zero, testarea se va termina. Nu va fi necesar sa opresti sau sa trimiti testul.
+		    When won't be more time available test will finish.
                 </li>
                 <li>
-                    Chenarul intrebarilor afisat in dreapta ecranului va arata statusul intrebarilor.
+		    Test content is forged by professional programmers and should be taken as it is.
                 </li>
             </ol>
         </div>
@@ -31,16 +31,14 @@
                 <div class="custom-control custom-checkbox">
                     <input class="custom-control-input" id="check" name="agree" [(ngModel)]="agree" type="checkbox" />
                     <label class="custom-control-label" for="check">
-                    Am citit si inteles instructiunile.
-                    Calculatorul de unde rulez testul este in conditie buna. Declar ca nu sunt in posesia nici unui dispozitiv interzis precum telefonul, casca, etc.  Sunt de acord in cazul in care nu voi respecta instructiunile ca voi fi declarat neadmis si 
-ca nu voi mai avea posibilitatea de a da testul din nou.
-                   </label>
+			I've read and undestood the instructions
+                    </label>
 
                 </div>
             </form>
         </div>
         <div class="col-12 mt-3 text-right">
-            <button [disabled]="!agree" [ngClass]="{'btn-secondary' : !agree}" class="btn btn-primary" (click)="navigateToTest()">Inainte</button>
+            <button [disabled]="!agree" [ngClass]="{'btn-secondary' : !agree}" class="btn btn-primary" (click)="navigateToTest()">Next</button>
         </div>
     </div>
 
