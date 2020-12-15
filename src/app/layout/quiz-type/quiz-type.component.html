@@ -12,20 +12,13 @@
                   </div>
                   <h3 class="text-center">
                   </h3>
-                    
-                  <!--
-                  <h3  class="text-center">
-                    Welcome back
-                     
-                  </h3>
-                  -->
 
                   <hr>
                   <form id="test" class="col-12" #quiztypeform="ngForm" (ngSubmit)="submit(quiztypeform)">
                    
                      
                       <div class="row form-group">
-                          <label class="col-sm-4 col-form-label" for="email">Tipul examinarii</label>
+                          <label class="col-sm-4 col-form-label">Examination name</label>
                           <div class="col-sm-8">
                             <select class="form-control" name="test" [(ngModel)]="test" required>
                               <option [ngValue]="testType" *ngFor="let testType of typeTestList">{{testType.name}}</option>
@@ -34,7 +27,7 @@
                       </div>
                       <div class="row">
                           <div class="col-12">
-                            <button [ngClass]="{'btn-secondary' : quiztypeform.invalid}" class="btn btn-primary btn-block" [disabled]="quiztypeform.invalid" type="submit">Inainte</button>
+                            <button [ngClass]="{'btn-secondary' : quiztypeform.invalid}" class="btn btn-primary btn-block" [disabled]="quiztypeform.invalid" type="submit">Next</button>
                           </div>
                       </div>
                   </form>
