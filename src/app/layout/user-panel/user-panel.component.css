@@ -1,5 +1,5 @@
 mat-expansion-panel {
-    width: 280px; 
+    width: 150px; 
+    background-color: coral;
     float: right;
-    margin-top: -50px;
 }
