@@ -1,40 +1,39 @@
-<app-user-panel [user_firstname]="user.firstname">
-</app-user-panel>
-
+<app-user-panel [user_firstname]="user.firstname"></app-user-panel>
 <div class="container">
-    
   <div class="row mt-5">
-      <div class="col-md-6 mx-auto">
-          <div class="card">
-              <div class="card-body">
-                  <div class="text-center mb-3">
-                      <img width="180" alt="Testino logo" src="assets/images/logo.png">
-                  </div>
-                  <h3 class="text-center">
-                  </h3>
-
-                  <hr>
-                  <form id="test" class="col-12" #quiztypeform="ngForm" (ngSubmit)="submit(quiztypeform)">
-                   
-                     
-                      <div class="row form-group">
-                          <label class="col-sm-4 col-form-label">Examination name</label>
-                          <div class="col-sm-8">
-                            <select class="form-control" name="test" [(ngModel)]="test" required>
-                              <option [ngValue]="testType" *ngFor="let testType of typeTestList">{{testType.name}}</option>
-                            </select>
-                          </div>
-                      </div>
-                      <div class="row">
-                          <div class="col-12">
-                            <button [ngClass]="{'btn-secondary' : quiztypeform.invalid}" class="btn btn-primary btn-block" [disabled]="quiztypeform.invalid" type="submit">Next</button>
-                          </div>
-                      </div>
-                  </form>
-              </div>
+    <div class="col-md-6 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <div class="text-center mb-3">
+            <img id="quiz-type-logo" alt="Testino logo"
+              src="assets/images/logo.png">
           </div>
-
+          <hr>
+          <form id="test" class="col-12" #quiztypeform="ngForm"
+            (ngSubmit)="submit(quiztypeform)">
+            <div class="row form-group">
+              <label class="col-sm-4 col-form-label">Examination
+                name</label>
+              <div class="col-sm-8">
+                <select class="form-control" name="test" [(ngModel)]="test"
+                  required>
+                  <option [ngValue]="testType"
+                    *ngFor="let testType of typeTestList">
+                    {{testType.name}}
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <button [ngClass]="{'btn-secondary' : quiztypeform.invalid}"
+                  class="btn btn-primary btn-block"
+                  [disabled]="quiztypeform.invalid" type="submit">Next</button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
+    </div>
   </div>
-
 </div>
