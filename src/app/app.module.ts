@@ -21,7 +21,7 @@ import { FeedbackComponent } from './layout/feedback/feedback.component';
 import { ReviewComponent } from './layout/review/review.component';
 import { RegisterComponent } from './layout/register/register.component';
 import { LoginComponent } from './layout/login/login.component';
-import { UserPanelContentComponent } from './layout/user-panel-content/user-panel-content.component';
+import { UserPanelComponent } from './layout/user-panel/user-panel.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -46,7 +46,7 @@ import { DashboardComponent } from './layout/dashboard/dashboard.component';
     ReviewComponent,
     RegisterComponent,
     LoginComponent,
-    UserPanelContentComponent,
+    UserPanelComponent,
     DashboardComponent,
   ],
   imports: [

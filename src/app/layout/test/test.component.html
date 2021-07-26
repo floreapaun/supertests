@@ -1,15 +1,6 @@
-<mat-accordion>
-    <mat-expansion-panel style="width: 280px; float: right;" #panel>
-        <mat-expansion-panel-header>
-            <mat-panel-description style="float: right;">
-                Panoul utilizatorului
-            </mat-panel-description>
-        </mat-expansion-panel-header>
-        <app-user-panel-content [user_firstname]="user.firstname">
-        </app-user-panel-content>
-    </mat-expansion-panel>
-</mat-accordion>
-<br><br><br>
+<app-user-panel [user_firstname]="user.firstname">
+</app-user-panel>
+
 <div class="container">
     <div class="row mt-5">
         <div class="col-md-12">
@@ -18,12 +9,12 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-12">
                             <div class="row">
-                                <div class="col-md-4 text-sm-center d-none d-sm-block"><img src="assets/images/logo_ls.png"
+                                <div class="col-md-4 text-sm-center d-none d-sm-block"><img src="assets/images/logo.png"
                                         class="img-fluid">
                                 </div>
                                 <div class="col-md-8 text-sm-center text-md-left">
                                     <h1 class="mb-0 text-primary">{{ title }}</h1>
-                                    <p>Excelenta in testare</p>
+                                    <p>Check your knowledge</p>
                                 </div>
                             </div>
                         </div>
@@ -31,13 +22,13 @@
                             <form class="candidate-details">
                                 <div class="p-3 mb-2 bg-light text-dark row">
                                     <div class="row form-group">
-                                        <div class="col-12"> <strong>Numele candidatului</strong> </div>
+                                        <div class="col-12"> <strong>First name</strong> </div>
                                         <div class="col-12">
                                             {{user.firstname}}
                                         </div>
                                     </div>
                                     <div class="row form-group">
-                                        <div class="col-12"> <strong>Numele testului</strong> </div>
+                                        <div class="col-12"> <strong>Examination</strong> </div>
                                         <div class="col-12">
                                             {{test.name}}
                                         </div>
@@ -45,7 +36,7 @@
                                     <div class="row form-group">
                                         <!-- <i class="material-icons">watch_later</i> -->
                                         <div class="col-12">
-                                            <strong>Timp ramas</strong> </div>
+                                            <strong>Remaining time</strong> </div>
                                         <!-- <strong>Remaning Time</strong> -->
                                         <div class="col-12">
                                             {{timeRem}}
@@ -57,29 +48,17 @@
                     </div>
                     <hr>
                     <div class="row">
-                        <!-- <div class="container">
-                            <ul class="pagination pagination-sm d-flex flex-wrap">
-                                <li *ngFor="let i of questionList; index as test" class="page-item"><a
-                                        [ngClass]="{'bg-primary text-white': itr == test, 'bg-info text-white':checkAnswered(test)}"
-                                        class="page-link" (click)="questionLoad(test)">{{test +1}}</a></li>
-
-
-                            </ul>
-                        </div> -->
                     </div>
                     <div class="row">
-                        <!-- <div class="col-md-12">
-                            <h4> <span class="badge badge-danger">{{user.test.name}}</span> </h4>
-                        </div> -->
                         <div *ngIf="questionList?.length>0" class="col-12">
                             <div class="d-flex justify-content-between">
-                                <strong> {{'Intrebarea ' + (itr + 1) + '/' + questionList.length}}</strong>
-                                <strong> Raspunsuri oferite % :
+                                <strong> {{'Question ' + (itr + 1) + '/' + questionList.length}}</strong>
+                                <strong> Answers % :
                                     {{(answerList.length * 100 / questionList.length).toFixed(2) + '%'}}</strong>
                             </div>
                         </div>
                         <div class="col-12" *ngIf="questionList?.length==0">
-                            <p>Intrebarea nu a fost incarcata deocamdata</p>
+                            <p>Questions wasn't loaded so far!</p>
                         </div>
 
                         <div class="col-sm-12" *ngIf="question">
@@ -120,7 +99,7 @@
                                         <div class="col-lg-6 col-sm-6">
                                             <select (click)="changeSection()">
                                                 <option>
-                                                   Alege sectiunea 
+                                                   Choose question 
                                                 </option>
                                             </select>
                                             <div class="d-flex" style="overflow-y: scroll;">
@@ -143,16 +122,16 @@
                                     <div class="row">
                                         <div class="col-xl-6 col-sm-12">
                                             <button class="btn btn-primary btn-block-sm"
-                                                (click)="previousQuestion();">Inapoi</button>
+                                                (click)="previousQuestion();">Back</button>
 
                                         </div>
                                         <div class="col-xl-6 col-sm-12 text-right ">
                                             <button class="btn btn-primary btn-block-sm mr-2 "
-                                                (click)="clearResponse();">Sterge
-                                                raspunsul</button>
-                                            <button class="btn btn-primary mr-2 " (click)="saveAndNext();"> Salveaza &
-                                                Inainte</button>
-                                            <button class="btn btn-primary " (click)="finishTest()">Termina testul</button>
+                                                (click)="clearResponse();">Clear
+                                                answer</button>
+                                            <button class="btn btn-primary mr-2 " (click)="saveAndNext();"> Save &
+                                                Next</button>
+                                            <button class="btn btn-primary " (click)="finishTest()">Finish test</button>
                                         </div>
                                     </div>
                                 </div>
@@ -164,16 +143,16 @@
 
                                     <div class="row">
                                         <button type="button" class="btn btn-primary btn-lg btn-block"
-                                            (click)="clearResponse();">Sterge
-                                            Raspunsul</button>
+                                            (click)="clearResponse();">Clear
+                                            answer</button>
                                         <button type="button" class="btn btn-primary btn-lg btn-block"
                                             (click)="previousQuestion();">Preview </button>
 
                                         <button type="button" class="btn btn-primary btn-lg btn-block"
-                                            (click)="saveAndNext();">Salveaza &
-                                            Inainte</button>
+                                            (click)="saveAndNext();">Save &
+                                            Next</button>
                                         <button type="button" class="btn btn-primary btn-lg btn-block"
-                                            (click)="finishTest()">Termina testul</button>
+                                            (click)="finishTest()">Finish test</button>
 
                                     </div>
                                 </div>

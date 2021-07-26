@@ -1,13 +1,6 @@
-<mat-accordion>
-    <mat-expansion-panel style="width: 280px; float: right;" #panel>
-        <mat-expansion-panel-header>
-            <mat-panel-description style="float: right;">
-                Panoul utilizatorului
-            </mat-panel-description>
-        </mat-expansion-panel-header>
-    </mat-expansion-panel>
-</mat-accordion>
-<br><br><br>
+<app-user-panel [user_firstname]="user.firstname">
+</app-user-panel>
+
 <div class="row">
   <form  #feedbackform="ngForm" >
   <div class="col-12 text-right">

@@ -9,13 +9,12 @@ import User from '../models/User';
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
     private currentUserSubject: BehaviorSubject<User>;
-    public currentUser: Observable<User>;
-    url = (environment.backend_prod_url) ? environment.backend_prod_url : environment.backend_dev_url;
+    url = (environment.production) ? 
+	environment.backend_prod_url : environment.backend_dev_url;
 
     constructor(private http: HttpClient,
       private router: Router, ) {
       this.currentUserSubject = new BehaviorSubject <User> ({} as any);
-      this.currentUser = this.currentUserSubject.asObservable();
     }
 
     public get currentUserValue(): User {
