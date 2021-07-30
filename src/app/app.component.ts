@@ -8,12 +8,8 @@ import { LoaderService } from './services/loader.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit {
-  counter : number;
   loading:boolean;
   progress:boolean;
-  childDataRecieved(data:number):void{
-    this.counter = data;
-  }
 
   constructor(router:Router,
               public loaderService: LoaderService,
@@ -43,3 +39,4 @@ export class AppComponent implements AfterViewInit {
 
 
 }
+
