@@ -1,6 +1,17 @@
-import { Component, AfterViewInit, ChangeDetectorRef } from '@angular/core';
-import { Router, RouterEvent, NavigationStart, NavigationEnd } from '@angular/router';
-import { LoaderService } from './services/loader.service';
+import {
+  Component,
+  AfterViewInit,
+  ChangeDetectorRef
+} from '@angular/core';
+import {
+  Router,
+  RouterEvent,
+  NavigationStart,
+  NavigationEnd
+} from '@angular/router';
+import {
+  LoaderService
+} from './services/loader.service';
 
 @Component({
   selector: 'app-root',
@@ -8,35 +19,17 @@ import { LoaderService } from './services/loader.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements AfterViewInit {
-  loading:boolean;
-  progress:boolean;
+  progress: boolean;
 
-  constructor(router:Router,
-              public loaderService: LoaderService,
-              private cd: ChangeDetectorRef){
-    this.loading = false;
-    router.events.subscribe(
-      (event: RouterEvent): void => {
-        if (event instanceof NavigationStart) {
-          this.loading = true;
-        } else if (event instanceof NavigationEnd) {
-          this.loading = false;
-        }
-      }
-    );
+  constructor(public loaderService: LoaderService,
+    private cd: ChangeDetectorRef) { }
 
-   
-
-  }
-
-  ngAfterViewInit(){
-    this.loaderService.status.subscribe(res=>{
+  ngAfterViewInit() {
+    this.loaderService.status.subscribe(res => {
       this.progress = res;
       this.cd.detectChanges();
     })
-   
   }
-
 
 }
 
