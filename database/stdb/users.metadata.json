@@ -1,1 +1,1 @@
-{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"stdb.users"}],"uuid":"8d7d207c271d461787a13880eedcdcbc"}
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"ba8d4c4722944386b2c8eba05f212d19","collectionName":"users","type":"collection"}
