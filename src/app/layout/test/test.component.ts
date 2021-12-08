@@ -82,8 +82,8 @@ export class TestComponent implements OnInit {
       this.finalSubmit();
     }else{
       const modalRef = this.modalService.open(CustomPopupModalComponent);
-      modalRef.componentInstance.message = `Ai  ${this.questionList.length - this.answerList.length} 
-      intrebari la care nu ai raspuns`;
+      modalRef.componentInstance.message = `There are ${this.questionList.length - this.answerList.length} 
+      questions without answer provided`;
       modalRef.componentInstance.passData.subscribe(res=>{
         if(res){
           this.finalSubmit();

@@ -24,7 +24,7 @@ export class NotificationComponent implements OnInit {
     if(this.agree){
       this.router.navigate(['/test']);
     } else {
-      alert('Bifeaza ca ai citit continutul paginii!');
+      alert('Check you have read the page content!');
     }
   }
 }
