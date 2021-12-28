@@ -21,3 +21,204 @@
     <td>{{ftest.blank_answers}}</td>
   </tr>
 </table>
+
+<br><br><br>
+
+<div class="form-group row justify-content-end">
+  <label for="name{{t}}" class="col col-auto col-form-label">All tests:</label>
+  <div class="col-sm-3">
+    <select class="custom-select" name="test" size="3" [(ngModel)]="test" 
+    (change)="onSelectChange()">
+      <option *ngFor="let test of testsList" [ngValue]="test">
+          {{ test.name }}
+      </option>
+    </select>
+  </div>
+  <div class="col-sm-3">
+  </div>
+</div>
+
+<div class="form-group row">
+  <div class="col-md-2 offset-md-10">
+    <button (click)="addTest()">Add test</button>
+  </div>
+</div>
+
+<div *ngIf="addTestIsPushedOnce">
+
+  <div class="form-group row justify-content-end">
+    <label for="name" class="col col-auto col-form-label">Name:</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control" id="name" 
+      [(ngModel)]="newTest.name">
+    </div>
+    <div class="col-sm-3">
+    </div>
+  </div>
+  
+  <div class="form-group row justify-content-end">
+    <label for="duration" class="col col-auto offset-sm-4 col-form-label">Duration:</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control" id="duration" 
+      [(ngModel)]="newTest.duration">
+    </div>
+    <div class="col-sm-3">
+    </div>
+  </div>
+
+</div>  
+
+
+<div *ngIf="test">
+
+  <div class="form-group row justify-content-end">
+    <label for="name" class="col col-auto col-form-label">Name:</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control" id="name" 
+      [(ngModel)]="test.name">
+    </div>
+    <div class="col-sm-3">
+    </div>
+  </div>
+  
+  <div class="form-group row justify-content-end">
+    <label for="duration" class="col col-auto offset-sm-4 col-form-label">Duration:</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control" id="duration" 
+      [(ngModel)]="test.duration">
+    </div>
+    <div class="col-sm-3">
+    </div>
+  </div>
+
+  <div *ngFor="let question of test.questions; index as q">
+    <div class="form-group row justify-content-end">
+      <label for="content{{q}}" class="col col-auto col-form-label">Question:</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="content{{q}}" 
+        [(ngModel)]="question.content">
+      </div>
+      <div class="col-sm-1">
+      </div>
+    </div>
+    
+    <div *ngFor="let option of question.options; index as o; trackBy: trackByIndex">
+      <div class="form-group row justify-content-end">
+        <label for="option{{q}}-{{o}}" class="col col-auto col-form-label">
+          Answer #{{o}}:
+        </label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" id="option{{q}}-{{o}}" 
+          [(ngModel)]="question.options[o]">
+        </div>
+        <div class="col-sm-1">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row justify-content-end">
+      <label for="correct-answer{{q}}" class="col col-auto col-form-label">Correct answer:</label>
+      <div class="col-sm-1">
+        <input type="text" class="form-control" id="correct-answer{{q}}" 
+        [(ngModel)]="question.answer">
+      </div>
+      <div class="col-sm-7">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-md-2 offset-md-10">
+        <button (click)="updateQuestion(test._id, question)">Update question</button>
+      </div>
+    </div>
+        
+  </div>
+
+  <div class="form-group row">
+    <div class="col-md-2 offset-md-10">
+      <button (click)="addQuestion(test._id)">Add question</button>
+    </div>
+  </div>
+  
+</div>
+
+<!--
+<div *ngFor="let test of testsList; index as t">
+
+  <div class="form-group row justify-content-end">
+    <label for="name{{t}}" class="col col-auto col-form-label">Name:</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control" id="name{{t}}" 
+      [(ngModel)]="test.name">
+    </div>
+    <div class="col-sm-3">
+    </div>
+  </div>
+  
+  <div class="form-group row justify-content-end">
+    <label for="duration{{t}}" class="col col-auto offset-sm-4 col-form-label">Duration:</label>
+    <div class="col-sm-3">
+      <input type="text" class="form-control" id="duration{{t}}" 
+      [(ngModel)]="test.duration">
+    </div>
+    <div class="col-sm-3">
+    </div>
+  </div>
+
+  <div *ngFor="let question of test.questions; index as q">
+    <div class="form-group row justify-content-end">
+      <label for="content{{t}}-{{q}}" class="col col-auto col-form-label">Question:</label>
+      <div class="col-sm-7">
+        <input type="text" class="form-control" id="content{{t}}-{{q}}" 
+        [(ngModel)]="question.content">
+      </div>
+      <div class="col-sm-1">
+      </div>
+    </div>
+    
+    <div *ngFor="let option of question.options; index as o; trackBy: trackByIndex">
+      <div class="form-group row justify-content-end">
+        <label for="option{{t}}-{{q}}-{{o}}" class="col col-auto col-form-label">
+          Answer #{{o}}:
+        </label>
+        <div class="col-sm-7">
+          <input type="text" class="form-control" id="option{{t}}-{{q}}-{{o}}" 
+          [(ngModel)]="question.options[o]">
+        </div>
+        <div class="col-sm-1">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row justify-content-end">
+      <label for="correct-answer{{t}}-{{q}}" class="col col-auto col-form-label">Correct answer:</label>
+      <div class="col-sm-1">
+        <input type="text" class="form-control" id="correct-answer{{t}}-{{q}}" 
+        [(ngModel)]="question.answer">
+      </div>
+      <div class="col-sm-7">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <div class="col-md-2 offset-md-10">
+        <button (click)="updateQuestion(test._id, question)">Update question</button>
+      </div>
+    </div>
+        
+  </div>
+
+  <div class="form-group row">
+    <div class="col-md-2 offset-md-10">
+      <button (click)="addQuestion(test._id)">Add question</button>
+    </div>
+  </div>
+  
+</div>
+
+<div class="form-group row">
+  <div class="col-md-2 offset-md-10">
+    <button (click)="addTest()">Add test</button>
+  </div>
+</div>
+-->

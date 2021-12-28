@@ -1,0 +1,21 @@
+<style>
+  .material-icons.green-color { color: #65cf0d; }
+  .material-icons.red-color { color: #e91212; }
+</style>
+
+<h1 mat-dialog-title>
+  <p *ngIf = "data.success === true"> 
+    <span  class="material-icons green-color">check_circle</span>
+    Ok 
+  </p> 
+  <p *ngIf = "data.success === false"> 
+    <span  class="material-icons red-color">gpp_bad</span>
+    Error 
+  </p> 
+</h1>
+<div mat-dialog-content>
+    {{ data.message }}
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Close</button>
+</div>

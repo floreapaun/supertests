@@ -74,6 +74,7 @@ router.get('/status', function(req, res) {
 });
 
 router.post('/addTest', function(req, res) {
+
   // Create an instance of model Test 
   var test = new Test({ name: req.body.name, duration: req.body.duration });
 
@@ -82,39 +83,24 @@ router.post('/addTest', function(req, res) {
     if (err) {
       return res.status(500).json({
         status: false,
-        message: 'Could not create new test',
+        message: 'Could not create new test!',
         error: handleError(err),
       });
     }
     return res.status(200).json({
       status: true,
-      message: 'Created new test successfully',
+      message: 'Created new test successfully!',
     });
   });
 });
 
 router.post('/addQuestion', function(req, res) {
 
-  var options = [];
-
-  if (typeof(req.body.option1) === 'string') {
-    options.push(req.body.option1);
-  }
-  if (typeof(req.body.option2) === 'string') {
-    options.push(req.body.option2);
-  }
-  if (typeof(req.body.option3) === 'string') {
-    options.push(req.body.option3);
-  }
-  if (typeof(req.body.option4) === 'string') {
-    options.push(req.body.option4);
-  }
-
   // Create an instance of model Question 
   var question = new Question({
-    content: req.body.content,
-    answer: req.body.answer,
-    options
+    content: req.body.question.content,
+    answer: req.body.question.answer,
+    options: req.body.question.options
   });
 
   // Save the new model instance, passing a callback
@@ -122,7 +108,7 @@ router.post('/addQuestion', function(req, res) {
     if (err) {
       return res.status(500).json({
         status: false,
-        message: 'Could not create new question',
+        message: 'Could not create new question!',
         error: handleError(err),
       });
     }
@@ -131,7 +117,7 @@ router.post('/addQuestion', function(req, res) {
     
     //create relationship
     Test.findByIdAndUpdate(
-      req.body.test_id,{ 
+      req.body.testId, { 
         $push: { 
           "questions": question._id 
         } 
@@ -151,7 +137,7 @@ router.post('/addQuestion', function(req, res) {
 
     return res.status(200).json({
       status: true,
-      message: 'Created new question successfully',
+      message: 'Created new question successfully!',
     });
 
   });
@@ -159,6 +145,14 @@ router.post('/addQuestion', function(req, res) {
 
 router.get('/testsInfoList', function(req, res) {
  Test.find({}, function(err, tests) {
+    res.send(tests);  
+  });
+});
+
+router.get('/testsList', function(req, res) {
+ Test.find({}).
+ populate(['questions']).
+ exec(function(err, tests) {
     res.send(tests);  
   });
 });
@@ -181,6 +175,37 @@ router.get('/questionsList', function(req, res) {
     console.log("Response to send: " + test.questions);
     res.send(test.questions);
   });
+});
+
+router.post('/updateQuestion', function(req, res) {
+
+  Question.findById(
+    req.body.question._id,
+    
+    function (err, doc) {
+      if (err)
+        return res.status(500).json({
+          status: false,
+          message: 'Could not update, question to update not found!',
+        });
+      console.log(doc);
+      doc.content = req.body.question.content;
+      doc.answer = req.body.question.answer;
+      doc.options = req.body.question.options;
+      doc.save(function (err) {
+        if (err) {
+          return res.status(500).json({
+            status: false,
+            message: 'Could not update question!',
+          });
+        }
+        return res.status(200).json({
+          status: true,
+          message: 'Question updated successfully!',
+        });
+      });
+    });
+
 });
 
 router.post('/saveFinishedTest', function(req, res, next) {
@@ -227,7 +252,7 @@ router.post('/saveFinishedTest', function(req, res, next) {
         if (err) {
           return res.status(500).json({
             status: false,
-            message: 'Could not save the finished test',
+            message: 'Could not save the finished test!',
             error: handleError(err),
           });
           reject("Could not save the finished test");
@@ -236,7 +261,7 @@ router.post('/saveFinishedTest', function(req, res, next) {
 
       return res.status(200).json({
         status: true,
-        message: 'Created new finishedtest successfully',
+        message: 'Created new finishedtest successfully!',
       });
       resolve("Created new finishedtest successfully");
 
