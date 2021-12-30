@@ -1,3 +1,17 @@
+div.navbar {
+  display: flex;
+  justify-content: left;
+}
+
+div.navbar > button {
+  display: block;
+  padding: 8px;
+}
+
+.button-pushed {
+  background-color: #cfcccc; 
+}
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
