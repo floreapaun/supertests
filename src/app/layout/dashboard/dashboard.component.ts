@@ -1,20 +1,13 @@
-import { Component, ViewChildren, ElementRef, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DemoMaterialModule } from 'src/app/material-module';
 import { AuthenticationService } from 'src/app/services/authentication.service';
-import User from '../../models/User';
 import { LoaderService } from 'src/app/services/loader.service';
 import { environment } from './../../../environments/environment';
 import { FinishedTest } from 'src/app/finished-test';
 import { TestItem } from 'src/app/test-item';
-import {MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import User from '../../models/User';
 
 export interface DialogData {
   success: boolean;
@@ -38,6 +31,8 @@ export class DashboardComponent implements OnInit {
     duration: "",
     name: ""
   }; 
+  logsIsPushed: boolean = true;
+  testsPanelIsPushed: boolean;
 
   constructor(private router: Router,
     private http: HttpClient,
@@ -86,7 +81,6 @@ export class DashboardComponent implements OnInit {
     let qA = this.testsList[index].questions;
 
     if (qA[qA.length-1]._id === null) {
-      console.log("post /addQuestion");
       this.http.post<any>(`${this.url}/user/addQuestion`, 
         { "testId": testId, "question": qA[qA.length-1] })
         .subscribe(res => {
@@ -102,7 +96,6 @@ export class DashboardComponent implements OnInit {
         });    
     }
     else {
-      console.log("post /updateQuestion");
       this.http.post<any>(`${this.url}/user/updateQuestion`, { question })
           .subscribe(res => {
             this.dialog.open(DashboardDialog, {
@@ -137,7 +130,6 @@ export class DashboardComponent implements OnInit {
 
   addTest(): void {
     if (this.addTestIsPushedOnce) {
-      console.log("post /addTest");
       this.http.post<any>(`${this.url}/user/addTest`, this.newTest)
         .subscribe(res => {
           this.getTestsList();
@@ -170,8 +162,17 @@ export class DashboardComponent implements OnInit {
 
   }
 
-}
+  showLogs(): void {
+    this.testsPanelIsPushed = false;
+    this.logsIsPushed = true;
+  }  
 
+  showTestsPanel(): void {
+    this.logsIsPushed = false;
+    this.testsPanelIsPushed = true;
+  }  
+
+}
 
 @Component({
   selector: 'dashboard-dialog',
