@@ -6,6 +6,7 @@ import { LoaderService } from 'src/app/services/loader.service';
 import { environment } from './../../../environments/environment';
 import { FinishedTest } from 'src/app/finished-test';
 import { TestItem } from 'src/app/test-item';
+import { DataObject } from 'src/app/data-object';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import User from '../../models/User';
 
@@ -19,12 +20,14 @@ export interface DialogData {
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
+
 export class DashboardComponent implements OnInit {
+
   url = (environment.production) ? 
     environment.backend_prod_url : environment.backend_dev_url;
   user: User; 
-  finishedTestsList: Array < FinishedTest >;
-  testsList: Array < TestItem >;
+  finishedTestsList: Array<FinishedTest>;
+  testsList: Array<TestItem>;
   test: TestItem;
   addTestIsPushedOnce: boolean;
   newTest: any = {
@@ -49,28 +52,39 @@ export class DashboardComponent implements OnInit {
 
   getFinishedTestsList(): void {
     this.loaderSer.show(true);
-    this.http.get < Array < FinishedTest > > (`${this.url}/user/finishedTestsList`, {
+    this.http.get<Array<FinishedTest>>(`${this.url}/user/finishedTestsList`, {
         responseType: 'json'
       })
       .subscribe(
-        (res: Array < FinishedTest > ) => {
+        (res: Array<FinishedTest>) => {
           this.loaderSer.show(false);
           this.finishedTestsList = res;
-          console.log(res);
         });
   }
 
   getTestsList(): void {
     this.loaderSer.show(true);
-    this.http.get < Array < TestItem >> (`${this.url}/user/testsList`, {
+    this.http.get<Array<TestItem>>(`${this.url}/user/testsList`, {
         responseType: 'json'
       })
       .subscribe(
-        (res: Array < TestItem > ) => {
+        (res: Array<TestItem>) => {
           this.loaderSer.show(false);
           this.testsList = res;
-          console.log(res);
         });
+  }
+
+  getQuestions(testId): void {
+    this.loaderSer.show(true);
+    this.http.get<Array<DataObject>>(
+      `${this.url}/user/questionsList?test_id=${testId}`, {
+      responseType: 'json'
+    })
+    .subscribe(
+      (res: Array<DataObject>) => {
+        this.loaderSer.show(false);
+        this.test.questions = res;
+    });
   }
 
   updateQuestion(testId, question): void {
@@ -84,15 +98,13 @@ export class DashboardComponent implements OnInit {
       this.http.post<any>(`${this.url}/user/addQuestion`, 
         { "testId": testId, "question": qA[qA.length-1] })
         .subscribe(res => {
-          this.getTestsList();
-          
+          this.getQuestions(testId);
           this.dialog.open(DashboardDialog, {
             data: {
               success: res.status,
               message: res.message,
             },
           });
-
         });    
     }
     else {
@@ -105,7 +117,7 @@ export class DashboardComponent implements OnInit {
               },
             });
           });
-      console.log(question); 
+
     }
 
   }
@@ -178,6 +190,7 @@ export class DashboardComponent implements OnInit {
   selector: 'dashboard-dialog',
   templateUrl: 'dashboard-dialog.html',
 })
+
 export class DashboardDialog {
   constructor(@Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 }
