@@ -123,7 +123,7 @@ export class DashboardComponent implements OnInit {
   }
 
   trackByIndex (index: number) { 
-    return index 
+    return index; 
   }
 
   addQuestion(testId): void {
@@ -135,7 +135,7 @@ export class DashboardComponent implements OnInit {
       content: "",
       answer: -1,
       __v: 0,
-      options: [" ", " ", " ", " "]
+      options: ["", "", "", ""]
     });
 
   }
