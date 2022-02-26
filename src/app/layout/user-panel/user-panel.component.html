@@ -1,9 +1,16 @@
 <mat-expansion-panel #panel> 
-    <mat-expansion-panel-header>
-        <mat-panel-description> 
-	    User panel
-        </mat-panel-description>
-    </mat-expansion-panel-header>
-    <p>Hello, {{user_firstname}}!</p>
+  <mat-expansion-panel-header>
+    <mat-panel-description> 
+      User panel
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <div class="content">
+    <div class="greeter">
+      <p>Hello, {{user_firstname}}!</p>
+    </div>
+    <p>A test a day keeps the boredom away!</p>
+  </div>
+  <div>
     <button (click)="logout()" type="button">Sign out</button>
+  </div>
 </mat-expansion-panel>
