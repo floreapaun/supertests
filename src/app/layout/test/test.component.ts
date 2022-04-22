@@ -61,10 +61,6 @@ export class TestComponent implements OnInit {
     }
   }
 
-  changeSection():any{
-    
-  }
-
   clearResponse():void{
     const index = this.answerList.findIndex(e => {
       return e.no == this.itr;
