@@ -35,7 +35,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Create link to Angular build directory
-var distDir = __dirname + "/dist/";
+var distDir = __dirname + "/dist/frontend/";
 app.use(express.static(distDir));
 
 app.use(function(req, res, next) {

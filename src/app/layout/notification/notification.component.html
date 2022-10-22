@@ -2,47 +2,44 @@
 </app-user-panel>
 
 <div class="container">
-        <div class="card mt-5">
-                <div class="card-body">
-    <div class="row">
-        <div class="col-sm-12">
-            <h2 class="ge">General instructions</h2>
-            <p class="lead">Read carefully</p>
-            <ol>
-                <li>
-                    Total duration of test {{test.name}} is {{test.duration}} minutes.
-                </li>
-                <li>
-		    Time remaining is showed in top-right corner.  
-                </li>
-                <li>
-		    When won't be more time available test will finish.
-                </li>
-                <li>
-		    Test content is forged by professional programmers and should be taken as it is.
-                </li>
-            </ol>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-12">
-            <form class="instruction-block">
-                <div class="custom-control custom-checkbox">
-                    <input class="custom-control-input" id="check" name="agree" [(ngModel)]="agree" type="checkbox" />
-                    <label class="custom-control-label" for="check">
-			I've read and undestood the instructions
-                    </label>
-
+    <div class="card mt-5">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 class="ge">General instructions</h2>
+                    <p class="lead">Read carefully</p>
+                    <ol>
+                        <li>
+                            Total duration of test {{test.name}} is {{test.duration}} minutes.
+                        </li>
+                        <li>
+                            Time remaining is showed in top-right corner.  
+                        </li>
+                        <li>
+                            When won't be more time available test will finish.
+                        </li>
+                        <li>
+                            Test content is forged by professional programmers and should be taken as it is.
+                        </li>
+                    </ol>
                 </div>
-            </form>
-        </div>
-        <div class="col-12 mt-3 text-right">
-            <button [disabled]="!agree" [ngClass]="{'btn-secondary' : !agree}" class="btn btn-primary" (click)="navigateToTest()">Next</button>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <form class="instruction-block">
+                        <div class="custom-control custom-checkbox">
+                            <input class="custom-control-input" id="check" name="agree" [(ngModel)]="agree" type="checkbox" />
+                            <label class="custom-control-label" for="check">
+                                I've read and undestood the instructions.
+                            </label>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="col-12 mt-3 text-right">
+                    <button [disabled]="!agree" [ngClass]="{'btn-secondary' : !agree}" class="btn btn-primary" (click)="navigateToTest()">Next</button>
+                </div>
+            </div>
         </div>
     </div>
-
-</div>
-</div>
-
 </div>
